@@ -1,16 +1,15 @@
-%header.navbar.navbar-fixed-top.navbar-default
-  .container
+%nav.navbar.navbar-fixed-top.navbar-default
+  .container-fluid
     .navbar-header
-      %button{:type => 'button', :class => 'navbar-toggle collapsed', 'data-toggle' => 'collapse',
-              'data-target' => '#opciones-navbar', 'aria-expanded' => 'false'}
+      %button.navbar-toggle.collapsed{'aria-expanded' => 'false', 'data-target' => '#opciones-navbar', 'data-toggle' => 'collapse', :type => 'button'}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
 
-      %a{:class => "navbar-brand", :href => root_path} AECCI
+      = link_to 'AECCI', root_path, {class: 'navbar-brand'}
 
-    %div{:class => 'collapse navbar-collapse', :id => 'opciones-navbar'}
+    #opciones-navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
-          %a{:href => about_us_path} ¿Quienes somos?
+          = link_to '¿Quiénes somos?', about_us_path
