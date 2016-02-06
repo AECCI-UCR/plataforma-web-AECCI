@@ -1,0 +1,12 @@
+!!! 5
+%html
+  %head
+    %title Plataforma Aecci
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = render 'layouts/navbar'
+    / Aca hay que darle un espacio por css para que le de campo al navbar y no quede lo demas debajo del navbar
+    %div{:style => 'padding-top: 70px'}
+      = yield
