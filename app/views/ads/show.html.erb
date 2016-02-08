@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ad.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ad.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @ad.image_url %>
+</p>
+
+<p>
+  <strong>Image carousel url:</strong>
+  <%= @ad.image_carousel_url %>
+</p>
+
+<p>
+  <strong>Important:</strong>
+  <%= @ad.important %>
+</p>
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>
