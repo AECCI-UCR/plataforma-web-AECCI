@@ -1,37 +1,43 @@
 <%= form_for(@ad) do |f| %>
-  <% if @ad.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+    <% if @ad.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
 
-      <ul>
-      <% @ad.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @ad.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="form-horizontal">
+          <div class="form-group">
+            <%= f.label :title, 'Título de la imagen' %>
+            <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :description, 'Descripción' %><br>
+            <%= f.text_area :description, class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style:'resize: none'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :image_url, 'Imagen del anuncio' %><br>
+            <%= f.text_field :image_url %>
+          </div>
+          <div class="form-group">
+            <%= f.label :important, 'Destacado' %>
+            <%= f.check_box :important %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image_carousel_url %><br>
+            <%= f.text_field :image_carousel_url %>
+          </div>
+          <div class="actions">
+            <%= f.submit class:'btn btn-primary'%>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :image_carousel_url %><br>
-    <%= f.text_field :image_carousel_url %>
-  </div>
-  <div class="field">
-    <%= f.label :important %><br>
-    <%= f.check_box :important %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
