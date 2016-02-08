@@ -7,41 +7,42 @@
 <%# El carousel con las imágenes %>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <div class="carousel slide" data-ride="carousel" id="carousel-anuncios"></div>
-    <%# Indicadores %>
-    <ol class="carousel-indicators">
-      <li class="active" data-slide-to="0" data-target="#ejemplo-carousel-generico"></li>
-      <li data-slide-to="1" data-target="#ejemplo-carousel-generico"></li>
-    </ol>
-    <%# Wrappers para los slides %>
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/12644744_10207637957761072_1135077213064854338_n.jpg?oh=4293f4fea899bb1bde2438b306b5faaa&oe=576AC3D6"/>
-        <div class="carousel-caption">
-          <h3>Glacier Point</h3>
-          <p>Esta foto es del parque nacional Yosemite en California</p>
+    <div id="my_carousel" class="carousel slide" data-ride="carousel" >
+      <%# Indicadores %>
+      <ol class="carousel-indicators">
+        <li class="active" data-slide-to="0" data-target="#my_carousel"></li>
+        <li data-slide-to="1" data-target="#my_carousel"></li>
+      </ol>
+      <%# Wrappers para los slides %>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/12644744_10207637957761072_1135077213064854338_n.jpg?oh=4293f4fea899bb1bde2438b306b5faaa&oe=576AC3D6"/>
+          <div class="carousel-caption">
+            <h3>Glacier Point</h3>
+            <p>Esta foto es del parque nacional Yosemite en California</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10891734_10205302028444299_778399481311039019_n.jpg?oh=bd02cc15fcdefe6647c5bc5101bd50d4&oe=572784D0"/>
+          <div class="carousel-caption">
+            <h3>Angel Fire</h3>
+            <p>Esta foto es en Angel Fire en Nuevo México</p>
+          </div>
         </div>
       </div>
-      <div class="item">
-        <img src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10891734_10205302028444299_778399481311039019_n.jpg?oh=bd02cc15fcdefe6647c5bc5101bd50d4&oe=572784D0"/>
-        <div class="carousel-caption">
-          <h3>Angel Fire</h3>
-          <p>Esta foto es en Angel Fire en Nuevo México</p>
-        </div>
-      </div>
-    </div>
-    <%# Controles %>
+      <%# Controles %>
 
-    <%# Izquierdo %>
-    <a class="left carousel-control" data-slide="prev" href="ejemplo-carousel-generico" role="button">
-      <span aria-hiden="true" class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <%# Derecho %>
-    <a class="right carousel-control" data-slide="prev" href="ejemplo-carousel-generico" role="button">
-      <span aria-hiden="true" class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Siguiente</span>
-    </a>
+      <%# Izquierdo %>
+      <a class="left carousel-control" data-slide="prev" href="#my_carousel" role="button">
+        <span aria-hiden="true" class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <%# Derecho %>
+      <a class="right carousel-control" data-slide="prev" href="#my_carousel" role="button">
+        <span aria-hiden="true" class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
   </div>
 </div>
 <div class="row">
