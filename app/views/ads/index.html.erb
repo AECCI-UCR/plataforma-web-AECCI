@@ -2,14 +2,11 @@
 
 <h1>Listing Ads</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Image carousel url</th>
-      <th>Important</th>
+      <th>Título</th>
+      <th>Destacado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +15,7 @@
     <% @ads.each do |ad| %>
       <tr>
         <td><%= ad.title %></td>
-        <td><%= ad.description %></td>
-        <td><%= ad.image_url %></td>
-        <td><%= ad.image_carousel_url %></td>
-        <td><%= ad.important %></td>
+        <td><%= ad.important? ? 'Si' : 'No'%></td>
         <td><%= link_to 'Show', ad %></td>
         <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
         <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Ad', new_ad_path %>
+<%= link_to 'Agregar un anuncio', new_ad_path, class:'btn btn-primary' %>
