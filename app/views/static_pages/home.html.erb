@@ -7,7 +7,7 @@
 <%# El carousel con las imágenes %>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <div id="my_carousel" class="carousel slide" data-ride="carousel" >
+    <div id="my_carousel" class="carousel slide" data-ride="carousel">
       <%# Indicadores %>
       <ol class="carousel-indicators">
         <li class="active" data-slide-to="0" data-target="#my_carousel"></li>
@@ -29,6 +29,11 @@
             <p>Esta foto es en Angel Fire en Nuevo México</p>
           </div>
         </div>
+        <%# Para que la transicion se haga sola %>
+        <%# Izquierdo %>
+        <a data-slide="prev" href="#my_carousel" role="button" />
+        <%# Derecho %>
+        <a data-slide="prev" href="#my_carousel" role="button" />
       </div>
     </div>
   </div>
