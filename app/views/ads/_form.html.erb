@@ -13,55 +13,69 @@
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <div class="form-horizontal">
-          <div class="form-group">
-            <div class="col-md-3">
-              <%= f.label :title, 'Título de la imagen' %>
-            </div>
-            <div class="col-md-9">
-              <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id:'input_title' %>
-              <p class="text-danger" id="title_alert">Tiene que ingresar un título para el anuncio</p>
-            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Información del anuncio</h3>
           </div>
-          <div class="form-group">
-            <div class="col-md-3">
-              <%= f.label :description, 'Descripción' %>
+          <div class="panel-body">
+            <div class="form-horizontal">
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :title, 'Título del anuncio' %><span class="text-danger"> *</span>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
+                  <p class="text-danger" id="title_alert">Tiene que ingresar un título para el anuncio</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :description, 'Descripción' %><span class="text-danger"> *</span>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_area :description, id: 'input_description', class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style: 'resize: none' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :image_url, 'Imagen del anuncio' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <span class="picture">
+                    <%= f.file_field :image_url, id: 'ad_image', onchange:'image_uploaded(this)'%>
+                  </span>
+                </div>
+              </div>
+              <div class="form-group" id="first_pic_area">
+                <div class="col-md-6 col-md-offset-3">
+                  <img id="img_prev" src="#" alt="your image" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :important, 'Destacar' %>
+                  <%= f.check_box :important, id: 'check_important' %>
+                </div>
+              </div>
+              <div class="form-group" id="carousel_part">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :image_carousel_url, 'Imagen del carousel', id: 'label_img_carousel' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.file_field :image_carousel_url, id: 'field_img_carousel' %>
+                </div>
+              </div>
             </div>
-            <div class="col-md-9">
-              <%= f.text_area :description, class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style: 'resize: none' %>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-3">
-              <%= f.label :image_url, 'Imagen del anuncio' %>
-            </div>
-            <div class="col-md-6">
-              <span class="picture">
-                <%= f.file_field :image_url, id:'ad_image'%>
-              </span>
-            </div>
-            <div class="col-md-3">
-              <%= f.check_box :important, id:'check_important'%>
-              <%= f.label :important, 'Destacado' %>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-8 col-md-offset-2">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-3">
-              <%= f.label :image_carousel_url, 'Imagen del carousel' %>
-            </div>
-            <div class="col-md-9">
-              <%= f.file_field :image_carousel_url %>
-            </div>
-          </div>
-          <div class="actions">
-            <%= f.submit class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="actions">
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
 <% end %>
