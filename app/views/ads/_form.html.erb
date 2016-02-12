@@ -19,21 +19,22 @@
           </div>
           <div class="panel-body">
             <div class="form-horizontal">
-              <div class="form-group">
+              <div class="form-group" id="title_group">
                 <div class="col-md-4 col-lg-3">
                   <%= f.label :title, 'Título del anuncio' %><span class="text-danger"> *</span>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
-                  <p class="text-danger" id="title_alert">Tiene que ingresar un título para el anuncio</p>
+                  <p class="text-danger" id="title_alert">Tiene que ingresar un título para el anuncio.</p>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="description_group">
                 <div class="col-md-4 col-lg-3">
                   <%= f.label :description, 'Descripción' %><span class="text-danger"> *</span>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <%= f.text_area :description, id: 'input_description', class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style: 'resize: none' %>
+                  <p class="text-danger" id="description_alert">Tiene que ingresar una descripción para el anuncio.</p>
                 </div>
               </div>
               <div class="form-group">
@@ -42,19 +43,14 @@
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <span class="picture">
-                    <%= f.file_field :image_url, id: 'ad_image', onchange:'image_uploaded(this)'%>
+                    <%= f.file_field :image_url, id:'img_add'%>
                   </span>
-                </div>
-              </div>
-              <div class="form-group" id="first_pic_area">
-                <div class="col-md-6 col-md-offset-3">
-                  <img id="img_prev" src="#" alt="your image" />
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-md-4 col-lg-3">
                   <%= f.label :important, 'Destacar' %>
-                  <%= f.check_box :important, id: 'check_important' %>
+                  <%= f.check_box :important, id: 'check_important'%>
                 </div>
               </div>
               <div class="form-group" id="carousel_part">

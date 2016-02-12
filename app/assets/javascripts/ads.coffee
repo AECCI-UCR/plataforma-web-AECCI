@@ -4,6 +4,7 @@
 
 ready = ->
   $('#title_alert').hide()
+  $('#description_alert').hide()
   $('#carousel_part').hide()
 
   $('#check_important').click ->
@@ -12,27 +13,23 @@ ready = ->
     else
       $('#carousel_part').fadeOut()
     return
-  return
 
-  $('#input_title').blur() ->
-    if $('#input_title').val == ""
+  $('#input_title').blur ->
+    val = $('#input_title').val()
+    if val == ''
       $('#title_alert').fadeIn()
     else
       $('#title_alert').fadeOut()
     return
-  return
 
-  # TODO Este escript todavia no se esta ejecutando
-  image_uploaded = (input) ->
-  if input.files and input.files[0]
-    reader = new FileReader
+  $('#input_description').blur ->
+    val = $('#input_description').val()
+    if val == ''
+      $('#description_alert').fadeIn()
+    else
+      $('#description_alert').fadeOut()
+    return
 
-    reader.onload = (e) ->
-      $('#img_prev').attr('src', e.target.result).width(150).height 200
-      return
 
-    reader.readAsDataURL input.files[0]
-  return
-
-$(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).ready ready
+$(document).on 'page:load', ready
