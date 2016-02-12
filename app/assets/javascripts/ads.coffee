@@ -5,7 +5,12 @@
 ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
-  $('#carousel_part').hide()
+
+  if $('#check_important').is(':checked')
+    $('#carousel_part').show()
+  else
+    $('#carousel_part').hide()
+  return
 
   $('#check_important').click ->
     if $(this).is(':checked')

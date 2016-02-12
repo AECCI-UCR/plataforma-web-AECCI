@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @ad.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripción:</strong>
   <%= @ad.description %>
 </p>
 
 <p>
   <strong>Image url:</strong>
   <%= @ad.image_url %>
+  <%= image_tag(@ad.image_url) %>
 </p>
 
 <p>
