@@ -286,11 +286,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
-<<<<<<< HEAD
-  fog
-=======
   devise
->>>>>>> master
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
