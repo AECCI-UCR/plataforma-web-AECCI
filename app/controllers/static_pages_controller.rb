@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @ads = Ad.find_by(important: true)
+    @ads = Ad.where(important: true)
   end
 
   def about_us
