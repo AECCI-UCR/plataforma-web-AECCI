@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :ads
-=======
   devise_for :users
->>>>>>> master
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
