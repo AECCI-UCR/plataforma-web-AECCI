@@ -2,15 +2,18 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
-  $('#title_alert').hide()
-  $('#description_alert').hide()
-
+hide_carousel_part = ->
   if $('#check_important').is(':checked')
     $('#carousel_part').show()
   else
     $('#carousel_part').hide()
   return
+
+ready = ->
+  $('#title_alert').hide()
+  $('#description_alert').hide()
+
+  hide_carousel_part()
 
   $('#check_important').click ->
     if $(this).is(':checked')
@@ -34,7 +37,6 @@ ready = ->
     else
       $('#description_alert').fadeOut()
     return
-
 
 $(document).ready ready
 $(document).on 'page:load', ready
