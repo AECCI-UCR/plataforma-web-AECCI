@@ -1,76 +1,82 @@
 <p id="notice"><%= notice %></p>
 
 <!-- Esta deberia de ser la vista para los miembros de la asocia -->
-<h1>Anuncios publicados en el sitio
-  <small class="text-warning">(vista solo para admis)</small>
-</h1>
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Título</th>
-    <th>En el carousel</th>
-    <th colspan="3"> Acciones</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @ads.each do |ad| %>
-      <tr>
-        <td><%= ad.title %></td>
-        <td><%= ad.important? ? 'Si' : 'No' %></td>
-        <td>
-          <%= link_to ad, class:'btn btn-info btn-xs' do %>
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          <%end%>
-        </td>
-        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-        <td><%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Agregar un anuncio', new_ad_path, class: 'btn btn-primary' %>
-<hr/>
-<!-- Los otros usuarios deben de tener otra vista-->
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1>Anuncios de interes
-      <small class="text-warning">(vista para estudiantes)</small>
-    </h1>
+    <h1>Anuncios del sitio</h1>
+    <hr/>
   </div>
 </div>
-<% @ads.each do |ad| %>
-    <!--
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><%= ad.title %></h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-4">
-                <%= ad.description %>
-              </div>
-              <div class="col-md-8">
-                <%= image_tag ad.image_url, class: 'img-responsive' %>
-              </div>
-            </div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Administrador de anuncios</h2>
+            <hr/>
           </div>
         </div>
-        <hr/>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Título</th>
+                <th>En el carousel</th>
+                <th colspan="3"> Acciones</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @ads.each do |ad| %>
+                  <tr>
+                    <td><%= ad.title %></td>
+                    <td><%= ad.important? ? 'Si' : 'No' %></td>
+                    <td>
+                      <%= link_to ad do %>
+                          <span class="glyphicon glyphicon-eye-open text-info" aria-hidden="true"></span>
+                      <% end %>
+                    </td>
+                    <td>
+                      <%= link_to edit_ad_path(ad) do %>
+                          <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
+                      <% end %>
+                    </td>
+                    <td>
+                      <%= link_to ad, method: :delete, data: {confirm: '¿Esta seguro?'} do %>
+                          <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
+                      <% end %>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-    -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-8">
+    <%= link_to 'Agregar un anuncio', new_ad_path, class: 'btn btn-primary btn-block' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <hr/>
+  </div>
+</div>
+
+
+<!-- Los otros usuarios deben de tener otra vista-->
+<% @ads.each do |ad| %>
     <div class="row">
       <div class="col-md-offset-1 col-md-10">
         <div class="row">
           <div class="col-md-12">
             <h3> <%= ad.title %></h3>
+            <br/>
           </div>
         </div>
         <div class="row">
@@ -78,7 +84,7 @@
             <%= ad.description %>
           </div>
           <div class="col-md-8">
-            <%= image_tag ad.image_url, class: 'img-responsive' %>
+            <%= image_tag ad.image_url, class: 'img-responsive img-rounded' %>
           </div>
         </div>
         <hr/>

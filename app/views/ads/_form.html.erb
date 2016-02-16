@@ -51,7 +51,7 @@
               <% if @ad.image_url?%>
                 <div class="form-group">
                   <div class="col-md-6 col-md-offset-3">
-                    <%= image_tag @ad.image_url%>
+                    <%= image_tag @ad.image_url, class:'img-responsive'%>
                   </div>
                 </div>
               <%end%>
@@ -74,7 +74,7 @@
               <% if @ad.image_carousel_url? %>
               <div class="form-group">
                 <div class="col-md-6 col-md-offset-3">
-                  <%= image_tag(@ad.image_carousel_url) %>
+                  <%= image_tag @ad.image_carousel_url, class:'img-responsive' %>
                 </div>
               </div>
               <%end%>
