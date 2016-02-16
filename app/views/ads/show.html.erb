@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="btn-group" role="group">
+      <%= link_to 'Editar', edit_ad_path(@ad), class: 'text-footer' %> |
+      <%= link_to 'Regresar', ads_path, class: 'text-footer' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h2><%= @ad.title %></h2>
+    <hr/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <%= @ad.description %>
+  </div>
+  <div class="col-md-5 col-lg-4">
+    <%= image_tag @ad.image_url, class: 'img-responsive' %>
+  </div>
+</div>
+<% if @ad.important? %>
+    <br/>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h4>Imagen que se muestra en el carousel</h4>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= image_tag @ad.image_carousel_url, class: 'img-responsive' %>
+      </div>
+    </div>
+<% end %>
+
+

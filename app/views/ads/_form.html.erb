@@ -1,0 +1,89 @@
+<%= form_for(@ad, html: {multipart: true}) do |f| %>
+    <% if @ad.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+
+          <ul>
+            <% @ad.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Información del anuncio</h3>
+          </div>
+          <div class="panel-body">
+            <div class="form-horizontal">
+              <div class="form-group" id="title_group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :title, 'Título del anuncio' %><span class="text-danger"> *</span>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
+                  <p class="text-danger" id="title_alert">Tiene que ingresar un título para el anuncio.</p>
+                </div>
+              </div>
+              <div class="form-group" id="description_group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :description, 'Descripción' %><span class="text-danger"> *</span>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_area :description, id: 'input_description', class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style: 'resize: none' %>
+                  <p class="text-danger" id="description_alert">Tiene que ingresar una descripción para el anuncio.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :image_url, 'Imagen del anuncio' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <span class="picture">
+                    <%= f.file_field :image_url %>
+                    <%= f.hidden_field :image_url_cache %>
+                  </span>
+                </div>
+              </div>
+              <% if @ad.image_url? %>
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                      <%= image_tag @ad.image_url, class: 'img-responsive' %>
+                    </div>
+                  </div>
+              <% end %>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :important, 'Destacar' %>
+                  <%= f.check_box :important, id: 'check_important' %>
+                </div>
+              </div>
+              <div class="form-group" id="carousel_part">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :image_carousel_url, 'Imagen del carousel', id: 'label_img_carousel' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.file_field :image_carousel_url %>
+                  <%= f.hidden_field :image_carousel_url_cache %>
+                  <p class="text-info">Las dimensiones de esta imagen tiene que ser de YY x ZZ pixeles como mínimo.</p>
+                </div>
+              </div>
+              <% if @ad.image_carousel_url? %>
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                      <%= image_tag @ad.image_carousel_url, class: 'img-responsive' %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <%= f.submit class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

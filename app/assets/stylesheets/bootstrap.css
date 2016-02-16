@@ -3893,22 +3893,22 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary:focus,
 .btn-primary.focus {
     color: #fff;
-    background-color: #F4511E;
-    border-color: #F4511E;
+    background-color: #E36922;
+    border-color: #E36922;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #F4511E;
-    border-color: #F4511E;
+    background-color: #E36922;
+    border-color: #E36922;
 }
 
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #E64A19;
-    border-color: #E64A19;
+    background-color: #E36922;
+    border-color: #E36922;
 }
 
 .btn-primary:active:hover,
@@ -3921,8 +3921,8 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
     color: #fff;
-    background-color: #E64A19;
-    border-color: #E64A19;
+    background-color: #E36922;
+    border-color: #E36922;
 }
 
 .btn-primary:active,
@@ -3940,8 +3940,8 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
 fieldset[disabled] .btn-primary.focus {
-    background-color: #E64A19;
-    border-color: #E64A19;
+    background-color: #E36922;
+    border-color: #E36922;
 }
 
 .btn-primary .badge {
@@ -5515,7 +5515,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .navbar-default {
     background-color: #2b2b2b;
-    border-color: #e7e7e7;
+    border-color: #2b2b2b;
 }
 
 .navbar-default .navbar-brand {
@@ -5533,13 +5533,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #777;
+    color: #E0E0E0;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: #FFFFFF;
     background-color: #f2762e;
+    border-color: #f2762e;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -5571,7 +5572,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #e7e7e7;
+    border-color: #f2762e;
 }
 
 .navbar-default .navbar-nav > .open > a,
