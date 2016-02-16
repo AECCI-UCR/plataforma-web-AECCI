@@ -19,7 +19,11 @@
       <tr>
         <td><%= ad.title %></td>
         <td><%= ad.important? ? 'Si' : 'No' %></td>
-        <td><%= link_to 'Show', ad %></td>
+        <td>
+          <%= link_to ad, class:'btn btn-info btn-xs' do %>
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+          <%end%>
+        </td>
         <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
         <td><%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
