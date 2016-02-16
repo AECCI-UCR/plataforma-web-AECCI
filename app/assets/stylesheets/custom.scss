@@ -20,3 +20,34 @@ body {
   color: #FFFFFF !important;
   border-color: transparent !important;
 }
+
+// Login Registration buttons
+.btn-login {
+  background-color: transparent;
+  padding: 8px 13px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #F2762e;
+  border-color: #F2762e;
+  transition: all ease 0.2s;
+}
+
+.btn-login:hover {
+  color: #E0E0E0;
+  background-color: #f2762e;
+}
+
+.btn-registro {
+  background-color: #F2762e;
+  padding: 8px 13px;
+  //margin-left: 3px;
+  //margin-right: 3px;
+  color: #E0E0E0;
+  border-color: #F2762e;
+  transition: all ease 0.2s;
+}
+
+.btn-registro:hover {
+  color: #f2762e;
+  background-color: transparent;
+}
