@@ -36,9 +36,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Gema de bootstrap
-gem 'bootstrap-sass'
-
 # Gema para el control de autorización
 gem 'devise'
 

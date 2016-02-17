@@ -1,4 +1,64 @@
+// Variables
+$orange: #F2762e;
+$orange-darker: #f4511e;
+$white: #e0e0e0;
+
+$primary-color: $orange;
+$primary-color-darker: $orange-darker;
+
 // Espacio para el navbar
 body {
   padding-top: 60px;
 }
+
+// Formularios
+.form-control{
+  border-radius: 3px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset !important;
+  color: #FFFFFF !important;
+}
+
+.form-control:hover{
+  background-color: rgba(0,0,0,.16) !important;
+}
+
+.form-control:focus{
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset !important;
+  background-color: rgba(0,0,0,0.23) !important;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+}
+// Fin Formularios
+
+
+// Botones de Inicio de sesión y registro
+.btn-login {
+  background-color: transparent;
+  padding: 8px 13px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: $orange;
+  border-color: $orange;
+  transition: all ease 0.2s;
+}
+
+.btn-login:hover {
+  color: $white;
+  background-color: $orange-darker;
+}
+
+.btn-registro {
+  background-color: $orange;
+  padding: 8px 13px;
+  color: $white;
+  border-color: $orange;
+  transition: all ease 0.2s;
+}
+
+.btn-registro:hover {
+  color: $white;
+  background-color: $orange-darker;
+}
+// Fin Botones de Inicio de sesión y registro
+
