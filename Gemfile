@@ -39,6 +39,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Gema para iconos y fonts
 gem 'font-awesome-sass'
 
+# Gema de boostrap
+gem 'bootstrap-sass'
+
 # Gema para el control de autorización
 gem 'devise'
 
