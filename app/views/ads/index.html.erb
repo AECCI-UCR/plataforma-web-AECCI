@@ -23,26 +23,32 @@
               <thead>
               <tr>
                 <th>Título</th>
-                <th>En el carousel</th>
-                <th colspan="3"> Acciones</th>
+                <th class="center-cell">En el carousel</th>
+                <th colspan="3" class="center-cell"> Acciones</th>
               </tr>
               </thead>
               <tbody>
               <% @ads.each do |ad| %>
                   <tr>
                     <td><%= ad.title %></td>
-                    <td><%= ad.important? ? 'Si' : 'No' %></td>
-                    <td>
+                    <td class="center-cell">
+                      <% if ad.important? %>
+                          <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+                      <% else %>
+                          <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+                      <% end %>
+                    </td>
+                    <td class="center-cell">
                       <%= link_to ad do %>
                           <span class="glyphicon glyphicon-eye-open text-info" aria-hidden="true"></span>
                       <% end %>
                     </td>
-                    <td>
+                    <td class="center-cell">
                       <%= link_to edit_ad_path(ad) do %>
                           <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
                       <% end %>
                     </td>
-                    <td>
+                    <td class="center-cell">
                       <%= link_to ad, method: :delete, data: {confirm: '¿Esta seguro?'} do %>
                           <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
                       <% end %>
@@ -72,21 +78,21 @@
 <!-- Los otros usuarios deben de tener otra vista-->
 <% @ads.each do |ad| %>
     <div class="row">
-      <div class="col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
-        <div class="row">
-          <div class="col-md-12">
-            <h3> <%= ad.title %></h3>
-            <br/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <%= ad.description %>
-          </div>
-          <div class="col-md-8">
-            <%= image_tag ad.image_url, class: 'img-responsive img-rounded' %>
-          </div>
-        </div>
+      <div class="col-md-10 col-md-offset-1">
+        <h3> <%= ad.title %></h3>
+        <br/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7 col-md-offset-1">
+        <%= ad.description %>
+      </div>
+      <div class="col-md-3">
+        <%= image_tag ad.image_url, class: 'img-responsive img-rounded' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
         <hr/>
       </div>
     </div>
