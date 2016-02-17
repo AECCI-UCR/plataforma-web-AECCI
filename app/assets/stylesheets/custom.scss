@@ -48,5 +48,9 @@ a:hover,
 a:focus{
   background-color: transparent;
   color: #FF9800;
-  text-decoration: none;
+  text-decoration: underline;
+}
+
+a{
+  color: #FF9800;
 }
