@@ -1,9 +1,35 @@
-@import 'bootstrap';
+// En este documento se definen los estilos propios de la aplicacion
+
+// Variables de los colores
+$lightOrange: #FF9800;
+$darkOrange: #f2762e;
+$white: #ffffff;
+$linkColor: $lightOrange;
+$darkGrey: #2b2b2b;
+$bodyColor: #fbfbfb;
+
+// Estilos del navbar
+$navbar-default-bg: $darkGrey;
+$navbar-default-brand-color: $white;
+$navbar-default-link-hover-color: $lightOrange;
+
+// Botones
+$btn-primary-bg: $lightOrange;
+$btn-primary-border: $lightOrange;
+
+// Otros
+$body-bg: $bodyColor;
+$link-color: $lightOrange;
+$link-hover-color: $lightOrange;
+
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 // Espacio para el navbar
 body {
   padding-top: 60px;
-  background-color: #fbfbfb;
 }
 
 .img-show{
@@ -30,7 +56,7 @@ body {
 }
 
 .body-footer{
-  background-color: #2b2b2b;
+  background-color: $darkGrey;
   padding: 40px;
 }
 .text-footer{
@@ -38,21 +64,11 @@ body {
 }
 
 .highligh-footer{
-  color: #f2762e;
+  color: $darkOrange;
 }
 
 .title-footer{
   color: #E0E0E0;
-}
-a:hover,
-a:focus{
-  background-color: transparent;
-  color: #FF9800;
-  text-decoration: underline;
-}
-
-a{
-  color: #FF9800;
 }
 
 .center-cell{
