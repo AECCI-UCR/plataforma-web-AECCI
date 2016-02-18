@@ -1,29 +1,30 @@
-// En este documento se definen los estilos propios de la aplicacion
-
-// Variables de los colores
-$light-orange: #FF9800;
-$dark-orange: #f2762e;
+// == Variables de los colores ==
+$orange-light: #FF9800;
+$orange-dark: #f2762e;
 $white: #ffffff;
-$link-color: $light-orange;
-$dark-grey: #2b2b2b;
-$light-grey: #9d9d9d;
+$link-color: $orange-light;
+$grey-dark: #2b2b2b;
+$grey-light: #9d9d9d;
 $body-color: #fbfbfb;
 
 // Estilos del navbar
-$navbar-default-bg: $dark-grey;
+$navbar-default-bg: $grey-dark;
 $navbar-default-brand-color: $white;
-$navbar-default-link-hover-color: $light-orange;
-$navbar-default-link-active-color: $light-orange;
+$navbar-default-link-hover-color: $orange-light;
+$navbar-default-link-hover-color: $orange-light;
+$navbar-default-link-active-color: $orange-light;
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-toggle-hover-bg: transparent;
 
 // Botones
-$btn-primary-bg: $light-orange;
-$btn-primary-border: $light-orange;
+$btn-primary-bg: $orange-light;
+$btn-primary-border: $orange-light;
+$btn-primary-bg: $orange-light;
+$btn-primary-border: $orange-light;
 $btn-border-radius-base: 2px;
 
 // Forms
-$input-border-focus: $light-orange;
+$input-border-focus: $orange-light;
 $input-border-radius: 0px;
 
 // Panels
@@ -32,20 +33,52 @@ $panel-default-border: transparent;
 
 // Otros
 $body-bg: $body-color;
-$link-color: $light-grey;
-$link-hover-color: $light-orange;
+$link-color: $grey-light;
+$link-hover-color: $orange-light;
 
-
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// == Fin Variables de los colores ==
+
+// == Botones de Inicio de sesión y registro ==
+.btn-login {
+  background-color: transparent;
+  padding: 8px 13px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: $orange-light;
+  border-color: $orange-light;
+  transition: all ease 0.2s;
+
+  &:hover {
+    color: $white;
+    background-color: $orange-dark;
+  }
+}
+
+.btn-registro {
+  background-color: $orange-light;
+  padding: 8px 13px;
+  color: $white;
+  border-color: $orange-light;
+  transition: all ease 0.2s;
+
+  &:hover {
+    color: $white;
+    background-color: $orange-dark;
+  }
+}
+
+// == Fin Botones de Inicio de sesión y registro ==
+
+// == Varios estilos ==
 
 // Espacio para el navbar
 body {
   padding-top: 60px;
 }
 
-.img-show{
+.img-show {
   width: 80%;
   height: 80%;
 }
@@ -59,23 +92,25 @@ body {
   border: 0px solid transparent;
   box-shadow: 2px 2px 7px #888888;
 }
-
-.body-footer{
-  background-color: $dark-grey;
+.body-footer {
+  background-color: $grey-dark;
   padding: 40px;
 }
-.text-footer{
+
+.text-footer {
   color: #9d9d9d;
 }
 
-.highligh-footer{
-  color: $dark-orange;
+.highligh-footer {
+  color: $orange-dark;
 }
 
-.title-footer{
+.title-footer {
   color: #E0E0E0;
 }
 
-.center-cell{
-  text-align:center;
+.center-cell {
+  text-align: center;
 }
+
+// == Fin Varios estilos ==
