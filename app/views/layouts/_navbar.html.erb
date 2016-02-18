@@ -16,10 +16,10 @@
       <%# Menú de la derecha %>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to '¿Quiénes somos?', about_us_path %>
+          <%= link_to '¿Quiénes somos?', about_us_path, id:'nav_quienes_somos' %>
         </li>
         <li>
-          <%= link_to 'Anuncios', ads_path %>
+          <%= link_to 'Anuncios', ads_path, id:'nav_anuncios' %>
         </li>
         <% if user_signed_in? %>
             <li>TODO: Menu cuando está loguedo</li>
