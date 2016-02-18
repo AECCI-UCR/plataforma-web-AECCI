@@ -31,7 +31,8 @@
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <%= f.text_area :description, id: 'input_description', class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style: 'resize: none' %>
-                  <p class="text-danger" id="description_alert">Tiene que ingresar una descripción para el anuncio.</p>
+                  <p class="text-danger" id="description_alert">Tiene que ingresar una descripción para el
+                    anuncio.</p>
                 </div>
               </div>
               <div class="form-group">
@@ -81,8 +82,13 @@
                 <% end %>
               </div>
               <div class="row">
-                <div class="col-md-3 col-md-offset-9 col-xs-4 col-lg-2 col-lg-offset-10">
-                  <%= f.submit class: 'btn btn-primary btn-block' %>
+                <hr/>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="pull-right">
+                    <%= f.submit class: 'btn btn-primary' %>
+                  </div>
                 </div>
               </div>
             </div>
