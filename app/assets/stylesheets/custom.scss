@@ -28,7 +28,7 @@ $input-border-focus: $orange-light;
 $input-border-radius: 0px;
 
 // Panels
-$panel-border-radius: 0px;
+$panel-border-radius: 2px;
 $panel-default-border: transparent;
 
 // Otros
@@ -75,7 +75,7 @@ $link-hover-color: $orange-light;
 
 // Espacio para el navbar
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .img-show {
@@ -134,6 +134,12 @@ body {
   margin-right: auto;
 }
 
+// Esto es para que la imagen abarque el ancho completo del carousel
+.carousel img{
+  min-width: 100%;
+  max-height: 95vh;
+}
+// Agrega una linea gris a la izquierda
 .section {
   border-left: 1px solid #e6e6e6;
 }
