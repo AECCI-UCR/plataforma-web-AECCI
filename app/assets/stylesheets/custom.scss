@@ -6,6 +6,7 @@ $link-color: $orange-light;
 $grey-dark: #2b2b2b;
 $grey-light: #9d9d9d;
 $body-color: #fbfbfb;
+$shadow-color: #888888;
 
 // Estilos del navbar
 $navbar-default-bg: $grey-dark;
@@ -19,8 +20,7 @@ $navbar-default-toggle-hover-bg: transparent;
 // Botones
 $btn-primary-bg: $orange-light;
 $btn-primary-border: $orange-light;
-$btn-primary-bg: $orange-light;
-$btn-primary-border: $orange-light;
+$btn-primary-color: $white;
 $btn-border-radius-base: 2px;
 
 // Forms
@@ -115,7 +115,27 @@ body {
 }
 
 .btn-primary {
-  box-shadow: 0px 2px 3px #888888;
+  box-shadow: 0px 2px 3px $shadow-color;
+  &:hover {
+    background-color: $orange-light;
+    border-color: $orange-light;
+    box-shadow: 0px 3px 4px $shadow-color;
+  }
+  &:active {
+    background-color: $orange-light;
+    border-color: $orange-light;
+    box-shadow: 0px 2px 5px $shadow-color;
+  }
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  border-left: 1px solid #e6e6e6;
 }
 
 // == Fin Varios estilos ==
