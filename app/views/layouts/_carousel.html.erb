@@ -1,6 +1,6 @@
 <% ads = Ad.where(important: true) %>
 <% if ads.count > 0 %>
-    <div id="my_carousel" class="carousel slide" data-ride="carousel">
+    <div id="my_carousel" class="carousel slide fix-carousel" data-ride="carousel">
       <%# Indicadores %>
       <ol class="carousel-indicators">
         <% count = 0 %>
@@ -19,14 +19,14 @@
         <% ads.each do |ad| %>
             <% if count == 0 %>
                 <div class="item active">
-                  <%= image_tag ad.image_carousel_url %>
+                  <%= link_to image_tag( ad.image_carousel_url ), ads_url<<'#'<<ad.title %>
                   <div class="carousel-caption">
                     <%= ad.title %>
                   </div>
                 </div>
             <% else %>
                 <div class="item">
-                  <%= image_tag ad.image_carousel_url %>
+                  <%= link_to image_tag( ad.image_carousel_url ), ads_url<<'#'<<ad.title %>
                   <div class="carousel-caption">
                     <%= ad.title %>
                   </div>

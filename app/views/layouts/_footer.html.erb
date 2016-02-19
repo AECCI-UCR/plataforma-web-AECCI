@@ -5,25 +5,33 @@
       <div class="col-md-4">
         <h5 class="title-footer">Enlaces de interés</h5>
         <ul>
-          <li><a href="http://www.ucr.ac.cr" class="text-footer" target="_blank">Universidad de Costa Rica </a></li>
-          <li><a href="http://www.ecci.ucr.ac.cr" class="text-footer" target="_blank">Escuela de Ciencias de la
-            Computación e Informática</a></li>
           <li>
-            <a href="https://webmail.ecci.ucr.ac.cr/webmail/src/login.php" class="text-footer" target="_blank">Correo de
-              la ECCI</a></li>
-          <li><a href="https://plataforma.ecci.ucr.ac.cr/moodle/" class="text-footer" target="_blank">Plataforma
-            educativa</a></li>
-          <li><a href="http://www.ori.ucr.ac.cr" class="text-footer" target="_blank">Oficina de Registro</a></li>
-          <li><a href="https://ematricula.ucr.ac.cr/ematricula/" class="text-footer" target="_blank">eMatricula</a></li>
+            <%= link_to 'Universidad de Costa Rica', 'http://www.ucr.ac.cr', class: 'text-footer', target: '_blank' %>
+          </li>
+          <li>
+            <%= link_to 'Escuela de Ciencias de la Computación e Informática', 'http://www.ecci.ucr.ac.cr', class: 'text-footer', target: '_blank' %>
+          </li>
+          <li>
+            <%= link_to 'Correo de la ECCI', 'https://webmail.ecci.ucr.ac.cr/webmail/src/login.php', class: 'text-footer', target: '_blank' %>
+          </li>
+          <li>
+            <%= link_to 'Plataforma educativa de la ECCI', 'https://plataforma.ecci.ucr.ac.cr/moodle/', class: 'text-footer', target: '_blank' %>
+          </li>
+          <li>
+            <%= link_to 'Oficina de Registro', 'https://www.ori.ucr.ac.cr', class: 'text-footer', target: '_blank' %>
+          </li>
+          <li>
+            <%= link_to 'eMatricula', 'https://ematricula.ucr.ac.cr/ematricula/', class: 'text-footer', target: '_blank' %>
+          </li>
         </ul>
       </div>
       <div class="col-md-4">
         <h5 class="title-footer">Mapa del sitio</h5>
         <ul>
-          <li><a href=<%= about_us_path %> class="text-footer">¿Quiénes somos?</a></li>
-          <li><a href=<%= ads_path %> class="text-footer">Anuncios</a></li>
-          <li><a href=<%= new_user_session_path %> class="text-footer">Iniciar sesión</a></li>
-          <li><a href=<%= new_user_registration_path %> class="text-footer">Registrarse</a></li>
+          <li><%= link_to '¿Quiénes somos?', about_us_path, class: 'text-footer' %></li>
+          <li><%= link_to 'Anuncios', ads_path, class: 'text-footer' %></li>
+          <li><%= link_to 'Ingresar', new_user_session_path, class: 'text-footer' %></li>
+          <li><%= link_to 'Registrarse', new_user_registration_path, class: 'text-footer' %></li>
         </ul>
       </div>
       <div class="col-md-4">
