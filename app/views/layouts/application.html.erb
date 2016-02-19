@@ -4,7 +4,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-    <%= content_for?(:title) ? yield(:title) | 'AECCI' : 'AECCI' %>
+    <%= content_for?(:title) ? yield(:title) | 'AECCI | Universidad de Costa Rica' : 'AECCI | Universidad de Costa Rica' %>
   </title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,28 +12,32 @@
 
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar' %>
 
-  <%# Flash messages %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-xs-12">
-        <%= render 'layouts/flash_messages' %>
-      </div>
+<% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" == root_url %>
+    <%= render 'layouts/carousel' %>
+<% end %>
+
+<%# Flash messages %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
+      <%= render 'layouts/flash_messages' %>
     </div>
   </div>
+</div>
 
-  <%# Main content %>
-  <div class="container-fluid">
-    <%= yield %>
+<%# Main content %>
+<div class="container-fluid">
+  <%= yield %>
 
-    <%# Información para modo desarrollo %>
-    <br/>
-    <br/>
-    <br/>
-    <%= debug(params) if Rails.env.development? %>
-  </div>
+  <%# Información para modo desarrollo %>
+  <br/>
+  <br/>
+  <br/>
+  <%= debug(params) if Rails.env.development? %>
+</div>
 
-  <%= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>
 </body>
 </html>

@@ -6,6 +6,7 @@ $link-color: $orange-light;
 $grey-dark: #2b2b2b;
 $grey-light: #9d9d9d;
 $body-color: #fbfbfb;
+$shadow-color: #888888;
 
 // Estilos del navbar
 $navbar-default-bg: $grey-dark;
@@ -19,8 +20,7 @@ $navbar-default-toggle-hover-bg: transparent;
 // Botones
 $btn-primary-bg: $orange-light;
 $btn-primary-border: $orange-light;
-$btn-primary-bg: $orange-light;
-$btn-primary-border: $orange-light;
+$btn-primary-color: $white;
 $btn-border-radius-base: 2px;
 
 // Forms
@@ -28,7 +28,7 @@ $input-border-focus: $orange-light;
 $input-border-radius: 0px;
 
 // Panels
-$panel-border-radius: 0px;
+$panel-border-radius: 2px;
 $panel-default-border: transparent;
 
 // Otros
@@ -75,7 +75,7 @@ $link-hover-color: $orange-light;
 
 // Espacio para el navbar
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .img-show {
@@ -83,15 +83,16 @@ body {
   height: 80%;
 }
 
-.form-control:focus{
+.form-control:focus {
   box-shadow: 0px 0px 0px transparent;
   border: 2px solid $orange-light;
 }
 
-.panel{
+.panel {
   border: 0px solid transparent;
   box-shadow: 2px 2px 7px #888888;
 }
+
 .body-footer {
   background-color: $grey-dark;
   padding: 40px;
@@ -111,6 +112,36 @@ body {
 
 .center-cell {
   text-align: center;
+}
+
+.btn-primary {
+  box-shadow: 0px 2px 3px $shadow-color;
+  &:hover {
+    background-color: $orange-light;
+    border-color: $orange-light;
+    box-shadow: 0px 3px 4px $shadow-color;
+  }
+  &:active {
+    background-color: $orange-light;
+    border-color: $orange-light;
+    box-shadow: 0px 2px 5px $shadow-color;
+  }
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Esto es para que la imagen abarque el ancho completo del carousel
+.carousel img{
+  min-width: 100%;
+  max-height: 95vh;
+}
+// Agrega una linea gris a la izquierda
+.section {
+  border-left: 1px solid #e6e6e6;
 }
 
 // == Fin Varios estilos ==

@@ -22,8 +22,8 @@
         <ul>
           <li><a href=<%= about_us_path %> class="text-footer">¿Quiénes somos?</a></li>
           <li><a href=<%= ads_path %> class="text-footer">Anuncios</a></li>
-          <li><a href="" class="text-footer" >Iniciar sesión</a></li>
-          <li><a href="" class="text-footer">Registrarse</a></li>
+          <li><a href=<%= new_user_session_path %> class="text-footer">Iniciar sesión</a></li>
+          <li><a href=<%= new_user_registration_path %> class="text-footer">Registrarse</a></li>
         </ul>
       </div>
       <div class="col-md-4">
@@ -43,7 +43,8 @@
       <div class="col-md-6 col-md-offset-3">
         <small>
           <hr/>
-          <p class="text-center text-footer">Asociación de Estudiantes de la Escuela de Ciencias de la Computación e Informatica - <%= Time.now.year %></p></small>
+          <p class="text-center text-footer">Asociación de Estudiantes de la Escuela de Ciencias de la Computación e
+            Informatica - <%= Time.now.year %></p></small>
       </div>
     </div>
     <div class="row">
