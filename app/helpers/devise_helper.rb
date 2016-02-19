@@ -17,4 +17,11 @@ module DeviseHelper
 
     html.html_safe
   end
+
+  def require_admin
+    unless current_user.admin?
+      redirect_to root_url, alert: 'No tiene permiso para acceder a esta página'
+    end
+  end
+
 end

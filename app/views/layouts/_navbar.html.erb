@@ -15,23 +15,13 @@
     <div class="collapse navbar-collapse" id="opciones-navbar">
       <%# Menú de la derecha %>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to '¿Quiénes somos?', about_us_path, id:'nav_quienes_somos' %>
-        </li>
-        <li>
-          <%= link_to 'Anuncios', ads_path, id:'nav_anuncios' %>
-        </li>
+        <li><%= link_to '¿Quiénes somos?', about_us_path, id: 'nav_quienes_somos' %></li>
+        <li><%= link_to 'Anuncios', ads_path, id: 'nav_anuncios' %></li>
         <% if user_signed_in? %>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="dropdown-opciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Opciones <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdown-opciones">
-                <li><%= link_to 'Editar perfil', edit_user_registration_path %></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to 'Cerrar sesión', destroy_user_session_path %></li>
-              </ul>
-            </div>
+            <% if current_user.admin? %>
+                <li><%= link_to 'Administración de usuarios', users_path %></li>
+            <% end %>
+            <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= button_to 'Iniciar Sesión', new_user_session_path, method: :get, class: 'btn navbar-btn btn-login' %></li>
             <li><%= button_to 'Registrarse', new_user_registration_path, method: :get, class: 'btn navbar-btn btn-registro' %></li>

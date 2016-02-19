@@ -3,7 +3,7 @@ module ApplicationHelper
   # Métodos auxiliar para mapear flash key en bootstrap css class
   BOOTSTRAP_FLASH_MSG = {
       notice: 'success',
-      alert:  'warning',
+      alert:  'danger',
       error:  'danger'
       #default: 'info'
   }
