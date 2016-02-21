@@ -2,6 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+dataConfirmModal.setDefaults
+  title: 'Confirmación de eliminación'
+  commit: 'Eliminar'
+  cancel: 'Cancelar'
+
 hide_carousel_part = ->
   if $('#check_important').is(':checked')
     $('#carousel_part').show()
