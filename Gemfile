@@ -42,6 +42,9 @@ gem 'bootstrap-sass'
 # Gema para el control de autorización
 gem 'devise'
 
+# Modal de confirmacion
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+
 # Gemas para subir archivos
 gem 'carrierwave'
 gem 'mini_magick'
