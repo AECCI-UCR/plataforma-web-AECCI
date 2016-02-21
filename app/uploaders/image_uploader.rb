@@ -32,13 +32,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  #version :thumb do
-  #  process :resize_to_fit => [100, 100]
-  #end
+  version :thumb do
+    process :resize_to_fit => [300, 600]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   def extension_white_list
-    %w(jpg jpeg gif png pdf)
+    %w(jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:
