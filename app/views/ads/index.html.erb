@@ -5,7 +5,7 @@
   </div>
 </div>
 <!-- Esta deberia de ser la vista para los miembros de la asocia -->
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin?%>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
