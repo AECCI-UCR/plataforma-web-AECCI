@@ -1,6 +1,9 @@
 <%= form_for(@ad, html: {multipart: true}) do |f| %>
-    <%= render 'shared/error_messages', object: @ad %>
-
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12">
+        <%= render 'shared/error_messages', object: @ad %>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
