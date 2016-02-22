@@ -78,7 +78,7 @@ body {
   padding-top: 60px;
 }
 
-.fix-carousel{
+.fix-carousel {
   margin-top: -10px;
   box-shadow: 2px 2px 7px #888888;
 }
@@ -87,7 +87,6 @@ body {
   width: 80%;
   height: 80%;
 }
-
 
 .field_with_errors {
   @extend .has-error;
@@ -142,13 +141,18 @@ body {
 }
 
 // Esto es para que la imagen abarque el ancho completo del carousel
-.carousel img{
+.carousel img {
   min-width: 100%;
   max-height: 600px;
 }
+
 // Agrega una linea gris a la izquierda
 .section {
   border-left: 1px solid #e6e6e6;
+}
+
+.error-description-message {
+  list-style-type: none;
 }
 
 // == Fin Varios estilos ==
