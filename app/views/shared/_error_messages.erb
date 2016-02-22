@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+    <div class="alert alert-danger alert-block">
+      <button type="button" class="close" data-dismiss="alert">x</button>
+      <h5><%= I18n.t :form_has_x_errors, count: object.errors.count %></h5>
+      <% object.errors.full_messages.each do |msg| %>
+          <li class="error-description-message"><%= msg %></li>
+      <% end %>
+    </div>
+<% end %>

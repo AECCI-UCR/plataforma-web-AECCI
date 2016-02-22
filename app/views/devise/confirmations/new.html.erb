@@ -1,5 +1,4 @@
 <br/>
-<%= devise_error_messages! %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3 col-xs-12">
     <div class="panel panel-default">
@@ -10,6 +9,7 @@
             <hr/>
           </div>
         </div>
+        <%= devise_error_messages! %>
         <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
             <div class="form-horizontal">
               <div class="form-group">
