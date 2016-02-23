@@ -38,7 +38,7 @@
                       <% end %>
                     </td>
                     <td class="center-cell">
-                      <%= link_to admin_destroy_user_path(user), method: :delete, data: {confirm: '¿Esta seguro?'} do %>
+                      <%= link_to admin_destroy_user_path(user), method: :delete, data: {confirm: "¿Esta seguro que desea eliminar a "<<user.email<<" del sistema?"} do %>
                           <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
                       <% end %>
                     </td>
