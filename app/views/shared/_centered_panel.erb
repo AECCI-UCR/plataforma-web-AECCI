@@ -1,0 +1,20 @@
+<br/>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2><%= title %></h2>
+            <hr/>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <% if content_for?(:outside_panel) %>
+        <%= yield(:outside_panel) %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<%= render layout: 'shared/centered_panel', locals: {title: title} do %>
+    <%= yield %>
+
+    <% content_for :outside_panel do %>
+        <%= render 'devise/shared/links' %>
+    <% end %>
+<% end %>
