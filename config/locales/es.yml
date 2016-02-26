@@ -123,3 +123,8 @@ es-CR:
   form_has_x_errors:
     one:   "El formulario contiene un error."
     other: "El formulario contiene %{count} errores."
+
+
+  activerecord:
+    models:
+      ad: anuncio
