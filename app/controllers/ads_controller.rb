@@ -1,4 +1,5 @@
 class AdsController < ApplicationController
+  before_action :require_admin, except: :index
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
 
   # GET /ads
@@ -28,7 +29,7 @@ class AdsController < ApplicationController
 
     respond_to do |format|
       if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
+        format.html { redirect_to @ad, notice: 'El anuncio se creó correctamente.' }
         format.json { render :show, status: :created, location: @ad }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
+        format.html { redirect_to @ad, notice: 'El anuncio se actualizó correctamente' }
         format.json { render :show, status: :ok, location: @ad }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class AdsController < ApplicationController
   def destroy
     @ad.destroy
     respond_to do |format|
-      format.html { redirect_to ads_url, notice: 'Ad was successfully destroyed.' }
+      format.html { redirect_to ads_url, notice: 'El anuncio se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end

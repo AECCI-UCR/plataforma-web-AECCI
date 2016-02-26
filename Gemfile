@@ -30,9 +30,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,10 +42,20 @@ gem 'bootstrap-sass'
 # Gema para el control de autorización
 gem 'devise'
 
+# Modal de confirmacion
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+
 # Gemas para subir archivos
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+
+# Paginación páginas con estilo de boostrap
+gem 'will_paginate-bootstrap'
+
+# Traducción
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

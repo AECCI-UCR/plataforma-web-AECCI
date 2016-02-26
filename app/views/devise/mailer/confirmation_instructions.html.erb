@@ -1,5 +1,5 @@
-<p>Bienvenido <%= @email %> a la plataforma de la  AECCI</p>
+<%= render 'mail_header' %>
 
-<p>Confirme su cuenta en el siguiente vínculo</p>
+<p>Confirme su cuenta en el siguiente vinculo</p>
 
 <p><%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>

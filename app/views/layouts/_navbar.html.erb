@@ -15,20 +15,18 @@
     <div class="collapse navbar-collapse" id="opciones-navbar">
       <%# Menú de la derecha %>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to '¿Quiénes somos?', about_us_path %>
-        </li>
-        <li>
-          <%= link_to 'Anuncios', ads_path %>
-        </li>
+        <li><%= link_to '¿Quiénes somos?', about_us_path, id: 'nav_quienes_somos' %></li>
+        <li><%= link_to 'Anuncios', ads_path, id: 'nav_anuncios' %></li>
         <% if user_signed_in? %>
-            <li>TODO: Menu cuando está loguedo</li>
+            <% if current_user.admin? %>
+                <li><%= link_to 'Administración de usuarios', users_path %></li>
+            <% end %>
+            <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
         <% else %>
-            <li><a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Autenticación</a></li>
-            <li><a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Registrar</a></li>
+            <li><%= button_to 'Ingresar', new_user_session_path, method: :get, class: 'btn navbar-btn btn-login' %></li>
+            <li><%= button_to 'Registrarse', new_user_registration_path, method: :get, class: 'btn navbar-btn btn-registro' %></li>
         <% end %>
       </ul>
     </div>
-
   </div>
 </nav>

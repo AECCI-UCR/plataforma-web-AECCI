@@ -1,67 +1,150 @@
+<br/>
+<br/>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h3>Anuncios importantes</h3>
-  </div>
-</div>
-
-<%# El carousel con las imágenes %>
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <div id="my_carousel" class="carousel slide" data-ride="carousel">
-
-      <%# Indicadores %>
-      <ol class="carousel-indicators">
-        <% count = 0 %>
-        <% @ads.each do |ad| %>
-            <% if count == 0 %>
-                <li class="active" data-slide-to= <%=count%> data-target="#my_carousel"></li>
-            <% else %>
-                <li data-slide-to= <%=count%> data-target="#my_carousel"></li>
-            <% end %>
-            <% count = count + 1 %>
-        <% end %>
-      </ol>
-      <%# Wrappers para los slides %>
-      <div class="carousel-inner" role="listbox">
-        <% count = 0 %>
-        <% @ads.each do |ad| %>
-            <% if count == 0 %>
-                <div class="item active">
-                  <%= image_tag ad.image_carousel_url %>
-                  <div class="carousel-caption">
-                    <h3> <%= ad.title %></h3>
-                  </div>
-                </div>
-            <% else %>
-                <div class="item">
-                  <%= image_tag ad.image_carousel_url %>
-                  <div class="carousel-caption">
-                    <h3><%= ad.title %></h3>
-                  </div>
-                </div>
-            <% end %>
-            <% count = count + 1 %>
-        <% end %>
-        <%# Para que la transicion se haga sola %>
-        <%# Izquierdo %>
-        <a data-slide="prev" href="#my_carousel" role="button"></a>
-        <%# Derecho %>
-        <a data-slide="prev" href="#my_carousel" role="button"></a>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Historia de la ECCI</h2>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <%= image_tag "logo-ecci.png", alt: 'Logo ECCI', class: 'img-responsive img-center' %>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <p class="text-justify">La Escuela de Ciencias de la Computación e Infomática de la Universidad de Costa
+              Rica se fundó en 1981,
+              como
+              resultado de la fusión de dos programas distintos pero relacionados, el de Bachillerato en Informática y
+              el de
+              Bachillerato y Licenciatura en Computación. También se creó un nuevo programa de Bachillerato en
+              Computación e
+              Informática, con el cual se introdujeron innovaciones tecnológicas en la educación superior de la
+              disciplina.</p>
+            <p class="text-justify">
+              La Escuela fue creada en un momento de gran cambio en las ciencias de la computación, puesto que la
+              microcomputadora había salido al mercado recientemente y estaba revolucionando el campo. Las
+              organizaciones
+              empezaban a necesitar profesionales capaces de ayudarles a automatizar sus actividades. La Escuela les
+              proveyó
+              tanto de profesionales de alta calidad que formaba como de asesorías y otras actividades de extensión
+              social.</p>
+            <a href="http://www.ecci.ucr.ac.cr/" class="pull-right">Más información de la ECCI</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h2>Historia de la escuela</h2>
-    <p>La Escuela de Ciencias de la Computación e Infomática de la Universidad de Costa Rica se fundó en 1981, como
-      resultado de la fusión de dos programas distintos pero relacionados, el de Bachillerato en Informática y el de
-      Bachillerato y Licenciatura en Computación. También se creó un nuevo programa de Bachillerato en Computación e
-      Informática, con el cual se introdujeron innovaciones tecnológicas en la educación superior de la disciplina.
-      La Escuela fue creada en un momento de gran cambio en las ciencias de la computación, puesto que la
-      microcomputadora había salido al mercado recientemente y estaba revolucionando el campo. Las organizaciones
-      empezaban a necesitar profesionales capaces de ayudarles a automatizar sus actividades. La Escuela les proveyó
-      tanto de profesionales de alta calidad que formaba como de asesorías y otras actividades de extensión social.</p>
-    <hr/>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Historia de la Universidad de Costa Rica</h2>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <%= image_tag "firma-ucr.png", alt: 'Logo UCR', class: 'img-responsive img-center' %>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <p class="text-justify">Los orígenes de la universidad están en la Casa de Enseñanza de Santo Tomás, fundada
+              en 1814 y que a
+              partir de 1843 se convirtió en la Universidad de Santo Tomás.</p>
+
+            <p class="text-justify">Luego de 45 años de aportes, fue clausurada por razones de orden político, económico
+              y académico, pero su
+              quehacer se perpetuó a través de las facultades de Derecho, Agronomía, Bellas Artes y Farmacia, que
+              continuaron funcionando independientemente.
+            </p>
+            <p class="text-justify">
+              Sobre el legado de la Universidad de Santo Tomás, se creó la Universidad de Costa Rica el 26 de agosto de
+              1940, mediante la Ley de la República Nº 362. Sus puertas fueron abiertas en marzo de 1941.
+            </p>
+            <p class="text-justify">
+              En 1946 se celebró el primer Congreso Universitario que sentó las bases de la Facultad Humanidades, cuyo
+              plan de estudios no se establece hasta 1957 con una importante reforma académica. Las Humanidades surgen
+              para cumplir la histórica misión de formar al hombre y ya no sólo al especialista. Se trata también de
+              propiciar la integración Académica, a través de estos cursos de humanidades comunes y obligatorios y
+              constituir la base de la unidad universitaria. Esta trascendente reforma también da como resultado la
+              aprobación de una nueva Ley Fundamental de Educación para el país, inspirada en el pensamiento y en las
+              inquietudes de la comunidad universitaria.
+            </p>
+            <div class="row">
+              <button class="btn btn-link btn-sm" id="btn-show-more">Mostrar más</button>
+            </div>
+            <div id="hide-area">
+              <p class="text-justify">
+                El Segundo Congreso, celebrado en 1966, introdujo cambios tendientes a modernizar la Universidad. En
+                1973
+                se llevó a cabo el Tercer Congreso Universitario, histórico como la Reforma de 1957, pues situó a la
+                Institución en la realidad de la sociedad que la alimenta y a la que sirve. De este Congreso emanará los
+                principios que inspiran el actual Estatuto Orgánico de la Institución. En 1980 se realizó el Cuarto
+                Congreso, en 1990 se llevó a cabo el Quinto Congreso, en el 2002 el Sexto Congreso y en el 2014 el
+                Sétimo
+                Congreso.
+              </p>
+              <p class="text-justify">
+                Desde que abrió sus puertas, en marzo de 1941, esta Institución ha encauzado su quehacer en concordancia
+                con una búsqueda constante, inagotable y libre, de la verdad, la eficacia y la belleza, como lo
+                establece
+                el Estatuto Orgánico: La Universidad de Costa Rica es una institución autónoma de cultura superior,
+                constituida por una comunidad de profesores, estudiantes y funcionarios administrativos, dedicada a la
+                enseñanza, la investigación, la acción social, el estudio, la meditación, la creación artística y la
+                difusión del conocimiento.
+              </p>
+              <p class="text-justify">
+                Goza de independencia para el desempeño de sus funciones y de plena capacidad jurídica para adquirir
+                derechos y contraer obligaciones, así como para darse su organización y gobierno propios. Su régimen
+                decisorio es democrático y por consiguiente en ella las decisiones personales y colectivas se realizan
+                con
+                absoluta libertad.
+              </p>
+              <p class="text-justify">
+                Su propósito es promover las transformaciones que la sociedad necesita para el logro del bien común,
+                mediante una política dirigida a la consecución de una verdadera justicia social, del desarrollo
+                integral,
+                de la libertad plena y de la total independencia de nuestro pueblo.
+              </p>
+              <p class="text-justify">
+                Estimula la formación de una conciencia creativa, crítica y objetiva en los miembros de la comunidad
+                costarricense, lo que permite a los sectores populares participar eficazmente en los diversos procesos
+                de
+                la actividad nacional.
+              </p>
+              <p class="text-justify">
+                En los principios establecidos en el Estatuto Orgánico, se señala como función esencial garantizar a la
+                comunidad universitaria el diálogo y la libre expresión de las ideas y opiniones, la coexistencia de
+                diferentes ideologías y corrientes del pensamiento, sin más limitación que el respeto mutuo.
+              </p>
+              <p class="text-justify">
+                Desde esta misma concepción, se instituye la libertad de cátedra como principio de la enseñanza
+                universitaria. Para realizar sus fines, cuenta con una comunidad de profesores, estudiantes y
+                funcionarios
+                administrativos, dedicados a cumplir con la actividad primordial de la Institución, propiciar el avance
+                del conocimiento en su máxima expresión, y responder, de manera efectiva, a las necesidades que genere
+                el
+                desarrollo integral de la sociedad. Su financiamiento principal proviene del aporte estatal por mandato
+                de
+                la Constitución Política de Costa Rica y otras leyes especiales.
+              </p>
+              <p class="text-justify">
+                En 2001, la Asamblea Legislativa de la República de Costa Rica mediante decreto N°8098 declaró a la
+                Universidad de Costa Rica como <b>Institución Benemérita de la Educación y la Cultura de Costa Rica</b>.
+
+                <button class="btn btn-link btn-sm" id="btn-show-less">Mostrar menos</button>
+              </p>
+            </div>
+            <a href="http://www.ucr.ac.cr/" class="pull-right">Más información de la UCR</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

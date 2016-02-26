@@ -1,0 +1,44 @@
+<% ads = Ad.where(important: true) %>
+<% if ads.count > 0 %>
+    <div id="my_carousel" class="carousel slide fix-carousel" data-ride="carousel">
+      <%# Indicadores %>
+      <ol class="carousel-indicators">
+        <% ads.each_index do |count| %>
+            <% if count == 0 %>
+                <li class="active" data-slide-to=<%= count %> data-target="#my_carousel"></li>
+            <% else %>
+                <li data-slide-to=<%= count %> data-target="#my_carousel"></li>
+            <% end %>
+        <% end %>
+      </ol>
+      <%# Wrappers para los slides %>
+      <div class="carousel-inner" role="listbox">
+        <% ads.each_with_index do |ad, count| %>
+            <% if count == 0 %>
+                <div class="item active">
+                  <%= link_to image_tag(ad.image_carousel_url), ads_url << '#' << ad.title %>
+                  <div class="carousel-caption">
+                    <%= ad.title %>
+                  </div>
+                </div>
+            <% else %>
+                <div class="item">
+                  <%= link_to image_tag(ad.image_carousel_url), ads_url << '#' << ad.title %>
+                  <div class="carousel-caption">
+                    <%= ad.title %>
+                  </div>
+                </div>
+            <% end %>
+        <% end %>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#my_carousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#my_carousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+<% end %>
