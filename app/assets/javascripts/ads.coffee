@@ -7,6 +7,7 @@ dataConfirmModal.setDefaults
   commit: 'Eliminar'
   cancel: 'Cancelar'
 
+
 hide_carousel_part = ->
   if $('#check_important').is(':checked')
     $('#carousel_part').show()
@@ -17,6 +18,9 @@ hide_carousel_part = ->
 ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
+
+  $('a.fancybox').fancybox()
+
 
   hide_carousel_part()
 

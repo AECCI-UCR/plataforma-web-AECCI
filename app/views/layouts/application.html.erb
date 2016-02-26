@@ -16,17 +16,21 @@
 
 <% if "#{request.protocol}#{request.host_with_port}#{request.fullpath}" == root_url %>
     <%= render 'layouts/carousel' %>
-    <%= render 'layouts/section_asocia'  %>
-<% end %>
-
-<%# Flash messages %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <%= render 'layouts/section_asocia' %>
+    <div style="display: none">
       <%= render 'layouts/flash_messages' %>
     </div>
-  </div>
-</div>
+<% else %>
+
+<%# Flash messages %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-xs-12">
+          <%= render 'layouts/flash_messages' %>
+        </div>
+      </div>
+    </div>
+<% end %>
 
 <%# Main content %>
 <div class="container-fluid">
