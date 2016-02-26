@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tests
+  resources :courses
   # Rutas para la administración de usuarios
   get 'users_administration' => 'users_administration#index', as: :users
   delete 'user/:id' => 'users_administration#destroy', as: :admin_destroy_user
