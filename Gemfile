@@ -33,6 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# -- Gemas agregadas por nosotros --
+
+# FancyBox (preview de imagenes)
+gem 'fancybox-rails'
+
 # Gema para iconos y fonts
 gem 'font-awesome-sass'
 

@@ -89,6 +89,8 @@ GEM
     erubis (2.7.0)
     excon (0.45.4)
     execjs (2.6.0)
+    fancybox-rails (0.3.1)
+      railties (>= 3.1.0)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.37.0)
@@ -316,6 +318,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   data-confirm-modal!
   devise
+  fancybox-rails
   fog
   font-awesome-sass
   jbuilder (~> 2.0)
