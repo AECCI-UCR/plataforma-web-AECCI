@@ -84,6 +84,17 @@ $body-bg: $body-color;
 
 // == Varios estilos ==
 
+// Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
+@media screen and (max-width: $screen-sm-max){
+  .info-asocia{
+    text-align: center;
+  }
+}
+
+.fancybox{
+  padding-top: 60px;
+  z-index: 10000;
+}
 // Espacio para el navbar
 body {
   padding-top: 60px;
@@ -167,12 +178,6 @@ h1, h2, h3, h4, h5, h6{
 
 .error-description-message {
   list-style-type: none;
-}
-
-.message{
-  top: 60px;
-  position: absolute;
-  z-index: 10;
 }
 
 // == Fin Varios estilos ==
