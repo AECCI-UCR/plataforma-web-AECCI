@@ -35,8 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # -- Gemas agregadas por nosotros --
 
-# FancyBox (preview de imagenes)
-gem 'fancybox-rails'
+# LightBox2 (preview de imagenes)
+gem 'lightbox2-rails'
 
 # Gema para iconos y fonts
 gem 'font-awesome-sass'
