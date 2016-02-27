@@ -9,7 +9,6 @@ $grey-light: #9d9d9d;
 $body-color: #f3f3f3;
 $shadow-color: #888888;
 
-
 // Typografia
 $text-color: #666;
 $link-color: $grey-light;
@@ -85,22 +84,18 @@ $body-bg: $body-color;
 // == Varios estilos ==
 
 // Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
-@media screen and (max-width: $screen-sm-max){
-  .info-asocia{
+@media screen and (max-width: $screen-sm-max) {
+  .info-asocia {
     text-align: center;
   }
 }
 
-.fancybox{
-  padding-top: 60px;
-  z-index: 10000;
-}
 // Espacio para el navbar
 body {
   padding-top: 60px;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
 }
 
@@ -141,9 +136,11 @@ h1, h2, h3, h4, h5, h6{
 .highligh-footer {
   color: $orange-dark;
 }
-.body-section{
+
+.body-section {
   background-color: $white;
 }
+
 .title-footer {
   color: #E0E0E0;
 }
@@ -158,6 +155,7 @@ h1, h2, h3, h4, h5, h6{
     border-color: $orange-lighter;
   }
 }
+
 
 .img-center {
   display: block;

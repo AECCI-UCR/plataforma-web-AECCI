@@ -1,3 +1,22 @@
 // Place all the styles related to the Ads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Cosas propias de los anuncios
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@media screen and (max-width: $screen-xs-max) {
+  .img-ad {
+    display: none;
+  }
+  .btn-ad {
+    display: block !important;
+  }
+
+}
+
+.img-ad {
+  max-width: 370px;
+  height: auto;
+  margin: 7px;
+}
