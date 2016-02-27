@@ -14,5 +14,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require data-confirm-modal
-//= require fancybox
+//= require lightbox
 //= require_tree .

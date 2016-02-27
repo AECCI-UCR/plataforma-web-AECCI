@@ -23,7 +23,7 @@
             <%= @ad.description.html_safe %>
           </div>
           <div class="col-md-3">
-            <%= image_tag @ad.image_url, class: 'img-responsive' %>
+            <%= link_to image_tag(@ad.image_url, class: 'img-responsive'), "#{@ad.image_url}", 'data-lightbox' => @ad.image_url, 'data-title' => "#{@ad.title}" %>
           </div>
         </div>
         <% if @ad.important? %>
@@ -36,9 +36,10 @@
             <br/>
             <div class="row">
               <div class="col-md-6 col-md-offset-3">
-                <%= image_tag @ad.image_carousel_url, class: 'img-responsive' %>
+                <%= link_to image_tag(@ad.image_carousel_url, class: 'img-responsive'), "#{@ad.image_carousel_url}", 'data-lightbox' => @ad.image_carousel_url, 'data-title' => 'Imagen a mostrar en el carousel' %>
               </div>
             </div>
+            <br/>
         <% end %>
       </div>
     </div>

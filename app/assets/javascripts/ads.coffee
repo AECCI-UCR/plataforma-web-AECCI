@@ -19,7 +19,6 @@ ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
 
-  $('a.fancybox').fancybox()
 
 
   hide_carousel_part()
