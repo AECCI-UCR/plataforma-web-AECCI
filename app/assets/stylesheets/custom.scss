@@ -9,7 +9,6 @@ $grey-light: #9d9d9d;
 $body-color: #f3f3f3;
 $shadow-color: #888888;
 
-
 // Typografia
 $text-color: #666;
 $link-color: $grey-light;
@@ -31,10 +30,13 @@ $btn-primary-bg: $orange-light;
 $btn-primary-border: $orange-light;
 $btn-primary-color: $white;
 $btn-border-radius-base: 2px;
+$btn-default-bg: $grey-dark;
+$btn-default-border: $grey-dark;
+$btn-default-color: white;
 
 // Forms
 $input-border-focus: $orange-light;
-$input-border-radius: 0px;
+$input-border-radius: 2px;
 
 // Panels
 $panel-border-radius: 2px;
@@ -85,22 +87,18 @@ $body-bg: $body-color;
 // == Varios estilos ==
 
 // Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
-@media screen and (max-width: $screen-sm-max){
-  .info-asocia{
+@media screen and (max-width: $screen-sm-max) {
+  .info-asocia {
     text-align: center;
   }
 }
 
-.fancybox{
-  padding-top: 60px;
-  z-index: 10000;
-}
 // Espacio para el navbar
 body {
   padding-top: 60px;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
 }
 
@@ -121,7 +119,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .form-control:focus {
-  box-shadow: 0px 0px 0px transparent;
+  box-shadow: 1px 1px 1px transparent;
   border: 2px solid $orange-light;
 }
 
@@ -141,9 +139,16 @@ h1, h2, h3, h4, h5, h6{
 .highligh-footer {
   color: $orange-dark;
 }
-.body-section{
-  background-color: $white;
+
+.body-section {
+  background-color: white;
+  box-shadow: 1px 0px 3px $shadow-color;
 }
+
+.body-contact{
+  background-color: $orange-lighter;
+}
+
 .title-footer {
   color: #E0E0E0;
 }
@@ -158,6 +163,7 @@ h1, h2, h3, h4, h5, h6{
     border-color: $orange-lighter;
   }
 }
+
 
 .img-center {
   display: block;
