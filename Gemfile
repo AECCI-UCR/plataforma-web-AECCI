@@ -50,6 +50,11 @@ gem 'devise'
 # Modal de confirmacion
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 
+# Para la conversión a Markdown
+gem 'epic-editor-rails'
+gem 'redcarpet'
+gem 'coderay'
+
 # Gemas para subir archivos
 gem 'carrierwave'
 gem 'mini_magick'

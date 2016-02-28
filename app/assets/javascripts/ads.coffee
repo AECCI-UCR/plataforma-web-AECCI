@@ -19,6 +19,23 @@ ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
 
+  # ------- Cosas del preview de Markdown -------
+  options_editor =
+    textarea: 'input_description'
+    button:
+      preview: true
+      fullscreen: false
+      bar: 'show'
+    string:
+      togglePreview: 'Vista previa'
+      toggleEdit: 'Editar'
+      toggleFullscreen: 'Entrar en pantalla completa'
+    autogrow:
+      minHeight: 300
+      maxHeight: 300
+
+  editor = (new EpicEditor(options_editor)).load()
+  # ---------------------------------------------
 
 
   hide_carousel_part()

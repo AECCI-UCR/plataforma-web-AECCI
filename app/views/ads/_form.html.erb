@@ -23,7 +23,11 @@
                   <%= f.label :description, 'Descripción' %><span class="text-danger"> *</span>
                 </div>
                 <div class="col-md-8 col-lg-9">
-                  <%= f.text_area :description, id: 'input_description', class: 'form-control', placeholder: 'Ingrese la descripción del anuncio', Rows: '5', Style: 'resize: none' %>
+                  <div id="epiceditor">
+                    <script src="epiceditor.min.js"></script>
+                    <%= f.text_area :description, id: 'input_description', Style: 'display: none' %>
+                  </div>
+                  <p class="text-muted"><small>La descripción la puede hacer utilizando html o <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown</a> </small></p>
                   <p class="text-danger" id="description_alert">Tiene que ingresar una descripción para el
                     anuncio.</p>
                 </div>
