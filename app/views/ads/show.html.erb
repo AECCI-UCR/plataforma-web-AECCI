@@ -20,7 +20,7 @@
         </div>
         <div class="row">
           <div class="col-md-7 col-md-offset-1">
-            <%= @ad.description.html_safe %>
+            <%= markdown(@ad.description) %>
           </div>
           <div class="col-md-3">
             <%= link_to image_tag(@ad.image_url, class: 'img-responsive'), "#{@ad.image_url}", 'data-lightbox' => @ad.image_url, 'data-title' => "#{@ad.title}" %>

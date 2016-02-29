@@ -11,6 +11,7 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
+//= require epiceditor
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require data-confirm-modal

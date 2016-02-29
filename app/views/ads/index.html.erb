@@ -94,7 +94,7 @@
             <div class="row">
               <div class="col-md-10 col-md-offset-1">
                 <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
-                <%= ad.description.html_safe %>
+                <%= markdown(ad.description) %>
                 <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
               </div>
             </div>

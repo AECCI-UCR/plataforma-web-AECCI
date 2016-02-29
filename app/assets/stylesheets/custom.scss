@@ -37,6 +37,7 @@ $btn-default-color: white;
 // Forms
 $input-border-focus: $orange-light;
 $input-border-radius: 2px;
+$input-bg-disabled: white;
 
 // Panels
 $panel-border-radius: 2px;
@@ -137,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highligh-footer {
-  color: $orange-dark;
+  color: $orange-light;
 }
 
 .body-section {
@@ -164,6 +165,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.md-html_zone{
+  border-color:$grey-light;
+}
 
 .img-center {
   display: block;
