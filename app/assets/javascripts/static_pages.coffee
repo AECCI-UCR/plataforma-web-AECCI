@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
   $('#hide-area').hide()
+
   $('#btn-show-more').click ->
     $('#hide-area').fadeIn()
     $('#btn-show-more').fadeOut()
