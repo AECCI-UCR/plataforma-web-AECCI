@@ -15,8 +15,6 @@ hide_carousel_part = ->
     $('#carousel_part').hide()
   return
 
-unload = ->
-
 ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
@@ -67,4 +65,3 @@ ready = ->
 
 $(document).ready ready
 $(document).on 'page:load', ready
-$(document).unload unload
