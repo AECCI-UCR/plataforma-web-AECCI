@@ -1,41 +1,42 @@
-// == Variables de los colores ==
-$orange-light: #FF9800;
-$orange-lighter: #ffaa2d;
-$orange-dark: #f2762e;
-$white: #ffffff;
-$link-color: $orange-light;
+// == Variables de los colores (la paleta del sistema) ==
+$primary: #FF9800;
+$primary-light: #ffad33;
+$primary-dark: #e68900;
+$link-color: $primary;
 $grey-dark: #2b2b2b;
 $grey-light: #9d9d9d;
+$grey-text: #666;
 $body-color: #f3f3f3;
 $shadow-color: #888888;
+// == Fin Variables de los colores ==
 
 // Typografia
-$text-color: #666;
-$link-color: $orange-light;
-$link-hover-color: $orange-light;
+$text-color: $grey-text;
+$link-color: $grey-text;
+$link-hover-color: $primary-light;
 $font-family-sans-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 $font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 
 // Estilos del navbar
 $navbar-default-bg: $grey-dark;
-$navbar-default-brand-color: $white;
-$navbar-default-link-hover-color: $orange-light;
-$navbar-default-link-hover-color: $orange-light;
-$navbar-default-link-active-color: $orange-light;
+$navbar-default-brand-color: white;
+$navbar-default-link-hover-color: $primary;
+$navbar-default-link-hover-color: $primary;
+$navbar-default-link-active-color: $primary;
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-toggle-hover-bg: transparent;
 
 // Botones
-$btn-primary-bg: $orange-light;
-$btn-primary-border: $orange-light;
-$btn-primary-color: $white;
+$btn-primary-bg: $primary;
+$btn-primary-border: $primary;
+$btn-primary-color: white;
 $btn-border-radius-base: 3px;
 $btn-default-bg: $grey-dark;
 $btn-default-border: $grey-dark;
 $btn-default-color: white;
 
 // Forms
-$input-border-focus: $orange-light;
+$input-border-focus: $primary;
 $input-border-radius: 2px;
 $input-bg-disabled: white;
 
@@ -44,15 +45,14 @@ $panel-border-radius: 2px;
 $panel-default-border: transparent;
 
 // Pagination
-$pagination-active-bg: $orange-light;
-$pagination-active-border: $orange-light;
+$pagination-active-bg: $primary;
+$pagination-active-border: $primary;
 
 // Otros
 $body-bg: $body-color;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// == Fin Variables de los colores ==
 
 // == Botones de Inicio de sesión y registro ==
 .btn-login {
@@ -60,26 +60,26 @@ $body-bg: $body-color;
   padding: 8px 13px;
   margin-left: 3px;
   margin-right: 3px;
-  color: $orange-light;
-  border-color: $orange-light;
+  color: $primary;
+  border-color: $primary;
   transition: all ease 0.2s;
 
   &:hover {
-    color: $white;
-    background-color: $orange-dark;
+    color: white;
+    background-color: $primary-dark;
   }
 }
 
 .btn-registro {
-  background-color: $orange-light;
+  background-color: $primary;
   padding: 8px 13px;
-  color: $white;
-  border-color: $orange-light;
+  color: white;
+  border-color: $primary;
   transition: all ease 0.2s;
 
   &:hover {
-    color: $white;
-    background-color: $orange-dark;
+    color: white;
+    background-color: $primary-dark;
   }
 }
 
@@ -99,23 +99,32 @@ body {
   padding-top: 60px;
 }
 
+// Estilo de los encabezados
 h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
 }
 
-p{
+// Estilo de los párrafos
+p {
   font-weight: 300; // "Roboto Light"
 }
 
+// Para que el carousel se pegue al navbar
 .fix-carousel {
   margin-top: -10px;
 }
 
-.img-show {
-  width: 80%;
-  height: 80%;
+.btn-primary:hover{
+  background-color: $primary-light;
+  border-color: $primary-light;
 }
 
+.btn-default:hover{
+  background-color: #444444;
+  border-color: #444444;
+}
+
+// Campos con errores en los forms
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -123,52 +132,50 @@ p{
   }
 }
 
+// Cuando enfoca un form
 .form-control:focus {
   box-shadow: 1px 1px 1px transparent;
-  border: 2px solid $orange-light;
+  border: 2px solid $primary;
 }
 
+// El cuerpo del pie de pagina
 .body-footer {
   background-color: $grey-dark;
   padding: 40px;
 }
 
+// Estilo del texto en el pie de pagina
 .text-footer {
-  color: #9d9d9d;
+  color: $grey-light;
 }
 
+// Cosas resaltadas en el pie de pagina
 .highligh-footer {
-  color: $orange-light;
+  color: $primary;
 }
 
+// Estilo de los titulos de las listas del pie de pagina
+.title-footer {
+  color: #E0E0E0;
+}
+
+// Cuerpo de la seccion de la asociacion en el home
 .body-section {
   background-color: white;
   box-shadow: 1px 0px 3px $shadow-color;
 }
 
-.body-contact{
-  background-color: $orange-lighter;
+// Cuerpo de la seccion de "contactenos"
+.body-contact {
+  background-color: $primary-light;
 }
 
-.title-footer {
-  color: #E0E0E0;
-}
-
+// Para centrar la información de las tablas
 .center-cell {
   text-align: center;
 }
 
-.btn-primary {
-  &:hover {
-    background-color: $orange-lighter;
-    border-color: $orange-lighter;
-  }
-}
-
-.md-html_zone{
-  border-color:$grey-light;
-}
-
+// Estilo para centrar imágenes
 .img-center {
   display: block;
   margin-left: auto;
@@ -181,11 +188,7 @@ p{
   max-height: 600px;
 }
 
-// Agrega una linea gris a la izquierda
-.section {
-  border-left: 1px solid #e6e6e6;
-}
-
+// Estilo para la descripccion de mensajes de error
 .error-description-message {
   list-style-type: none;
 }
