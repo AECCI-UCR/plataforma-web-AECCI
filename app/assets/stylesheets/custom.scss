@@ -11,7 +11,7 @@ $shadow-color: #888888;
 
 // Typografia
 $text-color: #666;
-$link-color: $grey-light;
+$link-color: $orange-light;
 $link-hover-color: $orange-light;
 $font-family-sans-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 $font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
@@ -29,7 +29,7 @@ $navbar-default-toggle-hover-bg: transparent;
 $btn-primary-bg: $orange-light;
 $btn-primary-border: $orange-light;
 $btn-primary-color: $white;
-$btn-border-radius-base: 2px;
+$btn-border-radius-base: 3px;
 $btn-default-bg: $grey-dark;
 $btn-default-border: $grey-dark;
 $btn-default-color: white;
@@ -103,6 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
 }
 
+p{
+  font-weight: 300; // "Roboto Light"
+}
+
 .fix-carousel {
   margin-top: -10px;
 }
@@ -122,10 +126,6 @@ h1, h2, h3, h4, h5, h6 {
 .form-control:focus {
   box-shadow: 1px 1px 1px transparent;
   border: 2px solid $orange-light;
-}
-
-.panel {
-  box-shadow: 2px 2px 6px $shadow-color;
 }
 
 .body-footer {
