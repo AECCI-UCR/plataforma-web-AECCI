@@ -31,8 +31,8 @@ ready = ->
       toggleEdit: 'Editar'
       toggleFullscreen: 'Entrar en pantalla completa'
     autogrow:
-      minHeight: 300
-      maxHeight: 300
+      minHeight: 350
+      maxHeight: 350
 
   editor = (new EpicEditor(options_editor)).load()
   # ---------------------------------------------
