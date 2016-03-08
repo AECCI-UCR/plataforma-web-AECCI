@@ -6,6 +6,7 @@ $link-color: $primary;
 $grey-dark: #2b2b2b;
 $grey-light: #9d9d9d;
 $grey-text: #666;
+$grey-link-nav-footer: #E0E0E0;
 $body-color: #f3f3f3;
 $shadow-color: #888888;
 // == Fin Variables de los colores ==
@@ -19,13 +20,15 @@ $font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 
 // Estilos del navbar
 $navbar-default-bg: $grey-dark;
+$navbar-default-border: transparent;
 $navbar-default-brand-color: white;
-$navbar-default-link-hover-color: $primary;
+$navbar-default-link-color: $grey-link-nav-footer;
 $navbar-default-link-hover-color: $primary;
 $navbar-default-link-active-color: $primary;
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-toggle-hover-bg: transparent;
-
+$navbar-default-toggle-icon-bar-bg: $grey-link-nav-footer;
+$navbar-default-link-active-bg: transparent;
 // Botones
 $btn-primary-bg: $primary;
 $btn-primary-border: $primary;
@@ -34,6 +37,12 @@ $btn-border-radius-base: 3px;
 $btn-default-bg: $grey-dark;
 $btn-default-border: $grey-dark;
 $btn-default-color: white;
+
+// Dropdowns
+$dropdown-bg: $grey-dark;
+$dropdown-link-color: $grey-link-nav-footer;
+$dropdown-link-hover-bg: transparent;
+$dropdown-link-hover-color: $primary-light;
 
 // Forms
 $input-border-focus: $primary;
@@ -114,12 +123,12 @@ p {
   margin-top: -10px;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
   background-color: $primary-light;
   border-color: $primary-light;
 }
 
-.btn-default:hover{
+.btn-default:hover {
   background-color: #444444;
   border-color: #444444;
 }
@@ -156,13 +165,12 @@ p {
 
 // Estilo de los titulos de las listas del pie de pagina
 .title-footer {
-  color: #E0E0E0;
+  color: $grey-link-nav-footer;
 }
 
 // Cuerpo de la seccion de la asociacion en el home
 .body-section {
   background-color: white;
-  box-shadow: 1px 0px 3px $shadow-color;
 }
 
 // Cuerpo de la seccion de "contactenos"
@@ -188,6 +196,11 @@ p {
   max-height: 600px;
 }
 
+.logo{
+  max-height: 40px;
+  min-width: 90%;
+  margin-top: -10px;
+}
 // Estilo para la descripccion de mensajes de error
 .error-description-message {
   list-style-type: none;

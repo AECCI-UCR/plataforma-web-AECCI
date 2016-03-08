@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <%# Logo %>
-      <%= link_to 'AECCI', root_path, class: 'navbar-brand' %>
+      <%= link_to image_tag('logo_aecci.png', class:'logo'), root_path, class: 'navbar-brand' %>
     </div>
     <%# Menú que irá dentro del botón de vista movil %>
     <div class="collapse navbar-collapse" id="opciones-navbar">
@@ -18,9 +18,16 @@
         <li><%= link_to '¿Quiénes somos?', about_us_path, id: 'nav_quienes_somos' %></li>
         <li><%= link_to 'Anuncios', ads_path, id: 'nav_anuncios' %></li>
         <% if user_signed_in? %>
-            <li><%= link_to 'Banco de exámenes', courses_path, id:'nav_banco_examenes' %></li>
+            <li>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Recursos <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Banco de exámenes', courses_path, id: 'nav_banco_examenes' %></li>
+              </ul>
+            </li>
             <% if current_user.admin? %>
-                <li><%= link_to 'Administración de usuarios', users_path, id:'nav_administracion_usuarios' %></li>
+                <li><%= link_to 'Usuarios', users_path, id: 'nav_administracion_usuarios' %></li>
             <% end %>
             <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
         <% else %>
