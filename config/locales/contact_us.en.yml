@@ -15,7 +15,7 @@ en:
         message: "Message"
         name: "Name"
         subject: "Subject"
-        submit: "Submit"
+        submit: "Enviar correo"
       new_formtastic:
         <<: *new
       new_simple_form:

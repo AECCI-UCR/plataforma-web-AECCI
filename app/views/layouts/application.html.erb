@@ -23,7 +23,6 @@
       <%= render 'layouts/flash_messages' %>
     </div>
 <% else %>
-
 <%# Flash messages %>
     <div class="container">
       <div class="row">
@@ -35,6 +34,7 @@
 <% end %>
 
 <%# Main content %>
+
 <div class="container-fluid">
   <%= yield %>
   <br/>
@@ -45,10 +45,6 @@
   <%= debug(params) if Rails.env.development? %>-->
 </div>
 
-<% if ruta == about_us_url || ruta == root_url %>
-    <span id="contact"></span>
-    <%= render 'layouts/contact_us' %>
-<% end %>
 <%= render 'layouts/footer' %>
 </body>
 </html>

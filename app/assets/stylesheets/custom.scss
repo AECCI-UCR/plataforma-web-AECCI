@@ -108,6 +108,9 @@ body {
   padding-top: 60px;
 }
 
+textarea{
+  resize: none;
+}
 // Estilo de los encabezados
 h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
