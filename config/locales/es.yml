@@ -11,6 +11,28 @@ es-CR:
     models:
       user: Usuario
 
+  contact_us:
+    contact_mailer:
+      contact_email:
+        sent_by_contact_form: "Enviado por el formulario de contacto desde %{email}"
+        sent_by_name: "Enviado por %{name} desde %{email}"
+        subject: "Mensaje del usuario %{email} de AECCI"
+    contacts:
+      new: &new
+        contact_us: "Contáctenos"
+        email: "Correo"
+        message: "Mensaje"
+        name: "Nombre"
+        subject: "Tema"
+        submit: "Enviar correo"
+      new_formtastic:
+        <<: *new
+      new_simple_form:
+        <<: *new
+    notices:
+      error: "Todos los campos son obligatorios."
+      success: "El correo electrónico de contacto fue enviado con éxito."
+
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente.

@@ -78,6 +78,8 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
+    contact_us (1.0.1)
+      rails (>= 4.2.0)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   carrierwave
   coderay
   coffee-rails (~> 4.1.0)
+  contact_us (~> 1.0.1)
   data-confirm-modal!
   devise
   epic-editor-rails

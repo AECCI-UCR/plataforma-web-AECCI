@@ -60,6 +60,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+# Gema de "contact us"
+gem 'contact_us', '~> 1.0.1'
+
 # Paginación páginas con estilo de boostrap
 gem 'will_paginate-bootstrap'
 

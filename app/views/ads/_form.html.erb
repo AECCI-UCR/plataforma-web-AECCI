@@ -68,6 +68,15 @@
                     <%= f.hidden_field :image_carousel_url_cache %>
                   </div>
                 </div>
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <div class="alert alert-warning" role="alert">
+                      <strong>¡Atención! </strong>las dimensiones de esta imagen tiene que ser de 800x1800 pixeles y
+                      tiene que ser archivos en formato .jpg, .png o .gif para una correcta visualización en el
+                      carousel.
+                    </div>
+                  </div>
+                </div>
                 <% if @ad.image_carousel_url? %>
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-3">
@@ -75,13 +84,6 @@
                       </div>
                     </div>
                 <% end %>
-                <div class="form-group">
-                  <div class="col-xs-12">
-                    <small><p class="text-info">Las dimensiones de esta imagen tiene que ser de 600x1800 pixeles y
-                      tiene que ser archivos en formato .jpg, .png o .gif para una correcta visualización en el
-                      carousel.</p></small>
-                  </div>
-                </div>
               </div>
               <div class="row">
                 <hr/>

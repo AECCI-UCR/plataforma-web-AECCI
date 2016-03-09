@@ -7,30 +7,49 @@
       </div>
     </div>
     <br/>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="form-horizontal">
-          <div class="form-group">
-            <div class="col-md-6">
-              <input type="text" class="form-control" id="input_name" placeholder="Nombre">
-            </div>
-            <div class="col-md-6">
-              <input type="email" class="form-control" id="input_mail" placeholder="Correo electrónico">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-xs-12">
-              <textarea class="form-control" rows="5" id="input_message" placeholder="Mensaje" style="resize: none"></textarea>
+    <%= form_for :contact_us_contact, url: contacts_path do |f| %>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-horizontal">
+              <div class="form-group">
+                <div class="col-md-6">
+                  <% if ContactUs.require_name %>
+                      <div class='string required' id='contact_us_contact_name_input'>
+                        <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
+                      </div>
+                  <% end %>
+                </div>
+                <div class="col-md-6">
+                  <div class='string required' id='contact_us_contact_email_input'>
+                    <%= f.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <% if ContactUs.require_subject %>
+                      <div class='string required' id='contact_us_contact_subject_input'>
+                        <%= f.text_field :subject, placeholder: 'Asunto' %>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <div class='text required' id='contact_us_contact_message_input'>
+                    <%= f.text_area :message, class: 'form-control', rows: '5', placeholder: 'Mensaje' %>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-5">
-        <button class="btn btn-default btn-block">Enviar mensaje</button>
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-5">
+            <%= f.submit :submit, class: 'btn btn-default btn-block', title: 'Enviar mensaje' %>
+          </div>
+        </div>
+        <br/>
+    <% end %>
   </div>
-  <br/>
 </div>
