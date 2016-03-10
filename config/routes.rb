@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :ads
   resources :tests
-  resources :courses
+  resources :courses, except: :show
+  
   # Rutas para la administración de usuarios
+  devise_for :users
   get 'users_administration' => 'users_administration#index', as: :users
   delete 'user/:id' => 'users_administration#destroy', as: :admin_destroy_user
   put 'user/:id' => 'users_administration#make_admin', as: :make_admin
 
-  resources :ads
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
