@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
   default_scope { order(email: :asc) }
   scope :admins, lambda { where admin: true }
   scope :students, lambda { where admin: false }
+
+  # Métodos de clase
+  def self.search(carnet)
+    carnet ? where('email LIKE ?', "%#{carnet}%") : students
+  end
+
 end
