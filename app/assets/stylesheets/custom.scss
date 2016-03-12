@@ -29,6 +29,7 @@ $navbar-default-toggle-border-color: transparent;
 $navbar-default-toggle-hover-bg: transparent;
 $navbar-default-toggle-icon-bar-bg: $grey-link-nav-footer;
 $navbar-default-link-active-bg: transparent;
+
 // Botones
 $btn-primary-bg: $primary;
 $btn-primary-border: $primary;
@@ -52,6 +53,8 @@ $input-bg-disabled: white;
 // Panels
 $panel-border-radius: 2px;
 $panel-default-border: transparent;
+$panel-primary-border: $primary-light;
+$panel-primary-heading-bg: $primary-light;
 
 // Pagination
 $pagination-active-bg: $primary;
@@ -108,9 +111,10 @@ body {
   padding-top: 60px;
 }
 
-textarea{
+textarea {
   resize: none;
 }
+
 // Estilo de los encabezados
 h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
@@ -199,11 +203,12 @@ p {
   max-height: 600px;
 }
 
-.logo{
+.logo {
   max-height: 40px;
   min-width: 90%;
   margin-top: -10px;
 }
+
 // Estilo para la descripccion de mensajes de error
 .error-description-message {
   list-style-type: none;
