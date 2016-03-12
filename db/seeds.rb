@@ -7,4 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 course = Course.create(name: 'Programacion II', initials: 'MPLP666')
-Test.create(teacher: 'Di Mare', course: course)
+course2 = Course.create(name: 'Bases de datos I', initials: 'BD001')
+Test.create([{teacher: 'Di Mare', course: course}, {teacher: 'Braulio', course: course}, {teacher: 'Allan', course: course}, {teacher: 'Olman', course: course2}])

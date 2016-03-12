@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   resources :ads
   resources :tests
-  resources :courses, except: :show
-  
+  resources :courses, except: :show do
+    get 'profesors', on: :member
+  end
+
   # Rutas para la administración de usuarios
   devise_for :users
   get 'users_administration' => 'users_administration#index', as: :users
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
 
   # Páginas estáticas
   get 'about_us' => 'static_pages#about_us'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

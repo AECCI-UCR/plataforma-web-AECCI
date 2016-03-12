@@ -15,10 +15,16 @@ hide_carousel_part = ->
     $('#carousel_part').hide()
   return
 
+submit_functions = (editor)->
+  $('#btn_prueba').click ->
+    alert("Perror")
+    editor.remove('epiceditor.md')
+
 ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
 
+  localStorage.clear() # TODO esto no lo limpia correctamente, investigar mas
   # ------- Cosas del preview de Markdown -------
   options_editor =
     textarea: 'input_description'
@@ -33,10 +39,13 @@ ready = ->
     autogrow:
       minHeight: 350
       maxHeight: 350
+    file:
+      name: 'adAECCI'
+      defaultContent: ''
+      autoSave: 100
 
   editor = (new EpicEditor(options_editor)).load()
   # ---------------------------------------------
-
 
   hide_carousel_part()
 
