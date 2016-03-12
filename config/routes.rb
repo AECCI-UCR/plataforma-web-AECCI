@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'users_administration' => 'users_administration#index', as: :users
   delete 'user/:id' => 'users_administration#destroy', as: :admin_destroy_user
-  put 'user/:id' => 'users_administration#make_admin', as: :make_admin
+  put 'user/:id' => 'users_administration#toggle_admin', as: :toggle_admin
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

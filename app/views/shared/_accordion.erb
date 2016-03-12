@@ -1,0 +1,22 @@
+<%# Partial necesita 4 variables locales
+    title: título del encabezado.
+    heading_id: id que va a tener la parte visible del acordión.
+    expand: booleano de si el contenido del panel debe aparecer abierto.
+    collapse_id: id de la parte oculta del acordión.
+-%>
+
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="<%= heading_id %>">
+    <h4 class="panel-title">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= collapse_id %>" aria-expanded="<%= expand %>" aria-controls="#<%= collapse_id %>">
+        <%= title %>
+      </a>
+    </h4>
+  </div>
+  <% collapse_class = expand ? 'in' : '' %>
+  <div id="<%= collapse_id %>" class="panel-collapse collapse <%= collapse_class %>" role="tabpanel" aria-labelledby="<%= heading_id %>">
+    <div class="panel-body">
+      <%= yield %>
+    </div>
+  </div>
+</div>
