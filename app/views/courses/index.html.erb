@@ -29,6 +29,7 @@
                   <%# TODO: Botones con el link de cada curso %>
                   <p>Nombre del curso es: <%= course.name %>.</p>
                   <p>Las iniciales son: <%= course.initials %>.</p>
+                  <b><%= link_to 'Ir a curso', profesors_course_path(course) %></b>
                   <hr/>
               <% end %>
           <% end %>
