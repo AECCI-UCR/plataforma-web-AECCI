@@ -3,27 +3,6 @@ dataConfirmModal.setDefaults
   commit: 'Eliminar'
   cancel: 'Cancelar'
 
-options_editor =
-  textarea: 'input_description'
-  button:
-    preview: true
-    fullscreen: false
-    bar: 'show'
-  string:
-    togglePreview: 'Vista previa'
-    toggleEdit: 'Editar'
-    toggleFullscreen: 'Entrar en pantalla completa'
-  autogrow:
-    minHeight: 350
-    maxHeight: 350
-  file:
-    name: 'adAECCI'
-    defaultContent: ''
-    autoSave: 100
-
-load_epic_editor = ->
-  editor = new EpicEditor(options_editor).load()
-
 hide_carousel_part = ->
   if $('#check_important').is(':checked')
     $('#carousel_part').show()
@@ -37,8 +16,6 @@ jQuery ($) ->
     $('#description_alert').hide()
 
     hide_carousel_part()
-    localStorage.clear()
-    #load_epic_editor()
 
     $('#check_important').click ->
       if $(this).is(':checked')
