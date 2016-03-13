@@ -38,11 +38,16 @@ courses = Course.create([{name: 'Introducción a la Computación e Informática'
 Test.create([{teacher: 'Roxana Vargas', course: courses[0]},
              {teacher: 'Braulio Solano', course: courses[2]},
              {teacher: 'Raul Blanco', course: courses[1]},
-             {teacher: 'Iliana alpizar', course: courses[6]},
+             {teacher: 'Iliana Alpizar', course: courses[6]},
              {teacher: 'Allan Calderón', course: courses[2]},
              {teacher: 'Allan Calderón', course: courses[6]},
              {teacher: 'Juan Carlos Briceño', course: courses[7]},
-             {teacher: 'Gabriela salazar', course: courses[13]},
+             {teacher: 'Gabriela Salazar', course: courses[13]},
              {teacher: 'MAURICIO VALVERDE', course: courses[5]},
              {teacher: 'Francisco Arroyo', course: courses[9]},
              {teacher: 'Richard Delgado', course: courses[4]}])
+
+Ad.create!([{title: 'Oferta laboral en HP', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'kylo.png')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-1.png')), important: true},
+            {title: 'Camisas semana U', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'soldado.jpg')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-2.png')), important: true},
+            {title: 'Pago de casilleros', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'yosemite.png')), image_carousel_url: 'dummy', important: false},
+            {title: 'Prueba con seed', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'binary.png')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-3.png')), important: true}])

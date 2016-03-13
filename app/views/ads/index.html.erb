@@ -87,7 +87,14 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-10 col-md-offset-1 col-xs-12">
-                <h3> <%= ad.title %></h3>
+                <h3>
+                  <%= ad.title %>
+                  <% if ad.important? %>
+                      <div class="pull-right">
+                        <small><i class="fa fa-star"></i></small>
+                      </div>
+                  <% end %>
+                </h3>
                 <hr/>
               </div>
             </div>
