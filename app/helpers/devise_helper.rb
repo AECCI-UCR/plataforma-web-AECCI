@@ -20,7 +20,7 @@ module DeviseHelper
 
   def require_admin
     unless current_user.admin?
-      redirect_to root_url, alert: 'No tiene permiso para acceder a esta página'
+      redirect_to root_url, alert: 'No tiene permiso para acceder a la página seleccionada'
     end
   end
 

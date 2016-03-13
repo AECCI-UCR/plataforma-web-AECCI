@@ -1,17 +1,11 @@
 class CoursesController < ApplicationController
-  before_filter :authenticate_user!
-  before_action :require_admin
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :profesors]
+  before_action :authenticate_user!
+  before_action :require_admin, except: [:index, :professors]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :professors]
 
   def index
-    @years_of_courses = Course.all.group_by(&:year)
-  end
-
-  def show
-  end
-
-  def profesors
-    @tests = @course.tests.group_by(&:teacher)
+    @courses = Course.all
+    @years_of_courses = @courses.group_by(&:year)
   end
 
   def new
@@ -54,6 +48,11 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+  def professors
+    @tests = @course.tests.group_by(&:teacher)
   end
 
   private

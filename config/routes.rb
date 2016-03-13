@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :ads
   resources :tests
   resources :courses, except: :show do
-    get 'profesors', on: :member
+    get :professors, on: :member
   end
 
   # Rutas para la administración de usuarios
