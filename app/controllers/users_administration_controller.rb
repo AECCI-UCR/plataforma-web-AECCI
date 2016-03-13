@@ -4,7 +4,7 @@ class UsersAdministrationController < ApplicationController
   before_action :set_user, only: [:destroy, :toggle_admin]
 
   def index
-    @users =  User.students.page(params[:page])
+    @users =  User.students.search(params[:search]).page(params[:page])
     @admins = User.admins
   end
 
@@ -28,6 +28,11 @@ class UsersAdministrationController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_administration_params
+    params.require(:user).permit :admin
   end
 
 end

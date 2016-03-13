@@ -4,17 +4,19 @@
     <hr/>
   </div>
 </div>
-
-<% if current_user && current_user.admin? %>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <%= link_to 'Nuevo Curso', new_course_path, remote: true, class: 'btn btn-primary' %>
-      </div>
-    </div>
-<% end %>
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-3">
+    <%= select_tag :course_name, options_from_collection_for_select(@courses, :id, :name), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-8 col-md-offset-3">
+    <hr/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-3">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <%# Itera sobre cada año %>
       <% @years_of_courses.sort.each do |year, courses| %>
@@ -27,10 +29,9 @@
               <%# Itera por cada curso que pertenece a un año %>
               <% courses.each do |course| %>
                   <%# TODO: Botones con el link de cada curso %>
-                  <p>Nombre del curso es: <%= course.name %>.</p>
+                  <p>Nombre del curso es: <span class="course-name"><%= course.name %></span>.</p>
                   <p>Las iniciales son: <%= course.initials %>.</p>
-                  <b><%= link_to 'Ir a curso', profesors_course_path(course) %></b>
-                  <hr/>
+                  <b><%= link_to 'Ir a curso', professors_course_path(course) %></b>
               <% end %>
           <% end %>
 

@@ -1,12 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 dataConfirmModal.setDefaults
   title: 'Confirmación de eliminación'
   commit: 'Eliminar'
   cancel: 'Cancelar'
-
 
 hide_carousel_part = ->
   if $('#check_important').is(':checked')
@@ -23,29 +18,6 @@ submit_functions = (editor)->
 ready = ->
   $('#title_alert').hide()
   $('#description_alert').hide()
-
-  localStorage.clear() # TODO esto no lo limpia correctamente, investigar mas
-  # ------- Cosas del preview de Markdown -------
-  options_editor =
-    textarea: 'input_description'
-    button:
-      preview: true
-      fullscreen: false
-      bar: 'show'
-    string:
-      togglePreview: 'Vista previa'
-      toggleEdit: 'Editar'
-      toggleFullscreen: 'Entrar en pantalla completa'
-    autogrow:
-      minHeight: 350
-      maxHeight: 350
-    file:
-      name: 'adAECCI'
-      defaultContent: ''
-      autoSave: 100
-
-  editor = (new EpicEditor(options_editor)).load()
-  # ---------------------------------------------
 
   hide_carousel_part()
 
@@ -74,3 +46,24 @@ ready = ->
 
 $(document).ready ready
 $(document).on 'page:load', ready
+
+
+options_editor =
+  textarea: 'input_description'
+  button:
+    preview: true
+    fullscreen: false
+    bar: 'show'
+  string:
+    togglePreview: 'Vista previa'
+    toggleEdit: 'Editar'
+    toggleFullscreen: 'Entrar en pantalla completa'
+  autogrow:
+    minHeight: 350
+    maxHeight: 350
+  file:
+    name: 'adAECCI'
+    defaultContent: ''
+    autoSave: 100
+
+editor = (new EpicEditor(options_editor)).load()
