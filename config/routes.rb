@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # Páginas estáticas
   get 'about_us' => 'static_pages#about_us'
+  get 'not_authorized' => 'static_pages#not_authorized', as: :not_authorized
 
 
   # Example of regular route:

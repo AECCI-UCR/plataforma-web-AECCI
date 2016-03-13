@@ -1,19 +1,21 @@
 class UsersAdministrationController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_admin
   before_action :set_user, only: [:destroy, :toggle_admin]
 
   def index
-    @users =  User.students.search(params[:search]).page(params[:page])
+    authorize User
+    @users = User.students.search(params[:search]).page(params[:page])
     @admins = User.admins
   end
 
   def destroy
+    authorize @user
     @user.destroy
     redirect_to users_url, notice: 'El estudiante fue eliminado correctamente '
   end
 
   def toggle_admin
+    authorize @user
     message = if @user.admin?
                 "A #{@user.email} se le ha revocado el rol de administrador"
               else

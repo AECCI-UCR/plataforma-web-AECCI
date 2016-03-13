@@ -72,6 +72,8 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 # Selectize is the hybrid of a textbox and <select> box
 gem 'selectize-rails'
 
+# Pudnit gema para el control de autorización
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
