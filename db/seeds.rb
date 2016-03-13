@@ -38,11 +38,11 @@ courses = Course.create([{name: 'Introducción a la Computación e Informática'
 Test.create([{teacher: 'Roxana Vargas', course: courses[0]},
              {teacher: 'Braulio Solano', course: courses[2]},
              {teacher: 'Raul Blanco', course: courses[1]},
-             {teacher: 'Iliana alpizar', course: courses[6]},
+             {teacher: 'Iliana Alpizar', course: courses[6]},
              {teacher: 'Allan Calderón', course: courses[2]},
              {teacher: 'Allan Calderón', course: courses[6]},
              {teacher: 'Juan Carlos Briceño', course: courses[7]},
-             {teacher: 'Gabriela salazar', course: courses[13]},
+             {teacher: 'Gabriela Salazar', course: courses[13]},
              {teacher: 'MAURICIO VALVERDE', course: courses[5]},
              {teacher: 'Francisco Arroyo', course: courses[9]},
              {teacher: 'Richard Delgado', course: courses[4]}])
