@@ -12,9 +12,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require selectize
-//= require epiceditor
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require data-confirm-modal
 //= require lightbox
+//= require epiceditor
 //= require_tree .
