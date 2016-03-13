@@ -5,18 +5,13 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3">
     <%= select_tag :course_name, options_from_collection_for_select(@courses, :id, :name), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
   </div>
 </div>
 <br/>
 <div class="row">
-  <div class="col-md-8 col-md-offset-3">
-    <hr/>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-8 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <%# Itera sobre cada año %>
       <% @years_of_courses.sort.each do |year, courses| %>
@@ -29,9 +24,24 @@
               <%# Itera por cada curso que pertenece a un año %>
               <% courses.each do |course| %>
                   <%# TODO: Botones con el link de cada curso %>
-                  <p>Nombre del curso es: <span class="course-name"><%= course.name %></span>.</p>
-                  <p>Las iniciales son: <%= course.initials %>.</p>
-                  <b><%= link_to 'Ir a curso', professors_course_path(course) %></b>
+                  <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                      <h4><%= course.name %></h4>
+                      <h4>
+                        <small><%= course.initials %>.</small>
+                      </h4>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="pull-right">
+                        <%= link_to 'Ir al curso', professors_course_path(course), class: 'btn btn-link' %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                      <hr/>
+                    </div>
+                  </div>
               <% end %>
           <% end %>
 

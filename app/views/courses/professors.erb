@@ -14,28 +14,31 @@
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>A continuación se le presenta la lista de profesores que han dado el curso <%= @course.name %> y de
+          los que se tiene material disponible para consulta.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <% @tests.each do |profesor, tests| %>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading_<%= profesor %>">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= profesor %>" aria-expanded="true" aria-controls="collapseOne">
-                  <%= profesor %>
-                </a>
-              </h4>
-            </div>
-            <div id="collapse_<%= profesor %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_<%= profesor %>">
-              <div class="panel-body">
-                <% tests.each do |test| %>
-                    <div class="row">
-                      <div class="col-md-1">
-                        <button class="btn btn-primary">- <%= test.id %> -</button>
-                      </div>
+          <%# Acordión para cada profesor %>
+          <% title = "#{profesor}" %>
+          <% heading_id = "heading_#{profesor.downcase.tr(" ", "_")}" %>
+          <% collapse_id = "collapse_#{profesor.downcase.tr(" ", "_")}" %>
+          <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+              <% tests.each do |test| %>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <button class="btn btn-primary">- <%= test.id %> -</button>
                     </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
+                  </div>
+              <% end %>
+          <% end %>
       <% end %>
     </div>
   </div>

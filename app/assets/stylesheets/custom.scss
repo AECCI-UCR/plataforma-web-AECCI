@@ -14,7 +14,8 @@ $shadow-color: #888888;
 // Typografia
 $text-color: $grey-text;
 $link-color: $grey-text;
-$link-hover-color: $primary-light;
+$link-hover-color: $primary;
+$link-hover-decoration: none;
 $font-family-sans-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 $font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 
@@ -213,4 +214,5 @@ p {
 .error-description-message {
   list-style-type: none;
 }
+
 // == Fin Varios estilos ==
