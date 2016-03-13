@@ -54,7 +54,7 @@ $input-bg-disabled: white;
 // Panels
 $panel-border-radius: 2px;
 $panel-default-border: transparent;
-$panel-primary-border: $primary-light;
+$panel-primary-border: $primary;
 $panel-primary-heading-bg: $primary-light;
 
 // Pagination
@@ -226,7 +226,7 @@ p {
   background-color: white;
 }
 
-.bs-callout h4 {
+.bs-callout h5 {
   margin-top: 0;
   margin-bottom: 5px;
 }
@@ -239,7 +239,7 @@ p {
   border-radius: 3px;
 }
 
-.bs-callout+.bs-callout {
+.bs-callout + .bs-callout {
   margin-top: -5px;
 }
 
@@ -250,7 +250,7 @@ p {
     border-left-color: $callout-color;
   }
   // Callout header color
-  .#{$name} h4 {
+  .#{$name} h5 {
     color: $callout-color;
   }
 }

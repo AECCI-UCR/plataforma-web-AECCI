@@ -60,6 +60,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+# Gema para preview de PDFs
+gem 'pdfjs_viewer-rails'
+
 # Gema de "contact us"
 gem 'contact_us', '~> 1.0.1'
 
