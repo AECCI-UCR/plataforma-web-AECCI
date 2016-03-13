@@ -22,7 +22,7 @@
 
 <p>
   <strong>File url:</strong>
-  <%= @test.file_url %>
+  <%= link_to "Ver el documento", pdfjs.full_path(file: "#{@test.file_url}"), target: '_blank' %>
 </p>
 
 <p>
