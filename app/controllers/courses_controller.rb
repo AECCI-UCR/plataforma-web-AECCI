@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :profesors]
 
   def index
-    @courses = Course.all
+    @years_of_courses = Course.all.group_by(&:year)
   end
 
   def show

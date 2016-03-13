@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
          :rememberable,
          :trackable,
          :validatable
+
+  # Scopes
+  default_scope { order(email: :asc) }
+  scope :admins, lambda { where admin: true }
+  scope :students, lambda { where admin: false }
 end

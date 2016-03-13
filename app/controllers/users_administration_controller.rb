@@ -1,10 +1,11 @@
 class UsersAdministrationController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   before_action :require_admin
-  before_action :set_user, only: [:destroy, :make_admin]
+  before_action :set_user, only: [:destroy, :toggle_admin]
 
   def index
-    @users = User.page(params[:page]).order('email DESC')
+    @users =  User.students.page(params[:page])
+    @admins = User.admins
   end
 
   def destroy
@@ -12,9 +13,14 @@ class UsersAdministrationController < ApplicationController
     redirect_to users_url, notice: 'El estudiante fue eliminado correctamente '
   end
 
-  def make_admin
-    @user.update_attribute(:admin, true)
-    redirect_to users_url, notice: "#{@user.email} ha sido convertido en administrador"
+  def toggle_admin
+    message = if @user.admin?
+                "A #{@user.email} se le ha revocado el rol de administrador"
+              else
+                "#{@user.email} ha sido convertido en administrador"
+              end
+    @user.update_attribute(:admin, !@user.admin)
+    redirect_to users_url, notice: message
   end
 
 
