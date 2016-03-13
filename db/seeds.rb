@@ -46,3 +46,8 @@ Test.create([{teacher: 'Roxana Vargas', course: courses[0]},
              {teacher: 'MAURICIO VALVERDE', course: courses[5]},
              {teacher: 'Francisco Arroyo', course: courses[9]},
              {teacher: 'Richard Delgado', course: courses[4]}])
+
+Ad.create!([{title: 'Oferta laboral en HP', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'kylo.png')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-1.png')), important: true},
+            {title: 'Camisas semana U', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'soldado.jpg')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-2.png')), important: true},
+            {title: 'Pago de casilleros', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'yosemite.png')), image_carousel_url: 'dummy', important: false},
+            {title: 'Prueba con seed', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'binary.png')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-3.png')), important: true}])
