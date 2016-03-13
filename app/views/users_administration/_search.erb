@@ -1,7 +1,11 @@
-<form class="form-inline">
+<form class="input-group">
   <%= form_tag users_path, method: :get, id: 'users_search' do %>
-      <div class="form-group"><%= text_field_tag :search, params[:search], placeholder: 'Carné', class: 'form-control' %></div>
-      <div class="form-group"><%= submit_tag 'Buscar', class: 'btn btn-sm btn-primary' %></div>
+      <%= text_field_tag :search, params[:search], placeholder: 'Carnet', class: 'form-control' %>
+      <div class="input-group-btn">
+        <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
+            <span class="glyphicon glyphicon-search"></span>
+        <% end %>
+      </div>
   <% end %>
 </form>
 
