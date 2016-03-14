@@ -17,7 +17,8 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
-    #@courses = Course.all
+    @tests = Test.all
+    @courses = Course.all
   end
 
   # GET /tests/1/edit

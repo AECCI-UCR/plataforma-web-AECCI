@@ -6,7 +6,7 @@
     </div>
     <div class="field">
       <%= f.label :teacher %><br>
-      <%= f.collection_select :teacher, Test.order(:teacher), :teacher, :teacher, {prompt: 'Seleccione un profesor'}, {class:'form-control'}%>
+      <%= f.select :teacher, options_from_collection_for_select(@tests, :teacher, :teacher), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
     </div>
     <div class="field">
       <%= f.label :semester %><br>
@@ -22,9 +22,7 @@
     </div>
     <div class="field">
       <%= f.label :course_id %><br>
-      <div class="form-group">
-        <%= f.collection_select :course_id, Course.order(:name), :id, :name, {prompt: 'Seleccione un curso'}, {class:'form-control'}%>
-      </div>
+      <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
     </div>
     <div class="actions">
       <%= f.submit %>
