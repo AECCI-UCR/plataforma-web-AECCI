@@ -4,8 +4,8 @@
     <hr/>
   </div>
 </div>
-<!-- Esta deberia de ser la vista para los miembros de la asocia -->
-<% if user_signed_in? && current_user.admin? %>
+<%# Esta deberia de ser la vista para los miembros de la asocia %>
+<% if policy(Ad).rest_operation? %>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
@@ -79,7 +79,7 @@
     </div>
 <% end %>
 
-<!-- Los otros usuarios deben de tener otra vista-->
+<%# Los otros usuarios deben de tener otra vista %>
 <% @ads.each_with_index do |ad, index| %>
     <div class="row" id="<%= ad.title %>">
       <div class="col-md-10 col-md-offset-1">

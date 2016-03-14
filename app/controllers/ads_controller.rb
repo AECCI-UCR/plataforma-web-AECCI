@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_filter :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: :index
   before_action :require_admin, except: :index
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
 
