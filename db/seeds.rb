@@ -32,8 +32,7 @@ courses = Course.create([{name: 'Introducción a la Computación e Informática'
                          {name: 'Arquitectura de Computadoras', initials: 'CI-1323', year: 4}, {name: 'Paradigmas Computacionales', initials: 'CI-1441', year: 4},
                          {name: 'Informática y Sociedad', initials: 'CI-1440', year: 4},
                          {name: 'Redes de Computadoras I', initials: 'CI-1320', year: 3},
-                         {name: 'Ingeniería de Software II', initials: 'CI-1430', year: 4},
-                        ])
+                         {name: 'Ingeniería de Software II', initials: 'CI-1430', year: 4}])
 
 teachers = Teacher.create([{name: 'Roxana Vargas'},
                            {name: 'Braulio Solano'},
@@ -49,17 +48,21 @@ teachers = Teacher.create([{name: 'Roxana Vargas'},
                            {name: 'Ricardo Gang'},
                            {name: 'Luis Quesada'}])
 
-#Test.create([{teacher: teachers[0], course: courses[0]},
-#             {teacher: teachers[1], course: courses[2]},
-#             {teacher: teachers[2], course: courses[1]},
-#             {teacher: teachers[2], course: courses[6]},
-#             {teacher: teachers[3], course: courses[2]},
-#             {teacher: teachers[4], course: courses[6]},
-#             {teacher: teachers[5], course: courses[7]},
-#             {teacher: teachers[5], course: courses[13]},
-#             {teacher: teachers[6], course: courses[5]},
-#             {teacher: teachers[7], course: courses[9]},
-#             {teacher: teachers[7], course: courses[4]}])
+
+Test.create!([{year: 2013, semester: 1, test_number: 1, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[0], teacher: teachers[0]},
+              {year: 2014, semester: 2, test_number: 2, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[1], teacher: teachers[1]},
+              {year: 2015, semester: 2, test_number: 2, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[1], teacher: teachers[3]},
+              {year: 2014, semester: 2, test_number: 3, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[3], teacher: teachers[10]},
+              {year: 2016, semester: 1, test_number: 1, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[14], teacher: teachers[11]},
+              {year: 2012, semester: 3, test_number: 1, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[7], teacher: teachers[7]},
+              {year: 2011, semester: 1, test_number: 3, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[5], teacher: teachers[5]},
+              {year: 2015, semester: 1, test_number: 2, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[0], teacher: teachers[6]},
+              {year: 2013, semester: 1, test_number: 3, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[2], teacher: teachers[1]},
+              {year: 2010, semester: 2, test_number: 1, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[11], teacher: teachers[0]},
+              {year: 2014, semester: 2, test_number: 2, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[3], teacher: teachers[10]},
+              {year: 2011, semester: 1, test_number: 3, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[6], teacher: teachers[9]},
+              {year: 2012, semester: 1, test_number: 1, file_url: File.open(Rails.root.join('app', 'assets', 'prueba_pdf.pdf')), course: courses[9], teacher: teachers[4]}])
+
 
 Ad.create!([{title: 'Oferta laboral en HP', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'kylo.png')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-1.png')), important: true},
             {title: 'Camisas semana U', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'soldado.jpg')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-2.png')), important: true},

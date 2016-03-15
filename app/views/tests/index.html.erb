@@ -49,7 +49,7 @@
                                 <tr>
                                   <td><%= test.teacher.name %></td>
                                   <td><%= test.year %></td>
-                                  <td><%= test.semester %></td>
+                                  <td><%= romanize(test.semester) %></td>
                                   <td><%= test.test_number %></td>
                                   <td class="center-cell">
                                     <%= link_to test do %>
