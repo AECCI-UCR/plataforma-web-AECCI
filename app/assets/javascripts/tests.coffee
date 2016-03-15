@@ -5,6 +5,10 @@
 hide_alerts = ->
   $('#year_alert').hide()
   $('#teacher_alert').hide()
+  $('#semester_alert').hide()
+  $('#test_number_alert').hide()
+  $('#file_url_aler').hide()
+  $('#course_aler').hide()
 
 jQuery ($) ->
   $(document).on 'ready page:load', ->
