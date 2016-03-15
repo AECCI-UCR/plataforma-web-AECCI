@@ -1,10 +1,15 @@
 class TestsController < ApplicationController
+  before_filter :authenticate_user!
+  before_action :require_admin
+  before_action :fill_data, only:[:edit, :new]
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   # GET /tests
   # GET /tests.json
   def index
-    @tests = Test.all
+    # TODO: agregar el orden por profesor
+    @tests = Test.all.order_for_table.group_by(&:course)
+    #@tests = Test.all.order(teacher: :asc, year: :desc, semester: :asc, test_number: :asc).group_by(&:course)
   end
 
   # GET /tests/1
@@ -14,7 +19,6 @@ class TestsController < ApplicationController
 
   # GET /tests/new
   def new
-    @test = Test.new
   end
 
   # GET /tests/1/edit
@@ -28,7 +32,7 @@ class TestsController < ApplicationController
 
     respond_to do |format|
       if @test.save
-        format.html { redirect_to @test, notice: 'Test was successfully created.' }
+        format.html { redirect_to @test, notice: 'El examen se agregó correctamente.' }
         format.json { render :show, status: :created, location: @test }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class TestsController < ApplicationController
   def update
     respond_to do |format|
       if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'Test was successfully updated.' }
+        format.html { redirect_to @test, notice: 'El examen se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @test }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class TestsController < ApplicationController
   def destroy
     @test.destroy
     respond_to do |format|
-      format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
+      format.html { redirect_to tests_url, notice: 'El examen se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end
@@ -67,8 +71,14 @@ class TestsController < ApplicationController
       @test = Test.find(params[:id])
     end
 
+    def fill_data
+      @test = Test.new
+      @teachers = Teacher.all
+      @courses = Course.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:year, :teacher, :semester, :test_number, :file_url, :course_id)
+      params.require(:test).permit(:year, :teacher_id, :semester, :test_number, :file_url, :course_id)
     end
 end

@@ -49,3 +49,11 @@
     </div>
   </div>
 </div>
+<% if user_signed_in? && current_user.admin? %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="pull-right">
+          <%= link_to 'Administrar exámenes', tests_path, class: 'btn btn-primary' %></div>
+      </div>
+    </div>
+<% end %>

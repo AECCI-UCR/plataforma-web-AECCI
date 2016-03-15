@@ -35,17 +35,31 @@ courses = Course.create([{name: 'Introducción a la Computación e Informática'
                          {name: 'Ingeniería de Software II', initials: 'CI-1430', year: 4},
                         ])
 
-Test.create([{teacher: 'Roxana Vargas', course: courses[0]},
-             {teacher: 'Braulio Solano', course: courses[2]},
-             {teacher: 'Raul Blanco', course: courses[1]},
-             {teacher: 'Iliana Alpizar', course: courses[6]},
-             {teacher: 'Allan Calderón', course: courses[2]},
-             {teacher: 'Allan Calderón', course: courses[6]},
-             {teacher: 'Juan Carlos Briceño', course: courses[7]},
-             {teacher: 'Gabriela Salazar', course: courses[13]},
-             {teacher: 'MAURICIO VALVERDE', course: courses[5]},
-             {teacher: 'Francisco Arroyo', course: courses[9]},
-             {teacher: 'Richard Delgado', course: courses[4]}])
+teachers = Teacher.create([{name: 'Roxana Vargas'},
+                           {name: 'Braulio Solano'},
+                           {name: 'Raul Blanco'},
+                           {name: 'Iliana Alpizar'},
+                           {name: 'Allan Calderón'},
+                           {name: 'Juan Carlos Briceño'},
+                           {name: 'Gabriela Salazar'},
+                           {name: 'Mauricio Valverde'},
+                           {name: 'Francisco Arroyo'},
+                           {name: 'Richard Delgado'},
+                           {name: 'Sanders Pacheco'},
+                           {name: 'Ricardo Gang'},
+                           {name: 'Luis Quesada'}])
+
+#Test.create([{teacher: teachers[0], course: courses[0]},
+#             {teacher: teachers[1], course: courses[2]},
+#             {teacher: teachers[2], course: courses[1]},
+#             {teacher: teachers[2], course: courses[6]},
+#             {teacher: teachers[3], course: courses[2]},
+#             {teacher: teachers[4], course: courses[6]},
+#             {teacher: teachers[5], course: courses[7]},
+#             {teacher: teachers[5], course: courses[13]},
+#             {teacher: teachers[6], course: courses[5]},
+#             {teacher: teachers[7], course: courses[9]},
+#             {teacher: teachers[7], course: courses[4]}])
 
 Ad.create!([{title: 'Oferta laboral en HP', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'kylo.png')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-1.png')), important: true},
             {title: 'Camisas semana U', description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', image_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'soldado.jpg')), image_carousel_url: File.open(Rails.root.join('app', 'assets', 'images', 'fotos', 'carousel', 'carousel-2.png')), important: true},

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :teachers
   resources :ads
   resources :tests
   resources :courses, except: :show do
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
   get 'users_administration' => 'users_administration#index', as: :users
   delete 'user/:id' => 'users_administration#destroy', as: :admin_destroy_user
   put 'user/:id' => 'users_administration#toggle_admin', as: :toggle_admin
+
+  # Ruta para el preview de PDFs
+  mount PdfjsViewer::Rails::Engine => "/pdfjs", as: 'pdfjs'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -60,6 +60,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+# Gema para preview de PDFs
+gem 'pdfjs_viewer-rails'
+
 # Gema de "contact us"
 gem 'contact_us', '~> 1.0.1'
 
@@ -71,6 +74,9 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 
 # Selectize is the hybrid of a textbox and <select> box
 gem 'selectize-rails'
+
+# Gema para agregar parallax
+gem 'parallax-rails'
 
 # Pudnit gema para el control de autorización
 gem 'pundit'
