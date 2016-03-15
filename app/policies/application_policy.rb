@@ -38,6 +38,24 @@ class ApplicationPolicy
     Pundit.policy_scope!(user, record.class)
   end
 
+
+  # Custom methods
+  def rest_operation?
+    user && administrator?
+  end
+
+
+  protected
+
+  def myself
+    user == record
+  end
+
+  def administrator?
+    user.admin?
+  end
+  # end custom methods
+
   class Scope
     attr_reader :user, :scope
 

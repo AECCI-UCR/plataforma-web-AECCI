@@ -12,15 +12,4 @@ class UserPolicy < ApplicationPolicy
     administrator? && (not myself)
   end
 
-
-  private
-
-  def myself
-    user == record
-  end
-
-  def administrator?
-    user.admin?
-  end
-
 end
