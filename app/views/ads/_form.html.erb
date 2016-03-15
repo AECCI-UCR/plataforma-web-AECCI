@@ -11,7 +11,7 @@
             <div class="form-horizontal">
               <div class="form-group" id="title_group">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :title, 'Título del anuncio' %><span class="text-danger"> *</span>
+                  <%= f.label :title %><span class="text-danger"> *</span>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
@@ -20,11 +20,11 @@
               </div>
               <div class="form-group" id="description_group">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :description, 'Descripción' %><span class="text-danger"> *</span>
+                  <%= f.label :description %><span class="text-danger"> *</span>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <div id="epiceditor">
-                    <%= f.text_area :description, id: 'input_description', Style: 'display: none' %>
+                    <%= f.text_area :description, id: 'input_description', style: 'display: none' %>
                   </div>
                   <p class="text-muted">
                     <small>La descripción la puede hacer utilizando html o
@@ -37,7 +37,7 @@
               </div>
               <div class="form-group">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :image_url, 'Imagen del anuncio' %>
+                  <%= f.label :image_url %>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <span class="picture">
@@ -55,7 +55,7 @@
               <% end %>
               <div class="form-group">
                 <div class="col-md-4 col-lg-3 col-xs-6">
-                  <%= f.label :important, 'Incluir en el carousel' %>
+                  <%= f.label :important %>
                 </div>
                 <div class="col-md-1 col-md-1 col-xs-1">
                   <%= f.check_box :important, id: 'check_important' %>
@@ -64,7 +64,7 @@
               <div id="carousel_part">
                 <div class="form-group">
                   <div class="col-md-4 col-lg-3">
-                    <%= f.label :image_carousel_url, 'Imagen del carousel', id: 'label_img_carousel' %>
+                    <%= f.label :image_carousel_url, id: 'label_img_carousel' %>
                   </div>
                   <div class="col-md-8 col-lg-9">
                     <%= f.file_field :image_carousel_url %>

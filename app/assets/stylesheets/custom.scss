@@ -210,6 +210,10 @@ p {
   margin-top: -10px;
 }
 
+.panel-accordion {
+  box-shadow: 1px 1px 2px $shadow-color;
+}
+
 // Estilo para la descripccion de mensajes de error
 .error-description-message {
   list-style-type: none;

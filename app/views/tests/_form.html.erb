@@ -1,30 +1,44 @@
-<%= form_for(@test) do |f| %>
-
-    <div class="field">
-      <%= f.label :year %><br>
-      <%= f.text_field :year %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <%= render 'shared/error_messages', object: @test %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <%= form_for @test do |f| %>
+              <div class="field">
+                <%= f.label :year %><br>
+                <%= f.text_field :year %>
+              </div>
+              <div class="field">
+                <%= f.label :teacher_id %><br>
+                <%= f.select :teacher_id, options_from_collection_for_select(@teachers, :id, :name, @test.teacher ? @test.teacher.id : nil), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
+              </div>
+              <div class="field">
+                <%= f.label :semester %><br>
+                <%= f.text_field :semester %>
+              </div>
+              <div class="field">
+                <%= f.label :test_number %><br>
+                <%= f.text_field :test_number %>
+              </div>
+              <div class="field">
+                <%= f.label :file_url %><br>
+                <%= f.file_field :file_url %>
+              </div>
+              <div class="field">
+                <%= f.label :course_id %><br>
+                <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, @test.course ? @test.course.id : nil), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
+              </div>
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :teacher_id %><br>
-      <%= f.select :teacher_id, options_from_collection_for_select(@teachers, :id, :name, @test.teacher ? @test.teacher.id : nil), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :semester %><br>
-      <%= f.text_field :semester %>
-    </div>
-    <div class="field">
-      <%= f.label :test_number %><br>
-      <%= f.text_field :test_number %>
-    </div>
-    <div class="field">
-      <%= f.label :file_url %><br>
-      <%= f.file_field :file_url %>
-    </div>
-    <div class="field">
-      <%= f.label :course_id %><br>
-      <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, @test.course ? @test.course.id : nil), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+  </div>
+</div>

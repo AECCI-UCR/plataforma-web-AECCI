@@ -1,16 +1,4 @@
 es-CR:
-  # Devise spanish locale
-  activerecord:
-    attributes:
-      user:
-        current_password: Contraseña actual
-        email: Correo electrónico
-        password: Contraseña
-        password_confirmation: Confirmación de la contraseña
-        remember_me: Recordarme
-    models:
-      user: Usuario
-
   contact_us:
     contact_mailer:
       contact_email:
@@ -32,6 +20,33 @@ es-CR:
     notices:
       error: "Todos los campos son obligatorios."
       success: "El correo electrónico de contacto fue enviado con éxito."
+
+  # Devise spanish locale
+  activerecord:
+    attributes:
+      user:
+        current_password: Contraseña actual
+        email: Correo electrónico
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        remember_me: Recordarme
+      test:
+        year: Año
+        teacher_id: Profesor
+        Semester: Semestre
+        test_number: Número de examen
+        file_url: Archivo pdf
+        course_id: Curso
+      ad:
+        title: Título
+        description: Descripción
+        image_url: Imagen del anuncio
+        important: Incluir en el carousel
+        image_carousel_url: Imagen del carousel
+    models:
+      user: usuario
+      test: examen
+      ad: anuncio
 
   devise:
     confirmations:
@@ -145,8 +160,3 @@ es-CR:
   form_has_x_errors:
     one:   "El formulario contiene un error."
     other: "El formulario contiene %{count} errores."
-
-
-  activerecord:
-    models:
-      ad: anuncio
