@@ -66,6 +66,9 @@ gem 'pdfjs_viewer-rails'
 # Gema de "contact us"
 gem 'contact_us', '~> 1.0.1'
 
+# Gema para estilizar los file_uploaders
+gem 'bootstrap-filestyle-rails'
+
 # Paginación páginas con estilo de boostrap
 gem 'will_paginate-bootstrap'
 

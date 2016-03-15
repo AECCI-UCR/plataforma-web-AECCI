@@ -1,89 +1,81 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1>Registro de exámenes</h1>
+    <h1>Administrador de exámenes</h1>
     <hr/>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-xs-12">
-            <h3>Administrador de exámenes</h3>
-            <hr/>
-          </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="bs-callout bs-callout-primary">
+          <h5>Información</h5>
+          <p>En esta sección podrá editar los exámenes presentes en el sistema, será capaz de agregar, eliminar o
+            editar los documentos a los que van a tener acceso los estudiantes.</p>
         </div>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="bs-callout bs-callout-primary">
-              <h5>Información</h5>
-              <p>En esta sección podrá editar los exámenes presentes en el sistema, será capaz de agregar, eliminar o
-                editar los documentos a los que van a tener acceso los estudiantes.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <% @tests.each do |course, tests| %>
-                  <%# Acordión para cada cursos %>
-                  <% title = "#{course.name}" %>
-                  <% heading_id = "heading_#{course.name.downcase.tr(" ", "_")}" %>
-                  <% collapse_id = "collapse_#{course.name.downcase.tr(" ", "_")}" %>
-                  <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
-                      <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                          <table class="table table-striped">
-                            <thead>
-                            <tr>
-                              <th>Profesor</th>
-                              <th>Año</th>
-                              <th>Semestre</th>
-                              <th>Número de examen</th>
-                              <th colspan="3" class="center-cell">Acciones</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <% tests.each do |test| %>
-                                <tr>
-                                  <td><%= test.teacher.name %></td>
-                                  <td><%= test.year %></td>
-                                  <td><%= romanize(test.semester) %></td>
-                                  <td><%= test.test_number %></td>
-                                  <td class="center-cell">
-                                    <%= link_to test do %>
-                                        <span class="glyphicon glyphicon-eye-open text-info" aria-hidden="true"></span>
-                                    <% end %></td>
-                                  <td class="center-cell">
-                                    <%= link_to edit_test_path(test) do %>
-                                        <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                    <% end %></td>
-                                  <td class="center-cell">
-                                    <%= link_to test, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el examen?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
-                                        <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
-                                    <% end %>
-                                  </td>
-                                </tr>
-                            <% end %>
-                            </tbody>
-                          </table>
-                        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <% @tests.each do |course, tests| %>
+              <%# Acordión para cada cursos %>
+              <% title = "#{course.name}" %>
+              <% heading_id = "heading_#{course.name.downcase.tr(" ", "_")}" %>
+              <% collapse_id = "collapse_#{course.name.downcase.tr(" ", "_")}" %>
+              <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                          <tr>
+                            <th>Profesor</th>
+                            <th>Año</th>
+                            <th>Semestre</th>
+                            <th>Número de examen</th>
+                            <th colspan="3" class="center-cell">Acciones</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <% tests.each do |test| %>
+                              <tr>
+                                <td><%= test.teacher.name %></td>
+                                <td><%= test.year %></td>
+                                <td><%= romanize(test.semester) %></td>
+                                <td><%= test.test_number %></td>
+                                <td class="center-cell">
+                                  <%= link_to pdfjs.full_path(file: "#{test.file_url}"), target: '_blank' do %>
+                                      <span class="glyphicon glyphicon-eye-open text-info" aria-hidden="true"></span>
+                                  <% end %></td>
+                                <td class="center-cell">
+                                  <%= link_to edit_test_path(test) do %>
+                                      <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                  <% end %></td>
+                                <td class="center-cell">
+                                  <%= link_to test, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el examen?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
+                                      <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
+                                  <% end %>
+                                </td>
+                              </tr>
+                          <% end %>
+                          </tbody>
+                        </table>
                       </div>
-                  <% end %>
+                    </div>
+                  </div>
               <% end %>
-            </div>
-          </div>
+          <% end %>
         </div>
-        <div class="row">
-          <hr/>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="pull-right">
-              <%= link_to 'Agregar un examen', new_test_path, class: 'btn btn-primary' %>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="pull-right">
+          <%= link_to 'Agregar un examen', new_test_path, class: 'btn btn-primary' %>
         </div>
       </div>
     </div>

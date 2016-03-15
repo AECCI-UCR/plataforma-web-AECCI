@@ -1,30 +1,93 @@
-<%= form_for(@test) do |f| %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <%= render 'shared/error_messages', object: @test %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <%= form_for @test do |f| %>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :year, class: 'required' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_field :year, class: 'form-control' %>
+                  <p class="text-danger" id="year_alert">
+                    <small>Tiene que ingresar el año en que se hizo el examen.</small>
+                  </p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :teacher_id, class: 'required' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.select :teacher_id, options_from_collection_for_select(@teachers, :id, :name, @test.teacher ? @test.teacher.id : nil), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
+                  <!-- TODO: linkear esto con el modal para agregar un profesor -->
+                  <span class="pull-right"><%= link_to 'Agregar un nuevo profesor', '#', class: 'btn btn-link btn-sm' %></span>
+                  <p class="text-danger" id="teacher_alert">
+                    <small>Tiene que ingresar el profesor que realizó el examen.</small>
+                  </p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :semester, class: 'required' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_field :semester, class: 'form-control' %>
+                  <p class="text-danger" id="semester_alert">
+                    <small>Tiene que ingresar el semestre en que se aplicó el examen.</small>
+                  </p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :test_number, class: 'required' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.text_field :test_number, class: 'form-control' %>
+                  <p class="text-danger" id="test_number_alert">
+                    <small>Tiene que ingresar el número del examen.</small>
+                  </p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :file_url, class: 'required' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.file_field :file_url, class: 'filestyle', "data-iconName" => 'glyphicon glyphicon-inbox', "data-size" => 'sm', "data-buttonText" => 'Subir archivo' %>
 
-    <div class="field">
-      <%= f.label :year %><br>
-      <%= f.text_field :year %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :course_id, class: 'required' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, @test.course ? @test.course.id : nil), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
+                  <!-- TODO: linkear esto con el modal para agregar un curso -->
+                  <span class="pull-right"><%= link_to 'Agregar un nuevo curso', '#', class: 'btn btn-link btn-sm' %></span>
+                  <p class="text-danger" id="course_aler">
+                    <small>Tiene que escoger el curso al cual pertenece el examen.</small>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <hr/>
+              </div>
+              <div class="col-xs-12">
+                <div class="pull-right">
+                  <%= f.submit class: 'btn btn-primary' %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :teacher_id %><br>
-      <%= f.select :teacher_id, options_from_collection_for_select(@teachers, :id, :name, @test.teacher ? @test.teacher.id : nil), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :semester %><br>
-      <%= f.text_field :semester %>
-    </div>
-    <div class="field">
-      <%= f.label :test_number %><br>
-      <%= f.text_field :test_number %>
-    </div>
-    <div class="field">
-      <%= f.label :file_url %><br>
-      <%= f.file_field :file_url %>
-    </div>
-    <div class="field">
-      <%= f.label :course_id %><br>
-      <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, @test.course ? @test.course.id : nil), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+  </div>
+</div>

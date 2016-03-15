@@ -9,39 +9,44 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="form-horizontal">
-              <div class="form-group" id="title_group">
+              <div class="form-group">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :title, 'Título del anuncio' %><span class="text-danger"> *</span>
+                  <%= f.label :title, class: 'required' %>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
-                  <p class="text-danger" id="title_alert">Tiene que ingresar un título para el anuncio.</p>
+                  <p class="text-danger" id="title_alert">
+                    <small>Tiene que ingresar un título para el anuncio.</small>
+                  </p>
                 </div>
               </div>
-              <div class="form-group" id="description_group">
+              <div class="form-group">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :description, 'Descripción' %><span class="text-danger"> *</span>
+                  <%= f.label :description, class: 'required' %>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <div id="epiceditor">
-                    <%= f.text_area :description, id: 'input_description', Style: 'display: none' %>
+                    <%= f.text_area :description, id: 'input_description', style: 'display: none' %>
                   </div>
                   <p class="text-muted">
                     <small>La descripción la puede hacer utilizando html o
                       <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown</a>
                     </small>
                   </p>
-                  <p class="text-danger" id="description_alert">Tiene que ingresar una descripción para el
-                    anuncio.</p>
+                  <p class="text-danger" id="description_alert">
+                    <small>Tiene que ingresar una descripción para el
+                      anuncio.
+                    </small>
+                  </p>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :image_url, 'Imagen del anuncio' %>
+                  <%= f.label :image_url, class: 'required' %>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <span class="picture">
-                    <%= f.file_field :image_url %>
+                    <%= f.file_field :image_url, class: 'filestyle', "data-iconName" => 'glyphicon glyphicon-inbox',"data-size" => 'sm', "data-buttonText"=> 'Subir archivo' %>
                     <%= f.hidden_field :image_url_cache %>
                   </span>
                 </div>
@@ -55,7 +60,7 @@
               <% end %>
               <div class="form-group">
                 <div class="col-md-4 col-lg-3 col-xs-6">
-                  <%= f.label :important, 'Incluir en el carousel' %>
+                  <%= f.label :important %>
                 </div>
                 <div class="col-md-1 col-md-1 col-xs-1">
                   <%= f.check_box :important, id: 'check_important' %>
@@ -64,15 +69,15 @@
               <div id="carousel_part">
                 <div class="form-group">
                   <div class="col-md-4 col-lg-3">
-                    <%= f.label :image_carousel_url, 'Imagen del carousel', id: 'label_img_carousel' %>
+                    <%= f.label :image_carousel_url, id: 'label_img_carousel' %>
                   </div>
                   <div class="col-md-8 col-lg-9">
-                    <%= f.file_field :image_carousel_url %>
+                    <%= f.file_field :image_carousel_url, class: 'filestyle', "data-iconName" => 'glyphicon glyphicon-inbox', "data-size" => 'sm', "data-buttonText" => 'Subir archivo'  %>
                     <%= f.hidden_field :image_carousel_url_cache %>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-xs-12">
+                  <div class="col-md-10 col-md-offset-1">
                     <div class="bs-callout bs-callout-danger">
                       <h5>¡Atención! </h5>
                       <p>Las dimensiones de esta imagen tiene que ser de 800x1800 pixeles y
