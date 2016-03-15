@@ -1,12 +1,15 @@
 class TestsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :require_admin, except: :index
+  before_action :require_admin
+  before_action :fill_data, only:[:edit, :new]
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   # GET /tests
   # GET /tests.json
   def index
-    @tests = Test.all
+    # TODO: agregar el orden por profesor
+    @tests = Test.all.order_for_table.group_by(&:course)
+    #@tests = Test.all.order(teacher: :asc, year: :desc, semester: :asc, test_number: :asc).group_by(&:course)
   end
 
   # GET /tests/1
@@ -16,9 +19,6 @@ class TestsController < ApplicationController
 
   # GET /tests/new
   def new
-    @test = Test.new
-    @tests = Test.all
-    @courses = Course.all
   end
 
   # GET /tests/1/edit
@@ -71,8 +71,14 @@ class TestsController < ApplicationController
       @test = Test.find(params[:id])
     end
 
+    def fill_data
+      @test = Test.new
+      @teachers = Teacher.all
+      @courses = Course.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:year, :teacher, :semester, :test_number, :file_url, :course_id)
+      params.require(:test).permit(:year, :teacher_id, :semester, :test_number, :file_url, :course_id)
     end
 end

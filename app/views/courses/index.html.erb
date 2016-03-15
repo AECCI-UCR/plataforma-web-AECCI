@@ -52,7 +52,8 @@
 <% if user_signed_in? && current_user.admin? %>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <%= link_to 'Agregar un examen nuevo', new_test_path, class: 'btn btn-primary' %>
+        <div class="pull-right">
+          <%= link_to 'Administrar exámenes', tests_path, class: 'btn btn-primary' %></div>
       </div>
     </div>
 <% end %>

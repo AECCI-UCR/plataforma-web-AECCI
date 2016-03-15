@@ -19,14 +19,14 @@
           <tr>
             <td><%= admin.email %></td>
             <td class="center-cell">
-              <% unless current_user.email == admin.email %>
+              <% if policy(admin).toggle_admin? %>
                   <%= link_to toggle_admin_path(admin), method: :put do %>
                       <span><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Revocar</span>
                   <% end %>
               <% end %>
             </td>
             <td class="center-cell">
-              <% unless current_user.email == admin.email %>
+              <% if policy(admin).destroy? %>
                   <%= link_to admin_destroy_user_path(admin), method: :delete, data: {confirm: "¿Está seguro que desea eliminar a #{admin.email} del sistema?"} do %>
                       <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
                   <% end %>
@@ -65,7 +65,7 @@
                   <% end %>
                 </td>
                 <td class="center-cell">
-                  <%= link_to admin_destroy_user_path(user), method: :delete, data: {confirm: "¿Esta seguro que desea eliminar a "<<user.email<<" del sistema?"} do %>
+                  <%= link_to admin_destroy_user_path(user), method: :delete, data: {confirm: "¿Está seguro que desea eliminar a #{admin.email} del sistema?"} do %>
                       <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
                   <% end %>
                 </td>

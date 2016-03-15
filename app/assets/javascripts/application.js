@@ -17,4 +17,6 @@
 //= require data-confirm-modal
 //= require lightbox
 //= require epiceditor
+// require parallax
+// require jquery.parallax
 //= require_tree .
