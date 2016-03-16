@@ -29,7 +29,7 @@
           <% title = "#{teacher.name}" %>
           <% heading_id = "heading_#{teacher.name.downcase.tr(" ", "_")}" %>
           <% collapse_id = "collapse_#{teacher.name.downcase.tr(" ", "_")}" %>
-          <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+          <%= render layout: 'shared/accordion', locals: {title: title, initials: nil, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
               <% tests.each do |test| %>
                   <div class="row">
                     <div class="col-md-1">
