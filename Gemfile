@@ -60,6 +60,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+# Para validar el tamaño de archivos
+gem 'file_validators'
+
 # Gema para preview de PDFs
 gem 'pdfjs_viewer-rails'
 

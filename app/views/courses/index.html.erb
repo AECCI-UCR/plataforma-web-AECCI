@@ -23,12 +23,11 @@
           <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
               <%# Itera por cada curso que pertenece a un año %>
               <% courses.each do |course| %>
-                  <%# TODO: Botones con el link de cada curso %>
                   <div class="row">
                     <div class="col-md-5 col-md-offset-1">
                       <h4><%= course.name %></h4>
                       <h4>
-                        <small><%= course.initials %>.</small>
+                        <small><%= course.initials %></small>
                       </h4>
                     </div>
                     <div class="col-md-5">

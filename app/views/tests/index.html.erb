@@ -24,6 +24,55 @@
               <% heading_id = "heading_#{course.name.downcase.tr(" ", "_")}" %>
               <% collapse_id = "collapse_#{course.name.downcase.tr(" ", "_")}" %>
               <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+                  <!-- TODO: refact esto para hacerlo en el modelo -->
+                  <% data = tests.group_by(&:teacher) %>
+                  <% data.each do |teacher, test_data| %>
+                      <div class="row">
+                        <div class="col-md-5 col-md-offset-1">
+                          <h4><%= teacher.name %></h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                          <table class="table table-hover table-condensed">
+                            <thead>
+                            <th class="center-cell">Año</th>
+                            <th class="center-cell">Semestre</th>
+                            <th class="center-cell">Número</th>
+                            <th colspan="3" class="center-cell">Acciones</th>
+                            </thead>
+                            <tbody>
+                            <% test_data.each do |data| %>
+                                <tr>
+                                  <td class="center-cell"><%= data.year %></td>
+                                  <td class="center-cell"><%= romanize(data.semester) %></td>
+                                  <td class="center-cell"><%= data.test_number %></td>
+                                  <td class="center-cell">
+                                    <%= link_to pdfjs.full_path(file: "#{data.file_url}"), target: '_blank', alt: 'Ver archivo' do %>
+                                        <span class="glyphicon glyphicon-file text-info" aria-hidden="true"></span>
+                                    <% end %></td>
+                                  <td class="center-cell">
+                                    <%= link_to edit_test_path(data) do %>
+                                        <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    <% end %></td>
+                                  <td class="center-cell">
+                                    <%= link_to data, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el examen?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
+                                        <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
+                                    <% end %>
+                                  </td>
+                                </tr>
+                            <% end %>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                          <hr/>
+                        </div>
+                      </div>
+                  <% end %>
+                  <!--
                   <div class="row">
                     <div class="col-xs-12">
                       <div class="table-responsive">
@@ -45,8 +94,8 @@
                                 <td><%= romanize(test.semester) %></td>
                                 <td><%= test.test_number %></td>
                                 <td class="center-cell">
-                                  <%= link_to pdfjs.full_path(file: "#{test.file_url}"), target: '_blank' do %>
-                                      <span class="glyphicon glyphicon-eye-open text-info" aria-hidden="true"></span>
+                                  <%= link_to pdfjs.full_path(file: "#{test.file_url}"), target: '_blank', alt: 'Ver archivo' do %>
+                                      <span class="glyphicon glyphicon-file text-info" aria-hidden="true"></span>
                                   <% end %></td>
                                 <td class="center-cell">
                                   <%= link_to edit_test_path(test) do %>
@@ -63,7 +112,7 @@
                         </table>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
               <% end %>
           <% end %>
         </div>

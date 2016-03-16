@@ -3,15 +3,25 @@ dataConfirmModal.setDefaults
   commit: 'Eliminar'
   cancel: 'Cancelar'
 
+initialize_file_style = ->
+  $(':file').filestyle
+    buttonName: 'btn-default'
+    buttonText: ' Subir archivo'
+    size: 'sm'
+    iconName: 'glyphicon-file'
+
 hide_carousel_part = ->
   if $('#check_important').is(':checked')
     $('#carousel_part').show()
   else
-    $('#carousel_part').hide()
+  $('#carousel_part').hide()
   return
 
 jQuery ($) ->
   $(document).on 'ready page:load', ->
+
+    initialize_file_style()
+
     $('#title_alert').hide()
     $('#description_alert').hide()
 

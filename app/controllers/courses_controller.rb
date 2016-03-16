@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
-    @years_of_courses = @courses.group_by(&:year)
+    @years_of_courses = @courses.order(initials: :asc).group_by(&:year)
   end
 
   def new

@@ -94,6 +94,9 @@ GEM
     erubis (2.7.0)
     excon (0.48.0)
     execjs (2.6.0)
+    file_validators (2.0.2)
+      activemodel (>= 3.0)
+      mime-types (>= 1.0)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.37.0)
@@ -335,6 +338,7 @@ DEPENDENCIES
   data-confirm-modal!
   devise
   epic-editor-rails
+  file_validators
   fog
   font-awesome-sass
   jbuilder (~> 2.0)
