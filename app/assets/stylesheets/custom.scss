@@ -54,8 +54,8 @@ $input-bg-disabled: white;
 // Panels
 $panel-border-radius: 2px;
 $panel-default-border: transparent;
-$panel-primary-border: $primary;
-$panel-primary-heading-bg: $primary-light;
+$panel-primary-border: $grey-dark;
+$panel-primary-heading-bg: $grey-text;
 
 // Pagination
 $pagination-active-bg: $primary;
@@ -212,7 +212,7 @@ p {
 
 // Se le da una sombra a los acordiones
 .panel-accordion {
-  box-shadow: 1px 1px 2px $shadow-color;
+  //box-shadow: 1px 1px 2px $shadow-color;
 }
 
 // Para marcar labels con el asterizco

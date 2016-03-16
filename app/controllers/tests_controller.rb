@@ -7,9 +7,7 @@ class TestsController < ApplicationController
   # GET /tests
   # GET /tests.json
   def index
-    # TODO: agregar el orden por profesor
     @tests = Test.all.order_for_table.group_by(&:course)
-    #@tests = Test.all.order(teacher: :asc, year: :desc, semester: :asc, test_number: :asc).group_by(&:course)
   end
 
   # GET /tests/1

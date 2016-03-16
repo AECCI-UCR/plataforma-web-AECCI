@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <span class="picture">
-                    <%= f.file_field :image_url, class: 'filestyle', "data-iconName" => 'glyphicon glyphicon-inbox',"data-size" => 'sm', "data-buttonText"=> 'Subir archivo' %>
+                    <%= f.file_field :image_url %>
                     <%= f.hidden_field :image_url_cache %>
                   </span>
                 </div>
@@ -72,7 +72,7 @@
                     <%= f.label :image_carousel_url, id: 'label_img_carousel' %>
                   </div>
                   <div class="col-md-8 col-lg-9">
-                    <%= f.file_field :image_carousel_url, class: 'filestyle', "data-iconName" => 'glyphicon glyphicon-inbox', "data-size" => 'sm', "data-buttonText" => 'Subir archivo'  %>
+                    <%= f.file_field :image_carousel_url %>
                     <%= f.hidden_field :image_carousel_url_cache %>
                   </div>
                 </div>

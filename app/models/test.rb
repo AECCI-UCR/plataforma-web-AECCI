@@ -2,8 +2,9 @@ class Test < ActiveRecord::Base
   mount_uploader :file_url, PdfUploader
   belongs_to :course
   belongs_to :teacher
-  scope :order_for_table, lambda { joins(:teacher).order('teachers.name', year: :desc, semester: :asc, test_number: :asc) }
+  scope :order_for_table, lambda { joins(:course, :teacher).order('courses.initials', 'teachers.name', year: :desc, semester: :asc, test_number: :asc) }
 
+  validates :file_url, file_size: {less_than_or_equal_to: 20.megabytes}
   validates :year, presence: true
   validates :teacher_id, presence: true
   validates :semester, presence: true
