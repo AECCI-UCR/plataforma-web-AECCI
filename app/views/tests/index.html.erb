@@ -49,16 +49,16 @@
                                   <td class="center-cell"><%= romanize(data.semester) %></td>
                                   <td class="center-cell"><%= data.test_number %></td>
                                   <td class="center-cell">
-                                    <%= link_to pdfjs.full_path(file: "#{data.file_url}"), target: '_blank', alt: 'Ver archivo' do %>
-                                        <span class="glyphicon glyphicon-file text-info" aria-hidden="true"></span>
+                                    <%= link_to pdfjs.full_path(file: "#{data.file_url}"), target: '_blank' do %>
+                                        <i class="fa fa-file-pdf-o text-info"></i>
                                     <% end %></td>
                                   <td class="center-cell">
                                     <%= link_to edit_test_path(data) do %>
-                                        <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                        <i class="fa fa-pencil text-warning"></i>
                                     <% end %></td>
                                   <td class="center-cell">
                                     <%= link_to data, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el examen?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
-                                        <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
+                                        <i class="fa fa-trash text-danger"></i>
                                     <% end %>
                                   </td>
                                 </tr>

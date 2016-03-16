@@ -39,17 +39,17 @@
                         </td>
                         <td class="center-cell">
                           <%= link_to ad do %>
-                              <span class="glyphicon glyphicon-eye-open text-info" aria-hidden="true"></span>
+                              <i class="fa fa-eye text-info"></i>
                           <% end %>
                         </td>
                         <td class="center-cell">
                           <%= link_to edit_ad_path(ad) do %>
-                              <span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span>
+                              <i class="fa fa-pencil text-warning"></i>
                           <% end %>
                         </td>
                         <td class="center-cell">
                           <%= link_to ad, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el anuncio "' << ad.title << '"?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
-                              <span class="text-danger glyphicon glyphicon-erase" aria-hidden="true"></span>
+                              <i class="fa fa-trash text-danger"></i>
                           <% end %>
                         </td>
                       </tr>
