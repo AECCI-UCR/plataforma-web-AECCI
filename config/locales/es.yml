@@ -34,7 +34,7 @@ es-CR:
         year: Año
         teacher_id: Profesor
         semester: Semestre
-        test_number: Número de examen
+        test_number: Número
         file_url: Archivo pdf
         course_id: Curso
       ad:
