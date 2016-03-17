@@ -18,6 +18,19 @@ hide_carousel_part = ->
   return
 
 jQuery ($) ->
+  # Esto es para el boton de "take me to top"
+  amountScrolled = 300
+  $(window).scroll ->
+    if $(window).scrollTop() > amountScrolled
+      $('a.back-to-top').fadeIn 'slow'
+    else
+      $('a.back-to-top').fadeOut 'slow'
+    return
+
+  $('a.back-to-top').click ->
+    $('html, body').animate { scrollTop: 0 }, 700
+    false
+
   $(document).on 'ready page:load', ->
 
     initialize_file_style()
