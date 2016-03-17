@@ -5,6 +5,9 @@
       </div>
     </div>
     <div class="row">
+
+      <%= render layout: 'shared/universal_panel', locals: {title: ad.title, size: 10, offset: 1} do %>
+      <% end %>
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
           <div class="panel-body">

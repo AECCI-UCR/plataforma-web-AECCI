@@ -6,72 +6,60 @@
 </div>
 <%# Esta deberia de ser la vista para los miembros de la asocia %>
 <% if policy(Ad).rest_operation? %>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-xs-12">
-                <h3>Administrador de anuncios</h3>
-                <hr/>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1">
-                <table class="table table-striped">
-                  <thead>
+    <%= render layout: 'shared/universal_panel', locals: {title: 'Administrador de anuncios', size: 8, offset: 2} do %>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Título</th>
+                <th class="center-cell">¿En el carousel?</th>
+                <th colspan="3" class="center-cell"> Acciones</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @ads.each do |ad| %>
                   <tr>
-                    <th>Título</th>
-                    <th class="center-cell">¿En el carousel?</th>
-                    <th colspan="3" class="center-cell"> Acciones</th>
+                    <td><%= ad.title %></td>
+                    <td class="center-cell">
+                      <% if ad.important? %>
+                          <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+                      <% else %>
+                          <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+                      <% end %>
+                    </td>
+                    <td class="center-cell">
+                      <%= link_to ad do %>
+                          <i class="fa fa-eye text-info"></i>
+                      <% end %>
+                    </td>
+                    <td class="center-cell">
+                      <%= link_to edit_ad_path(ad) do %>
+                          <i class="fa fa-pencil text-warning"></i>
+                      <% end %>
+                    </td>
+                    <td class="center-cell">
+                      <%= link_to ad, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el anuncio "' << ad.title << '"?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
+                          <i class="fa fa-trash text-danger"></i>
+                      <% end %>
+                    </td>
                   </tr>
-                  </thead>
-                  <tbody>
-                  <% @ads.each do |ad| %>
-                      <tr>
-                        <td><%= ad.title %></td>
-                        <td class="center-cell">
-                          <% if ad.important? %>
-                              <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-                          <% else %>
-                              <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-                          <% end %>
-                        </td>
-                        <td class="center-cell">
-                          <%= link_to ad do %>
-                              <i class="fa fa-eye text-info"></i>
-                          <% end %>
-                        </td>
-                        <td class="center-cell">
-                          <%= link_to edit_ad_path(ad) do %>
-                              <i class="fa fa-pencil text-warning"></i>
-                          <% end %>
-                        </td>
-                        <td class="center-cell">
-                          <%= link_to ad, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el anuncio "' << ad.title << '"?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
-                              <i class="fa fa-trash text-danger"></i>
-                          <% end %>
-                        </td>
-                      </tr>
-                  <% end %>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="row">
-              <hr/>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="pull-right">
-                  <%= link_to 'Agregar un anuncio', new_ad_path, class: 'btn btn-primary' %>
-                </div>
-              </div>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <hr/>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="pull-right">
+              <%= link_to 'Agregar un anuncio', new_ad_path, class: 'btn btn-primary' %>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    <% end %>
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <hr/>
@@ -82,31 +70,14 @@
 <%# Los otros usuarios deben de tener otra vista %>
 <% @ads.each_with_index do |ad, index| %>
     <div class="row" id="<%= ad.title %>">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1 col-xs-12">
-                <h3>
-                  <%= ad.title %>
-                  <% if ad.important? %>
-                      <div class="pull-right">
-                        <small><i class="fa fa-star"></i></small>
-                      </div>
-                  <% end %>
-                </h3>
-                <hr/>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1">
-                <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
-                <%= markdown(ad.description) %>
-                <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
-              </div>
+      <%= render layout: 'shared/universal_panel', locals: {title: ad.title, size: 10, offset: 1} do %>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
+              <%= markdown(ad.description) %>
+              <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
             </div>
           </div>
-        </div>
-      </div>
+      <% end %>
     </div>
 <% end %>
