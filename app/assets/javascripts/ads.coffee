@@ -27,9 +27,6 @@ jQuery ($) ->
       $('a.back-to-top').fadeOut 'slow'
     return
 
-  $('a.back-to-top').click ->
-    $('html, body').animate { scrollTop: 0 }, 700
-    false
 
   $(document).on 'ready page:load', ->
 
@@ -37,6 +34,10 @@ jQuery ($) ->
 
     $('#title_alert').hide()
     $('#description_alert').hide()
+
+    $('a.back-to-top').click ->
+      $('html, body').animate { scrollTop: 0 }, 700
+      false
 
     hide_carousel_part()
 
