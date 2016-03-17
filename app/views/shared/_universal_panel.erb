@@ -1,0 +1,16 @@
+<br/>
+<div class="row">
+  <div class="col-md-<%= size.to_s %> col-md-offset-<%= offset.to_s %> col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2><%= title %></h2>
+            <hr/>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
