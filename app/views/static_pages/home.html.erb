@@ -1,41 +1,30 @@
 <br/>
-<br/>
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h2>Historia de la ECCI</h2>
-            <hr/>
-          </div>
-        </div>
-        <div class="row">
-          <%= image_tag "logo-ecci.png", alt: 'Logo ECCI', class: 'img-responsive img-center' %>
-        </div>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <p class="text-justify">La Escuela de Ciencias de la Computación e Infomática de la Universidad de Costa
-              Rica se fundó en 1981,
-              como
-              resultado de la fusión de dos programas distintos pero relacionados, el de Bachillerato en Informática y
-              el de
-              Bachillerato y Licenciatura en Computación. También se creó un nuevo programa de Bachillerato en
-              Computación e
-              Informática, con el cual se introdujeron innovaciones tecnológicas en la educación superior de la
-              disciplina.</p>
-            <p class="text-justify">
-              La Escuela fue creada en un momento de gran cambio en las ciencias de la computación, puesto que la
-              microcomputadora había salido al mercado recientemente y estaba revolucionando el campo. Las
-              organizaciones
-              empezaban a necesitar profesionales capaces de ayudarles a automatizar sus actividades. La Escuela les
-              proveyó
-              tanto de profesionales de alta calidad que formaba como de asesorías y otras actividades de extensión
-              social.</p>
-            <a href="http://www.ecci.ucr.ac.cr/" class="pull-right">Más información de la ECCI</a>
-          </div>
+  <%= render layout: 'shared/universal_panel', locals: {title: 'Historia de la ECCI', size: 8, offset: 2} do %>
+      <div class="row">
+        <%= image_tag "logo-ecci.png", alt: 'Logo ECCI', class: 'img-responsive img-center' %>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <p class="text-justify">La Escuela de Ciencias de la Computación e Infomática de la Universidad de Costa
+            Rica se fundó en 1981,
+            como
+            resultado de la fusión de dos programas distintos pero relacionados, el de Bachillerato en Informática y
+            el de
+            Bachillerato y Licenciatura en Computación. También se creó un nuevo programa de Bachillerato en
+            Computación e
+            Informática, con el cual se introdujeron innovaciones tecnológicas en la educación superior de la
+            disciplina.</p>
+          <p class="text-justify">
+            La Escuela fue creada en un momento de gran cambio en las ciencias de la computación, puesto que la
+            microcomputadora había salido al mercado recientemente y estaba revolucionando el campo. Las
+            organizaciones
+            empezaban a necesitar profesionales capaces de ayudarles a automatizar sus actividades. La Escuela les
+            proveyó
+            tanto de profesionales de alta calidad que formaba como de asesorías y otras actividades de extensión
+            social.</p>
+          <a href="http://www.ecci.ucr.ac.cr/" class="pull-right">Más información de la ECCI</a>
         </div>
       </div>
-    </div>
-  </div>
+  <% end %>
 </div>

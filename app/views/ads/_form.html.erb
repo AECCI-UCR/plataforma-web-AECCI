@@ -5,112 +5,105 @@
       </div>
     </div>
     <div class="row">
-
-      <%= render layout: 'shared/universal_panel', locals: {title: ad.title, size: 10, offset: 1} do %>
-      <% end %>
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="form-horizontal">
-              <div class="form-group">
-                <div class="col-md-4 col-lg-3">
-                  <%= f.label :title, class: 'required' %>
-                </div>
-                <div class="col-md-8 col-lg-9">
-                  <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
-                  <p class="text-danger" id="title_alert">
-                    <small>Tiene que ingresar un título para el anuncio.</small>
-                  </p>
-                </div>
+      <%= render layout: 'shared/universal_panel', locals: {title: 'Datos del anuncio', size: 8, offset: 2} do %>
+          <div class="form-horizontal">
+            <div class="form-group">
+              <div class="col-md-4 col-lg-3">
+                <%= f.label :title, class: 'required' %>
               </div>
-              <div class="form-group">
-                <div class="col-md-4 col-lg-3">
-                  <%= f.label :description, class: 'required' %>
-                </div>
-                <div class="col-md-8 col-lg-9">
-                  <div id="epiceditor">
-                    <%= f.text_area :description, id: 'input_description', style: 'display: none' %>
-                  </div>
-                  <p class="text-muted">
-                    <small>La descripción la puede hacer utilizando html o
-                      <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown</a>
-                    </small>
-                  </p>
-                  <p class="text-danger" id="description_alert">
-                    <small>Tiene que ingresar una descripción para el
-                      anuncio.
-                    </small>
-                  </p>
-                </div>
+              <div class="col-md-8 col-lg-9">
+                <%= f.text_field :title, class: 'form-control', placeholder: 'Ingrese el título del anuncio', id: 'input_title' %>
+                <p class="text-danger" id="title_alert">
+                  <small>Tiene que ingresar un título para el anuncio.</small>
+                </p>
               </div>
-              <div class="form-group">
-                <div class="col-md-4 col-lg-3">
-                  <%= f.label :image_url, class: 'required' %>
+            </div>
+            <div class="form-group">
+              <div class="col-md-4 col-lg-3">
+                <%= f.label :description, class: 'required' %>
+              </div>
+              <div class="col-md-8 col-lg-9">
+                <div id="epiceditor">
+                  <%= f.text_area :description, id: 'input_description', style: 'display: none' %>
                 </div>
-                <div class="col-md-8 col-lg-9">
+                <p class="text-muted">
+                  <small>La descripción la puede hacer utilizando html o
+                    <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown</a>
+                  </small>
+                </p>
+                <p class="text-danger" id="description_alert">
+                  <small>Tiene que ingresar una descripción para el
+                    anuncio.
+                  </small>
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-4 col-lg-3">
+                <%= f.label :image_url, class: 'required' %>
+              </div>
+              <div class="col-md-8 col-lg-9">
                   <span class="picture">
                     <%= f.file_field :image_url %>
                     <%= f.hidden_field :image_url_cache %>
                   </span>
+              </div>
+            </div>
+            <% if @ad.image_url? %>
+                <div class="form-group">
+                  <div class="col-md-6 col-md-offset-3">
+                    <%= image_tag @ad.image_url, class: 'img-responsive' %>
+                  </div>
+                </div>
+            <% end %>
+            <div class="form-group">
+              <div class="col-md-4 col-lg-3 col-xs-6">
+                <%= f.label :important %>
+              </div>
+              <div class="col-md-1 col-md-1 col-xs-1">
+                <%= f.check_box :important, id: 'check_important' %>
+              </div>
+            </div>
+            <div id="carousel_part">
+              <div class="form-group">
+                <div class="col-md-4 col-lg-3">
+                  <%= f.label :image_carousel_url, id: 'label_img_carousel' %>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                  <%= f.file_field :image_carousel_url %>
+                  <%= f.hidden_field :image_carousel_url_cache %>
                 </div>
               </div>
-              <% if @ad.image_url? %>
+              <div class="form-group">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="bs-callout bs-callout-danger">
+                    <h5>¡Atención! </h5>
+                    <p>Las dimensiones de esta imagen tiene que ser de 800x1800 pixeles y
+                      tiene que ser archivos en formato .jpg, .png o .gif para una correcta visualización en el
+                      carousel.</p>
+                  </div>
+                </div>
+              </div>
+              <% if @ad.image_carousel_url? %>
                   <div class="form-group">
                     <div class="col-md-6 col-md-offset-3">
-                      <%= image_tag @ad.image_url, class: 'img-responsive' %>
+                      <%= image_tag @ad.image_carousel_url, class: 'img-responsive' %>
                     </div>
                   </div>
               <% end %>
-              <div class="form-group">
-                <div class="col-md-4 col-lg-3 col-xs-6">
-                  <%= f.label :important %>
-                </div>
-                <div class="col-md-1 col-md-1 col-xs-1">
-                  <%= f.check_box :important, id: 'check_important' %>
-                </div>
-              </div>
-              <div id="carousel_part">
-                <div class="form-group">
-                  <div class="col-md-4 col-lg-3">
-                    <%= f.label :image_carousel_url, id: 'label_img_carousel' %>
-                  </div>
-                  <div class="col-md-8 col-lg-9">
-                    <%= f.file_field :image_carousel_url %>
-                    <%= f.hidden_field :image_carousel_url_cache %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-10 col-md-offset-1">
-                    <div class="bs-callout bs-callout-danger">
-                      <h5>¡Atención! </h5>
-                      <p>Las dimensiones de esta imagen tiene que ser de 800x1800 pixeles y
-                        tiene que ser archivos en formato .jpg, .png o .gif para una correcta visualización en el
-                        carousel.</p>
-                    </div>
-                  </div>
-                </div>
-                <% if @ad.image_carousel_url? %>
-                    <div class="form-group">
-                      <div class="col-md-6 col-md-offset-3">
-                        <%= image_tag @ad.image_carousel_url, class: 'img-responsive' %>
-                      </div>
-                    </div>
-                <% end %>
-              </div>
-              <div class="row">
-                <hr/>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="pull-right">
-                    <%= f.submit class: 'btn btn-primary', id: 'btn_submit' %>
-                  </div>
+            </div>
+            <div class="row">
+              <hr/>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="pull-right">
+                  <%= f.submit class: 'btn btn-primary', id: 'btn_submit' %>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      <% end %>
     </div>
 <% end %>
 <script src="epiceditor.min.js"></script>
