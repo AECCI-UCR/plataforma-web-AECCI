@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160314234820) do
     t.integer  "test_number"
     t.string   "file_url"
     t.integer  "course_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "teacher_id"
   end
 

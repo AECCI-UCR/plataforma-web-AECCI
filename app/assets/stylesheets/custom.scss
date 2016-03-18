@@ -266,5 +266,6 @@ label.required:after {
 @include bs-mixin(bs-callout-danger, $brand-danger);
 @include bs-mixin(bs-callout-warning, $brand-warning);
 @include bs-mixin(bs-callout-success, $brand-success);
+@include bs-mixin(bs-callout-default, $grey-text);
 
 // == Fin Varios estilos ==

@@ -16,6 +16,7 @@
     width: 40px !important;
     height: 40px !important;
     background: #FF9800 url("up-arrow-sm.png") no-repeat center 43% !important;
+    box-shadow: 0px 1px 2px #2b2b2b !important;
     right: 20px !important;
   }
   a:hover.back-to-top {
@@ -35,6 +36,7 @@ a.back-to-top {
   width: 50px;
   height: 50px;
   text-indent: -9999px;
+  box-shadow: 0px 1px 4px #2b2b2b;
   position: fixed;
   z-index: 999;
   right: 30px;
