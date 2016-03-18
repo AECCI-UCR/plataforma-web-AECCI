@@ -24,11 +24,11 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-xs-12">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-      <% @tests.each do |teacher, tests| %>
+      <% @tests.each do |teacher_name, tests| %>
           <%# Acordión para cada profesor %>
-          <% title = "#{teacher.name}" %>
-          <% heading_id = "heading_#{teacher.name.downcase.tr(" ", "_")}" %>
-          <% collapse_id = "collapse_#{teacher.name.downcase.tr(" ", "_")}" %>
+          <% title = "#{teacher_name}" %>
+          <% heading_id = "heading_#{teacher_name.downcase.tr(" ", "_")}" %>
+          <% collapse_id = "collapse_#{teacher_name.downcase.tr(" ", "_")}" %>
           <%= render layout: 'shared/accordion', locals: {title: title, initials: nil, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
               <% tests.each do |test| %>
                   <div class="row">

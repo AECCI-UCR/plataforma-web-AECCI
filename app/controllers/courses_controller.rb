@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_admin, except: [:index, :professors]
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :professors]
+  before_action :require_admin, except: :index
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
     @courses = Course.all
@@ -50,10 +50,6 @@ class CoursesController < ApplicationController
     end
   end
 
-
-  def professors
-    @tests = @course.tests.group_by(&:teacher)
-  end
 
   private
 # Use callbacks to share common setup or constraints between actions.

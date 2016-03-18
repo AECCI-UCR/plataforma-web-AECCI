@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-5">
                       <div class="pull-right">
-                        <%= link_to 'Ir al curso', professors_course_path(course), class: 'btn btn-link' %>
+                        <%= link_to 'Ir al curso', teachers_course_path(course), class: 'btn btn-link teachers-course' %>
                       </div>
                     </div>
                   </div>
@@ -48,7 +48,7 @@
     </div>
   </div>
 </div>
-<% if user_signed_in? && current_user.admin? %>
+<% if policy(Course).rest_operation? %>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="pull-right">
