@@ -23,8 +23,8 @@
       <%= render 'layouts/flash_messages' %>
     </div>
 <% else %>
-<%# Flash messages %>
-    <div class="container">
+    <%# Flash messages %>
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-xs-12">
           <%= render 'layouts/flash_messages' %>
@@ -40,10 +40,14 @@
   <br/>
   <%# Información para modo desarrollo %>
   <br/><!--
-  <br/>
-  <%= debug(params) if Rails.env.development? %> -->
+      <br/>
+      <%= debug(params) if Rails.env.development? %>-->
 </div>
-
+<% if ruta == root_url %>
+    <div id="contact_us">
+      <%= render 'layouts/contact_us' %>
+    </div>
+<% end %>
 <%= render 'layouts/footer' %>
 </body>
 </html>
