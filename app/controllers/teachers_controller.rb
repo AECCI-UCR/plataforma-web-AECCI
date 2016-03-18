@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :require_admin, except: :course_teachers
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   # GET /teachers
@@ -63,18 +65,18 @@ class TeachersController < ApplicationController
 
   def course_teachers
     @course = Course.find(params[:id])
-    @tests = @course.tests.select(:id, :teacher_id).group_by {|test| test.teacher.name }
+    @tests = @course.tests.select(:id, :teacher_id).group_by { |test| test.teacher.name }
   end
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_teacher
-      @teacher = Teacher.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_teacher
+    @teacher = Teacher.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def teacher_params
-      params.require(:teacher).permit(:name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def teacher_params
+    params.require(:teacher).permit(:name)
+  end
 end
