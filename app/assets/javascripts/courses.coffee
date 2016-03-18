@@ -4,5 +4,5 @@ jQuery ($) ->
     $('#course_name').selectize {
       maxOptions: 3
       onChange: (value) ->
-        window.location.replace "http://0.0.0.0:3000/courses/#{value}/professors"
+        window.location.replace "/courses/#{value}/teachers"
     }

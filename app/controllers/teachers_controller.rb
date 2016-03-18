@@ -61,6 +61,12 @@ class TeachersController < ApplicationController
     end
   end
 
+  def course_teachers
+    @course = Course.find(params[:id])
+    @tests = @course.tests.select(:id, :teacher_id).group_by {|test| test.teacher.name }
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
-  resources :teachers
-  resources :ads
-  resources :tests
-  resources :courses, except: :show do
-    get :professors, on: :member
-  end
+  root 'static_pages#home'
+
+  # Páginas estáticas
+  get 'about_us' => 'static_pages#about_us'
+  get 'not_authorized' => 'static_pages#not_authorized', as: :not_authorized
 
   # Rutas para la administración de usuarios
   devise_for :users
@@ -13,18 +14,15 @@ Rails.application.routes.draw do
   delete 'user/:id' => 'users_administration#destroy', as: :admin_destroy_user
   put 'user/:id' => 'users_administration#toggle_admin', as: :toggle_admin
 
+  resources :ads
+  resources :tests
+  resources :teachers, except: [:show, :index]
+  resources :courses, except: :show do
+    get :teachers, on: :member, controller: :teachers, action: :course_teachers
+  end
+
   # Ruta para el preview de PDFs
-  mount PdfjsViewer::Rails::Engine => "/pdfjs", as: 'pdfjs'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'static_pages#home'
-
-  # Páginas estáticas
-  get 'about_us' => 'static_pages#about_us'
-  get 'not_authorized' => 'static_pages#not_authorized', as: :not_authorized
+  mount PdfjsViewer::Rails::Engine => '/pdfjs', as: 'pdfjs'
 
 
   # Example of regular route:
