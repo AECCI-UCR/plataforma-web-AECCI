@@ -1,4 +1,5 @@
 es-CR:
+  # Contact us gem
   contact_us:
     contact_mailer:
       contact_email:
@@ -21,8 +22,16 @@ es-CR:
       error: "Todos los campos son obligatorios."
       success: "El correo electrónico de contacto fue enviado con éxito."
 
-  # Devise spanish locale
+
+  # Active record
   activerecord:
+    models:
+      user: usuario
+      test: examen
+      ad: anuncio
+      course: curso
+      teacher: profesor
+
     attributes:
       user:
         current_password: Contraseña actual
@@ -43,11 +52,15 @@ es-CR:
         image_url: Imagen del anuncio
         important: Incluir en el carousel
         image_carousel_url: Imagen del carousel
-    models:
-      user: usuario
-      test: examen
-      ad: anuncio
+      course:
+        name: Nombre
+        initials: Siglas
+        year: Año en el plan de estudios
+      teacher:
+        name: Nombre completo
 
+
+  # Devise spanish locale
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente.
@@ -155,6 +168,7 @@ es-CR:
       not_saved:
         one: 'Ocurrió un error al tratar de guardar %{resource}:'
         other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
+
 
   # Plurización errores
   form_has_x_errors:

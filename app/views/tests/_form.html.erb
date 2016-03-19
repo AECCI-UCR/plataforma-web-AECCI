@@ -13,8 +13,7 @@
               </div>
               <div class="col-md-8 col-lg-9">
                 <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, @test.course ? @test.course.id : nil), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
-                <!-- TODO: linkear esto con el modal para agregar un curso -->
-                <span class="pull-right"><%= link_to 'Agregar un nuevo curso', '#', class: 'btn btn-link btn-sm' %></span>
+                <span class="pull-right"><%= link_to 'Agregar un nuevo curso', new_course_path, remote: true, class: 'btn btn-link btn-sm' %></span>
                 <p class="text-danger" id="course_alert">
                   <small>Tiene que escoger el curso al cual pertenece el examen.</small>
                 </p>
@@ -72,7 +71,7 @@
                 <%= f.label :file_url, class: 'required' %>
               </div>
               <div class="col-md-8 col-lg-9">
-                <%= f.file_field :file_url%>
+                <%= f.file_field :file_url %>
                 <span class="pull-left">
                   <p class="text-warning">
                     <small><b>¡Atención!</b> El archivo no puede superar los 20 MB.</small>

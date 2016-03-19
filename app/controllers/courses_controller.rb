@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
-    @years_of_courses = @courses.order(initials: :asc).group_by(&:year)
+    @years_of_courses = @courses.order(:initials).group_by(&:year)
   end
 
   def new
@@ -17,17 +17,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.save
-
-    #respond_to do |format|
-    # if @course.save
-    #  format.html { redirect_to @course, notice: 'Course was successfully created.' }
-    # format.json { render :show, status: :created, location: @course }
-    # else
-    #  format.html { render :new }
-    #  format.json { render json: @course.errors, status: :unprocessable_entity }
-    #end
-    #end
+    flash.now[:notice] = 'Curso creado correctamente' if @course.save
   end
 
   def update
