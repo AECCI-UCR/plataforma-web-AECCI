@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   # Páginas estáticas
-  get 'about_us' => 'static_pages#about_us'
   get 'not_authorized' => 'static_pages#not_authorized', as: :not_authorized
 
   # Rutas para la administración de usuarios

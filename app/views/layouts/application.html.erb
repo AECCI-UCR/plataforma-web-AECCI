@@ -17,8 +17,8 @@
 
 <% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
 <% if ruta == root_url %>
-    <%= render 'layouts/carousel' %>
-    <%= render 'layouts/section_asocia' %>
+    <%# Se quita el container-fluid %>
+    <%= yield %>
     <div style="display: none">
       <%= render 'shared/flash_messages' %>
     </div>
@@ -30,24 +30,19 @@
           <%= render 'shared/flash_messages' %>
         </div>
       </div>
-    </div>
-<% end %>
-
-<%# Main content %>
-
-<div class="container-fluid">
-  <%= yield %>
-  <br/>
-  <%# Información para modo desarrollo %>
-  <br/><!--
+      <%= yield %>
       <br/>
-      <%= debug(params) if Rails.env.development? %>-->
-</div>
-<% if ruta == root_url %>
-    <div id="contact_us">
-      <%= render 'layouts/contact_us' %>
     </div>
 <% end %>
+
+<%# Información para modo desarrollo %>
+<!--<div class="container-fluid">
+  <br/>
+  <br/>
+  <%= debug(params) if Rails.env.development? %>
+</div>-->
+
+
 <%= render 'layouts/footer' %>
 </body>
 </html>

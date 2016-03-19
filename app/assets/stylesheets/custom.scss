@@ -41,7 +41,7 @@ $btn-default-border: $grey-dark;
 $btn-default-color: white;
 
 // Dropdowns
-$dropdown-bg: $grey-dark;
+$dropdown-bg: #383838;
 $dropdown-link-color: $grey-link-nav-footer;
 $dropdown-link-hover-bg: transparent;
 $dropdown-link-hover-color: $primary-light;
@@ -100,13 +100,6 @@ $body-bg: $body-color;
 
 // == Varios estilos ==
 
-// Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
-@media screen and (max-width: $screen-sm-max) {
-  .info-asocia {
-    text-align: center;
-  }
-}
-
 // Espacio para el navbar
 body {
   padding-top: 60px;
@@ -161,6 +154,9 @@ p {
   padding: 40px;
 }
 
+.body-about-us{
+  background-color: #383838;
+}
 // Estilo del texto en el pie de pagina
 .text-footer {
   color: $grey-light;
@@ -176,17 +172,6 @@ p {
   color: $grey-link-nav-footer;
 }
 
-// Cuerpo de la seccion de la asociacion en el home
-.body-section {
-  background-color: white;
-}
-
-// Cuerpo de la seccion de "contactenos"
-.body-contact {
-  margin-top: -10px;
-  background-color: $primary-light;
-}
-
 // Para centrar la información de las tablas
 .center-cell {
   text-align: center;
@@ -197,12 +182,6 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-// Esto es para que la imagen abarque el ancho completo del carousel
-.carousel img {
-  min-width: 100%;
-  max-height: 600px;
 }
 
 .logo {
