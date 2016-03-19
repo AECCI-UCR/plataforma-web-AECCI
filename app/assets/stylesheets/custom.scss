@@ -154,9 +154,10 @@ p {
   padding: 40px;
 }
 
-.body-about-us{
+.body-about-us {
   background-color: #383838;
 }
+
 // Estilo del texto en el pie de pagina
 .text-footer {
   color: $grey-light;
@@ -249,3 +250,23 @@ label.required:after {
 @include bs-mixin(bs-callout-default, $grey-text);
 
 // == Fin Varios estilos ==
+
+// Sticky footer
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 75%;
+  height: auto !important;
+  //height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer, .push {
+  height: 4em;
+}

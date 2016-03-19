@@ -13,36 +13,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/navbar' %>
+<div class="wrapper">
+  <%= render 'layouts/navbar' %>
 
-<% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-<% if ruta == root_url %>
-    <%# Se quita el container-fluid %>
-    <%= yield %>
-    <div style="display: none">
-      <%= render 'shared/flash_messages' %>
-    </div>
-<% else %>
-    <%# Flash messages %>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-12">
-          <%= render 'shared/flash_messages' %>
-        </div>
-      </div>
+  <% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
+  <% if ruta == root_url %>
+      <%# Se quita el container-fluid %>
       <%= yield %>
-      <br/>
-    </div>
-<% end %>
+      <div style="display: none">
+        <%= render 'shared/flash_messages' %>
+      </div>
+  <% else %>
+      <%# Flash messages %>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 col-xs-12">
+            <%= render 'shared/flash_messages' %>
+          </div>
+        </div>
+        <%= yield %>
+        <br/>
+      </div>
+  <% end %>
 
 <%# Información para modo desarrollo %>
-<!--<div class="container-fluid">
+  <!--<div class="container-fluid">
   <br/>
   <br/>
   <%= debug(params) if Rails.env.development? %>
 </div>-->
+  <div class="push"></div>
+</div>
 
-
-<%= render 'layouts/footer' %>
+<div class="footer">
+  <%= render 'layouts/footer' %>
+</div>
 </body>
 </html>
