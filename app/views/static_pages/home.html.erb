@@ -139,140 +139,25 @@
   </div>
 </section> <!-- Info de la escuela -->
 <section>
+
+  <%# Esto hay que quitarlo luego %>
+  <% description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
+                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
+                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.' %>
   <div class="body-about-us" id="about_us">
     <div class="container">
       <br/>
       <br/>
       <div class="row">
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-xs-12">
-              <%= image_tag 'avatar.png', class: 'image-contact center-block img-responsive' %>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <h5 class="text-center name">Nombre Apellido</h5>
-              <hr/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-xs-12">
-              <%= image_tag 'avatar.png', class: 'image-contact center-block img-responsive' %>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <h5 class="text-center name">Nombre Apellido</h5>
-              <hr/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-xs-12">
-              <%= image_tag 'avatar.png', class: 'image-contact center-block img-responsive' %>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <h5 class="text-center name">Nombre Apellido</h5>
-              <hr/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.</p>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'static_pages/member_info', locals: {image_file: 'avatar.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
+        <%= render partial: 'static_pages/member_info', locals: {image_file: 'avatar.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
+        <%= render partial: 'static_pages/member_info', locals: {image_file: 'avatar.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
       </div>
       <br/>
       <div class="row">
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-xs-12">
-              <%= image_tag 'avatar.png', class: 'image-contact center-block img-responsive' %>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <h5 class="text-center name">Nombre Apellido</h5>
-              <hr/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-xs-12">
-              <%= image_tag 'avatar.png', class: 'image-contact center-block img-responsive' %>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <h5 class="text-center name">Nombre Apellido</h5>
-              <hr/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-xs-12">
-              <%= image_tag 'avatar.png', class: 'image-contact center-block img-responsive' %>
-            </div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-xs-12">
-              <h5 class="text-center name">Nombre Apellido</h5>
-              <hr/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.</p>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'static_pages/member_info', locals: {image_file: 'avatar.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
+        <%= render partial: 'static_pages/member_info', locals: {image_file: 'avatar.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
+        <%= render partial: 'static_pages/member_info', locals: {image_file: 'avatar.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
       </div>
       <br/>
       <br/>
