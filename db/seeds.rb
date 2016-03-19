@@ -1,22 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 User.create([{email: 'b20000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', admin: true, confirmed_at: Time.now},
-             {email: 'b30000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
-             {email: 'b40000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b50000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b50000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b20001@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b20002@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b20003@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b60000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b60001@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'},
-             {email: 'b60001@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password'}
+             {email: 'b20001@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b20002@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b20003@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b30000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', admin: true, confirmed_at: Time.now},
+             {email: 'b40000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b50000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b50000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b60000@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b60001@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now},
+             {email: 'b60001@ecci.ucr.ac.cr', password: 'password', password_confirmation: 'password', confirmed_at: Time.now}
             ])
 
 courses = Course.create([{name: 'Introducción a la Computación e Informática', initials: 'CI-1010', year: 1},

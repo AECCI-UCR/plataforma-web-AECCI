@@ -12,8 +12,8 @@ hide_alerts = ->
 
 jQuery ($) ->
   $(document).on 'ready page:load', ->
-    $('#test_teacher_id').selectize()
-    $('#test_course_id').selectize()
+    $('#test_teacher_id').selectize({valueField: 'value', labelField: 'name'})
+    $('#test_course_id').selectize({valueField: 'value', labelField: 'name'})
 
     hide_alerts()
 

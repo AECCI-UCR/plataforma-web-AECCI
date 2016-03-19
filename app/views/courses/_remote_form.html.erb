@@ -1,4 +1,4 @@
-<%= render layout: 'shared/modal', locals: {title: title} do %>
+<%= render layout: 'shared/modal', locals: {id: 'course-form-modal', title: title} do %>
 
     <div class="form-horizontal">
       <%= form_for @course, remote: true do |f| %>
@@ -16,7 +16,7 @@
 
           <div class="form-group">
             <div class="col-xs-12">
-              <%= f.number_field :name, placeholder: 'Año (Plan de estudios)', class: 'form-control' %>
+              <%= f.number_field :year, placeholder: 'Año (Plan de estudios)', class: 'form-control' %>
             </div>
           </div>
 
