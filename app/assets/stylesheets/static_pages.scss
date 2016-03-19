@@ -1,3 +1,35 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-light: #ffad33;
+// Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
+@media screen and (max-width: 992px) {
+  .info-asocia {
+    text-align: center;
+  }
+}
+
+// Cuerpo de la seccion de la asociacion en el home
+.body-section {
+  background-color: white;
+}
+
+// Cuerpo de la seccion de "contactenos"
+.body-contact {
+  background-color: $primary-light;
+}
+.name{
+  color: white;
+}
+
+// Esto es para que la imagen abarque el ancho completo del carousel
+.carousel img {
+  min-width: 100%;
+  max-height: 600px;
+}
+.image-contact{
+  min-width: 60px;
+  max-height: 60px;
+}
+

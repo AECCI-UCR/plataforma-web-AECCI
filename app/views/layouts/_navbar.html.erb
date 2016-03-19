@@ -15,16 +15,9 @@
     <div class="collapse navbar-collapse" id="opciones-navbar">
       <%# Menú de la derecha %>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to '¿Quiénes somos?', about_us_path, id: 'nav_quienes_somos' %></li>
         <li><%= link_to 'Anuncios', ads_path, id: 'nav_anuncios' %></li>
         <% if user_signed_in? %>
-            <li>
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Recursos <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to 'Banco de exámenes', courses_path, id: 'nav_banco_examenes' %></li>
-              </ul>
+            <li><%= link_to 'Banco de exámenes', courses_path%>
             </li>
             <% if current_user.admin? %>
                 <li><%= link_to 'Usuarios', users_path, id: 'nav_administracion_usuarios' %></li>
