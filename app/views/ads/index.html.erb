@@ -6,7 +6,7 @@
 </div>
 <%# Esta deberia de ser la vista para los miembros de la asocia %>
 <% if policy(Ad).rest_operation? %>
-    <%= render layout: 'shared/universal_panel', locals: {title: 'Administrador de anuncios', size: 8, offset: 2} do %>
+    <%= render layout: 'shared/panel', locals: {title: 'Administrador de anuncios', size: 8, offset: 2} do %>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <table class="table table-striped">
@@ -39,7 +39,7 @@
                       <% end %>
                     </td>
                     <td class="center-cell">
-                      <%= link_to ad, method: :delete, data: {confirm: '¿Esta seguro que desea eliminar el anuncio "' << ad.title << '"?', commit: 'Eliminar', cancel: 'Cancelar'} do %>
+                      <%= link_to ad, method: :delete, data: {confirm: "¿Está seguro que desea eliminar el anuncio '#{ad.title}'?", commit: 'Eliminar', cancel: 'Cancelar'} do %>
                           <span class="glyphicon glyphicon-erase text-danger" aria-hidden="true"></span>
                       <% end %>
                     </td>
@@ -67,10 +67,10 @@
     </div>
 <% end %>
 
-<%# Los otros usuarios deben de tener otra vista %>
+<%# Vista de usuarios %>
 <% @ads.each_with_index do |ad, index| %>
     <div class="row" id="<%= ad.title %>">
-      <%= render layout: 'shared/universal_panel', locals: {title: ad.title, size: 10, offset: 1} do %>
+      <%= render layout: 'shared/panel', locals: {title: ad.title, size: 10, offset: 1} do %>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
               <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>

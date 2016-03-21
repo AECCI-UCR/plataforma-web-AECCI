@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :ads
   resources :tests
-  resources :teachers, except: [:show, :index]
+  resources :teachers, except: [:show]#, :index]
   resources :courses, except: :show do
     get :teachers, on: :member, controller: :teachers, action: :course_teachers
   end

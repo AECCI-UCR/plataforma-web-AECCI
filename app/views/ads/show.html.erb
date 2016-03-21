@@ -9,7 +9,7 @@
 </div>
 <br/>
 <div class="row">
-  <%= render layout: 'shared/universal_panel', locals: {title: @ad.title, size: 10, offset: 1} do %>
+  <%= render layout: 'shared/panel', locals: {title: @ad.title, size: 10, offset: 1} do %>
       <div class="row">
         <div class="col-md-7 col-md-offset-1">
           <%= markdown(@ad.description) %>
