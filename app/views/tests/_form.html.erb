@@ -25,8 +25,7 @@
               </div>
               <div class="col-md-8 col-lg-9">
                 <%= f.select :teacher_id, options_from_collection_for_select(@teachers, :id, :name, @test.teacher ? @test.teacher.id : nil), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
-                <!-- TODO: linkear esto con el modal para agregar un profesor -->
-                <span class="pull-right"><%= link_to 'Agregar un nuevo profesor', '#', class: 'btn btn-link btn-sm' %></span>
+                <span class="pull-right"><%= link_to 'Agregar un nuevo profesor', new_teacher_path, remote: true, class: 'btn btn-link btn-sm' %></span>
                 <p class="text-danger" id="teacher_alert">
                   <small>Tiene que ingresar el profesor que realizó el examen.</small>
                 </p>

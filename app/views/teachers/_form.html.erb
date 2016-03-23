@@ -1,6 +1,7 @@
 <%= render layout: 'shared/modal', locals: {id: 'teacher-form-modal', title: title} do %>
+
     <div class="form-horizontal">
-      <%= form_for @teacher do |f| %>
+      <%= form_for @teacher, remote: true do |f| %>
           <div class="form-group">
             <div class="col-xs-12">
               <%= f.text_field :name, placeholder: 'Nombre del profesor', class: 'form-control' %>
@@ -14,5 +15,5 @@
           </div>
       <% end %>
     </div>
-<% end %>
 
+<% end %>

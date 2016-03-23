@@ -20,7 +20,7 @@
           <% heading_id = "heading_#{year}" %>
           <% collapse_id = "collapse_#{year}" %>
 
-          <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+          <%= render layout: 'shared/accordion', locals: {title: title, initials: nil, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
               <%# Itera por cada curso que pertenece a un año %>
               <% courses.each do |course| %>
                   <div class="row">
