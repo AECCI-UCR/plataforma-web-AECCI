@@ -46,23 +46,28 @@
         <h5 class="title-footer">Contáctenos</h5>
         <ul>
           <li>
-            <a href="https://www.facebook.com/aecci.ucr/" class="text-footer" target="_blank"><i class="fa fa-facebook highligh-footer"></i>
-              Síguenos en Facebook</a>
+            <%= link_to 'https://www.facebook.com/aecci.ucr/', target: '_blank', class: 'text-footer' do %>
+                <i class="fa fa-facebook highligh-footer"></i>
+                Síguenos en Facebook
+            <% end %>
           </li>
           <li>
-            <a href="mailto:aecci.ucr@gmail.com" class="text-footer"><i class="fa fa-envelope highligh-footer"></i>
-              aecci.ucr@gmail.com</a>
+            <%= mail_to 'aecci.ucr@gmail.com', class: 'text-footer' do %><i class="fa fa-envelope highligh-footer"></i>
+                aecci.ucr@gmail.com
+            <% end %>
           </li>
           <li>
             <a href="tel:+50625118027" class="text-footer">
-              <i class="fa fa-phone highligh-footer"></i> (+506) 2511 8027</a>
+              <i class="fa fa-phone highligh-footer"></i> 2511-8027</a>
           </li>
           <li>
-            <a href="https://goo.gl/maps/qce48V5g1F52" class="text-footer" target="_blank"><i class="fa fa-map-marker highligh-footer"></i>
-              San Pedro, San José, Costa Rica</a>
+            <%= link_to 'https://goo.gl/maps/qce48V5g1F52', class: 'text-footer', target: '_blank' do %>
+                <i class="fa fa-map-marker highligh-footer"></i>
+                San Pedro, San José, Costa Rica
+            <% end %>
           </li>
         </ul>
-        <h5><%= link_to 'Acerca de los desarrolladores', developers_info_url, class: 'title-footer' %></h5>
+        <h5><%= link_to 'Información del proyecto', project_info_url, class: 'title-footer' %></h5>
       </div>
     </div>
     <div class="row">
