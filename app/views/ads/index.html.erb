@@ -78,6 +78,13 @@
               <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <h6>
+                <small><b>Última modificación: </b> <%= ad.updated_at.to_date %></small>
+              </h6>
+            </div>
+          </div>
       <% end %>
     </div>
 <% end %>
