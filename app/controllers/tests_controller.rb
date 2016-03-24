@@ -30,7 +30,7 @@ class TestsController < ApplicationController
 
     respond_to do |format|
       if @test.save
-        format.html { redirect_to @test, notice: 'El examen se agregó correctamente.' }
+        format.html { redirect_to tests_url, notice: 'El examen se agregó correctamente.' }
         format.json { render :show, status: :created, location: @test }
       else
         format.html { render :new }
