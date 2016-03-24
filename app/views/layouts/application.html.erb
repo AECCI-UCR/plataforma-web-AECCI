@@ -17,7 +17,7 @@
   <%= render 'layouts/navbar' %>
 
   <% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-  <% if ruta == root_url %>
+  <% if ruta == root_url || ruta == contacts_url %>
       <%# Se quita el container-fluid %>
       <%= yield %>
       <div style="display: none">

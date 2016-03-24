@@ -1,18 +1,24 @@
 <div class="body-contact">
   <br/>
-  <div class="container">
+  <br/>
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-6 col-md-offset-3 col-xs-12">
+        <%= render 'shared/flash_messages' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-xs-12">
         <h2 align="center" style="color: white">Ponte en contacto con nosotros</h2>
       </div>
     </div>
     <br/>
     <%= form_for @contact, url: contacts_path, html: {class: 'formtastic'} do |f| %>
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
+          <div class="col-md-4 col-md-offset-4 col-xs-12">
             <div class="form-horizontal">
               <div class="form-group">
-                <div class="col-md-6">
+                <div class="col-xs-12">
                   <% if ContactUs.require_name %>
                       <div class='string required' id='contact_us_contact_name_input'>
                         <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
@@ -22,7 +28,9 @@
                       </div>
                   <% end %>
                 </div>
-                <div class="col-md-6">
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
                   <div class='string required' id='contact_us_contact_email_input'>
                     <%= f.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
                     <% if f.object.errors[:email].present? %>
@@ -57,11 +65,21 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-2 col-md-offset-5">
+          <div class="col-md-2 col-md-offset-5 col-xs-12">
             <%= f.submit t('.submit'), id: 'btn_submit', class: 'btn btn-default btn-block' %>
           </div>
         </div>
         <br/>
     <% end %>
   </div>
+  <%# Chanchada
+  TODO: ver como arreglar esto%>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
 </div>
