@@ -12,7 +12,6 @@ $primary-light: #ffad33;
     background-image: none !important;
     background-color: white;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: 100%;
   }
 }
@@ -23,13 +22,14 @@ $primary-light: #ffad33;
   padding-bottom: 30px;
   background-image: url("back_asocia.png");
   background-color: white;
-  background-repeat: repeat-y;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 
 // Cuerpo de la seccion de "contactenos"
 .body-contact {
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: white;
   margin-top: -10px;
 }
