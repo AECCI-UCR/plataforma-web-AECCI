@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Páginas estáticas
   get 'not_authorized' => 'static_pages#not_authorized', as: :not_authorized
+  get 'developers_info' => 'static_pages#developers_info', as: :developers_info
 
   # Rutas para la administración de usuarios
   devise_for :users
