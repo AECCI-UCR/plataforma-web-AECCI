@@ -2,7 +2,7 @@
 <div class="body-footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-xs-12">
         <h5 class="title-footer">Enlaces de interés</h5>
         <ul>
           <li>
@@ -25,7 +25,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-xs-12">
         <h5 class="title-footer">Mapa del sitio</h5>
         <ul>
           <li><%= link_to '¿Quiénes somos?', root_url<<'#about_us', class: 'text-footer' %></li>
@@ -42,36 +42,40 @@
           <% end %>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-xs-12">
         <h5 class="title-footer">Contáctenos</h5>
-        <ul>
-          <li>
-            <%= link_to 'https://www.facebook.com/aecci.ucr/', target: '_blank', class: 'text-footer' do %>
-                <i class="fa fa-facebook highligh-footer"></i>
-                Síguenos en Facebook
-            <% end %>
-          </li>
-          <li>
-            <%= mail_to 'aecci.ucr@gmail.com', class: 'text-footer' do %><i class="fa fa-envelope highligh-footer"></i>
-                aecci.ucr@gmail.com
-            <% end %>
-          </li>
-          <li>
-            <a href="tel:+50625118027" class="text-footer">
-              <i class="fa fa-phone highligh-footer"></i> 2511-8027</a>
-          </li>
-          <li>
-            <%= link_to 'https://goo.gl/maps/qce48V5g1F52', class: 'text-footer', target: '_blank' do %>
-                <i class="fa fa-map-marker highligh-footer"></i>
-                San Pedro, San José, Costa Rica
-            <% end %>
-          </li>
-        </ul>
-        <h5><%= link_to 'Información del proyecto', project_info_url, class: 'title-footer' %></h5>
+        <div class="social">
+          <div class="row">
+            <div class="col-xs-1">
+              <h4 class="text-center"><%= link_to 'https://www.facebook.com/aecci.ucr/', target: '_blank', class: 'text-footer' do %>
+                    <i class="fa fa-facebook"></i>
+                <% end %></h4>
+            </div>
+            <div class="col-xs-1">
+              <h4 class="text-center"><a href="tel:+50625118027" class="text-footer">
+                <i class="fa fa-phone"></i></a></h4>
+            </div>
+            <div class="col-xs-1">
+              <h4 class="text-center"><%= mail_to 'aecci.ucr@gmail.com', class: 'text-footer' do %>
+                    <i class="fa fa-envelope"></i>
+                <% end %></h4>
+            </div>
+            <div class="col-xs-1">
+              <h4 class="text-center"><%= link_to 'https://goo.gl/maps/qce48V5g1F52', class: 'text-footer', target: '_blank' do %>
+                    <i class="fa fa-map-marker"></i>
+                <% end %></h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h5><%= link_to 'Información del proyecto', project_info_url, class: 'title-footer' %></h5>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-3 col-xs-12">
         <small>
           <hr/>
           <p class="text-center text-footer">Asociación de Estudiantes de la Escuela de Ciencias de la Computación e

@@ -211,6 +211,10 @@ p {
   margin-top: -10px;
 }
 
+.social{
+  padding-left: 20px;
+}
+
 // Para marcar labels con el asterizco
 label.required:after {
   color: $alert-danger-text;
