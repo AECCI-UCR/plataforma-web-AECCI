@@ -1,9 +1,9 @@
 jQuery(($) ->
-  $('.modal-alerts').empty()
+  $('.modal-alerts').empty().hide()
 <% if @course.errors.any? %>
-  $('.modal-alerts').append "<%= j render 'shared/error_messages', object: @course %>"
+  $('.modal-alerts').append("<%= j render 'shared/error_messages', object: @course %>").fadeIn('fast')
 <% else %>
-  $('.modal-alerts').append "<%= j render 'shared/flash_messages' %>"
+  $('.modal-alerts').append("<%= j render 'shared/flash_messages' %>").fadeIn('fast')
   # Limpia los campos del formulario
   $('#teacher_name').val('')
   $('#course_name').val('')
