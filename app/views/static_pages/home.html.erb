@@ -87,7 +87,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-md-4 col-md-offset-4">
-          <hr/>
+          <hr style="background-color:#666"/>
         </div>
       </div>
       <div class="row">
@@ -130,47 +130,12 @@
   </div>
 </section> <%# About us %>
 <section>
-  <div class="container-fluid">
-    <br/>
-    <div class="row">
-      <%= render layout: 'shared/panel', locals: {title: 'Historia de la ECCI', size: 8, offset: 2} do %>
-          <div class="row">
-            <%= image_tag 'logo-ecci.png', alt: 'Logo ECCI', class: 'img-responsive img-center' %>
-          </div>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <p class="text-justify">La Escuela de Ciencias de la Computación e Infomática de la Universidad de Costa
-                Rica se fundó en 1981,
-                como
-                resultado de la fusión de dos programas distintos pero relacionados, el de Bachillerato en Informática y
-                el de
-                Bachillerato y Licenciatura en Computación. También se creó un nuevo programa de Bachillerato en
-                Computación e
-                Informática, con el cual se introdujeron innovaciones tecnológicas en la educación superior de la
-                disciplina.</p>
-              <p class="text-justify">
-                La Escuela fue creada en un momento de gran cambio en las ciencias de la computación, puesto que la
-                microcomputadora había salido al mercado recientemente y estaba revolucionando el campo. Las
-                organizaciones
-                empezaban a necesitar profesionales capaces de ayudarles a automatizar sus actividades. La Escuela les
-                proveyó
-                tanto de profesionales de alta calidad que formaba como de asesorías y otras actividades de extensión
-                social.</p>
-              <a href="http://www.ecci.ucr.ac.cr/" class="pull-right">Más información de la ECCI</a>
-            </div>
-          </div>
-      <% end %>
-    </div>
-    <br/>
-  </div>
-</section> <%# Info de la escuela %>
-<section>
   <div class="body-contact" id="contact_us">
     <div class="container-fluid">
       <br/>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h2 align="center" style="color: white">Ponte en contacto con nosotros</h2>
+          <h2 align="center" style="color:#666">Ponte en contacto con nosotros</h2>
         </div>
       </div>
       <br/>
@@ -213,7 +178,7 @@
           </div>
           <div class="row">
             <div class="col-md-2 col-md-offset-5">
-              <%= f.submit 'Enviar mensaje', class: 'btn btn-default btn-block' %>
+              <%= f.submit 'Enviar mensaje', class: 'btn btn-primary btn-block' %>
             </div>
           </div>
       <% end %>

@@ -1,7 +1,7 @@
 // == Variables de los colores (la paleta del sistema) ==
-$primary: #FF9800;
-$primary-light: #ffad33;
-$primary-dark: #e68900;
+$primary: #f96816;
+$primary-light: #FF8946;
+$primary-dark: #C94A02;
 $link-color: $primary;
 $grey-dark: #2b2b2b;
 $grey-light: #9d9d9d;
@@ -13,9 +13,9 @@ $shadow-color: #888888;
 
 // Typografia
 $text-color: $grey-text;
-$link-color: $grey-text;
+$link-color: $primary;
 $link-hover-color: $primary;
-$link-hover-decoration: none;
+$link-hover-decoration: underline;
 $font-family-sans-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 $font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 
@@ -36,19 +36,19 @@ $btn-primary-bg: $primary;
 $btn-primary-border: $primary;
 $btn-primary-color: white;
 $btn-border-radius-base: 3px;
-$btn-default-bg: $grey-dark;
-$btn-default-border: $grey-dark;
-$btn-default-color: white;
+$btn-default-bg: transparent;
+$btn-default-border: $primary;
+$btn-default-color: $primary;
 
 // Dropdowns
 $dropdown-bg: #383838;
 $dropdown-link-color: $grey-link-nav-footer;
 $dropdown-link-hover-bg: transparent;
-$dropdown-link-hover-color: $primary-light;
+$dropdown-link-hover-color: $primary;
 
 // Forms
 $input-border-focus: $primary;
-$input-border-radius: 2px;
+$input-border-radius: 1px;
 $input-bg-disabled: white;
 
 // Panels
@@ -100,6 +100,22 @@ $body-bg: $body-color;
 
 // == Varios estilos ==
 
+// Boton para cargar archivos
+.btn-file{
+  background-color: $grey-dark;
+  color: white;
+  border-color: $grey-dark;
+  transition: all ease 0.2s;
+  &:hover{
+    color: $grey-light;
+  }
+}
+
+// Color para el titulo de los paels
+.panel-title{
+  color: $primary;
+}
+
 // Espacio para el navbar
 body {
   padding-top: 60px;
@@ -130,8 +146,8 @@ p {
 }
 
 .btn-default:hover {
-  background-color: #444444;
-  border-color: #444444;
+  border-color: $primary-light;
+  color: $primary-light;
 }
 
 // Campos con errores en los forms

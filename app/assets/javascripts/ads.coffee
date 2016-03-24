@@ -5,7 +5,7 @@ dataConfirmModal.setDefaults
 
 initialize_file_style = ->
   $(':file').filestyle
-    buttonName: 'btn-default'
+    buttonName: 'btn-file'
     buttonText: ' Subir archivo'
     size: 'sm'
     iconName: 'glyphicon-file'
