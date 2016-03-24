@@ -59,7 +59,7 @@
               <tr>
                 <td><%= user.email %></td>
                 <td class="center-cell">
-                  <%= link_to toggle_admin_path(user), method: :put do %>
+                  <%= link_to toggle_admin_path(user), method: :put, style:'color:#666' do %>
                       <span><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Hacer administrador</span>
                   <% end %>
                 </td>

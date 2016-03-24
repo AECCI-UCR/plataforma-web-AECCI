@@ -36,9 +36,12 @@ $btn-primary-bg: $primary;
 $btn-primary-border: $primary;
 $btn-primary-color: white;
 $btn-border-radius-base: 3px;
-$btn-default-bg: transparent;
-$btn-default-border: $primary;
-$btn-default-color: $primary;
+$btn-default-bg: $grey-dark;
+$btn-default-border: $grey-dark;
+$btn-default-color: white;
+$btn-info-bg: transparent;
+$btn-info-border: $primary;
+$btn-info-color: $primary;
 
 // Dropdowns
 $dropdown-bg: #383838;
@@ -101,18 +104,18 @@ $body-bg: $body-color;
 // == Varios estilos ==
 
 // Boton para cargar archivos
-.btn-file{
+.btn-file {
   background-color: $grey-dark;
   color: white;
   border-color: $grey-dark;
   transition: all ease 0.2s;
-  &:hover{
+  &:hover {
     color: $grey-light;
   }
 }
 
 // Color para el titulo de los paels
-.panel-title{
+.panel-title {
   color: $primary;
 }
 
@@ -145,9 +148,14 @@ p {
   border-color: $primary-light;
 }
 
-.btn-default:hover {
+.btn-info:hover {
   border-color: $primary-light;
   color: $primary-light;
+}
+
+.btn-default:hover {
+  background-color: $grey-dark;
+  color: $grey-light;
 }
 
 // Campos con errores en los forms
@@ -168,10 +176,6 @@ p {
 .body-footer {
   background-color: $grey-dark;
   padding: 40px;
-}
-
-.body-about-us {
-  background-color: #383838;
 }
 
 // Estilo del texto en el pie de pagina

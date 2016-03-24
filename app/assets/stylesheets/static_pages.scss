@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$primary-light: #ffad33;
 // Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
 @media screen and (max-width: 992px) {
   .info-asocia {
@@ -13,6 +12,17 @@ $primary-light: #ffad33;
     background-color: white;
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+
+  .body-contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: none !important;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    margin-top: -10px;
   }
 }
 
@@ -30,12 +40,12 @@ $primary-light: #ffad33;
 .body-contact {
   padding-top: 30px;
   padding-bottom: 30px;
+  background-image: url("back_contact.png");
   background-color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
   margin-top: -10px;
-}
-
-.name {
-  color: white;
 }
 
 // Esto es para que la imagen abarque el ancho completo del carousel
@@ -49,3 +59,11 @@ $primary-light: #ffad33;
   max-height: 90px;
 }
 
+// Seccion de los miembros de la asocia
+.body-about-us {
+  background-color: #383838;
+}
+
+.name {
+  color: white;
+}
