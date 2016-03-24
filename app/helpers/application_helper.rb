@@ -1,6 +1,7 @@
 module ApplicationHelper
 
-  # Métodos auxiliar para mapear flash key en bootstrap css class
+  # Métodos auxiliares para vistas
+
   BOOTSTRAP_FLASH_MSG = {
       notice: 'success',
       alert: 'danger',
@@ -8,6 +9,7 @@ module ApplicationHelper
       #default: 'info'
   }
 
+  # Métodos auxiliar para mapear flash key en bootstrap css class
   def bootstrap_class_for(message_type)
     BOOTSTRAP_FLASH_MSG.fetch message_type.to_sym, message_type
   end

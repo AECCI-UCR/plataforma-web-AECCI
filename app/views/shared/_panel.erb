@@ -1,10 +1,10 @@
-<%# Panel universal para la aplicacion, necesita 3 variables:
-      * size: Tamaño del panel segun las columnas de bootstrap (para la md)
-      * offset: Tamaño del offset segun las columnas de bootstrap (para la md)
-      * title: Título que va a llevar el panel
+<%# Layout Panel bootstrap. Necesita 3 variables:
+    * size: Tamaño del panel segun las columnas de bootstrap (para la md)
+    * offset: Tamaño del offset segun las columnas de bootstrap (para la md)
+    * title: Título que va a llevar el panel
  -%>
 <br/>
-<div class="col-md-<%= size %> col-md-offset-<%= offset %> col-xs-12">
+<div class="col-md-<%= size %> col-md-offset-<%= offset ||= 0 %> col-xs-12">
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="row">
@@ -20,4 +20,5 @@
       <hr/>
       <%= yield(:outside_panel) %>
   <% end %>
+  <br/>
 </div>

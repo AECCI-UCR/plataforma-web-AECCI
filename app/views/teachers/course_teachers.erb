@@ -27,9 +27,9 @@
       <% @tests.each do |teacher_name, tests| %>
           <%# Acordión para cada profesor %>
           <% title = "#{teacher_name}" %>
-          <% heading_id = "heading_#{teacher_name.downcase.tr(" ", "_")}" %>
-          <% collapse_id = "collapse_#{teacher_name.downcase.tr(" ", "_")}" %>
-          <%= render layout: 'shared/accordion', locals: {title: title, initials: nil, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+          <% heading_id = "heading_#{teacher_name.downcase.tr(' ', '_')}" %>
+          <% collapse_id = "collapse_#{teacher_name.downcase.tr(' ', '_')}" %>
+          <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
               <div class="col-md-10 col-md-offset-1 col-xs-12">
                 <% test_data = tests.group_by(&:year) %>
                 <% test_data.each do |year, test| %>
