@@ -1,14 +1,19 @@
+<%# Layout Modal -%>
+
 <div id="<%= id %>" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h4 class="modal-title"><%= title %></h4>
       </div>
       <div class="modal-body">
-        <div id="alerts"></div>
-        <%= yield %>
+        <span class="modal-alerts"></span>
+        <span class="modal-content">
+          <%= yield %>
+        </span>
       </div>
       <% if content_for?(:modal_footer) %>
           <div class="modal-footer">

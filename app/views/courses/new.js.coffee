@@ -1,1 +1,1 @@
-$('<%= j render 'remote_form', title: 'Crear un curso' %>').modal()
+$('<%= j render 'form', title: 'Crear un curso' %>').modal()

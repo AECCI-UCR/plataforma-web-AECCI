@@ -1,17 +1,18 @@
-<%# Partial necesita 5 variables locales
-    title: título del encabezado.
-    initial: solo se usa para el acordión del curso para indicar las iniciales del mismo, de lo contrario se envia nil
-    heading_id: id que va a tener la parte visible del acordión.
-    expand: booleano de si el contenido del panel debe aparecer abierto.
-    collapse_id: id de la parte oculta del acordión.
+<%# Layout accordeon. Necesita 5 variables locales
+    * title: título del encabezado.
+    * initial: solo se usa para el acordión del curso para indicar las iniciales del mismo, de lo contrario se envia nil
+    * heading_id: id que va a tener la parte visible del acordión.
+    * expand: booleano de si el contenido del panel debe aparecer abierto.
+    * collapse_id: id de la parte oculta del acordión.
 -%>
+
 
 <div class="panel panel-primary panel-accordion">
   <div class="panel-heading" role="tab" id="<%= heading_id %>">
     <h4 class="panel-title" style="color: #FF9800">
       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= collapse_id %>" aria-expanded="<%= expand %>" aria-controls="#<%= collapse_id %>">
         <%= title %>
-        <span class="pull-right"><small> <%= initials.nil? ? '' : initials %></small></span>
+        <span class="pull-right"><small> <%= initials ||= '' %></small></span>
       </a>
     </h4>
   </div>
