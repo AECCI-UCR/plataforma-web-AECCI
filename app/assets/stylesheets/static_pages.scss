@@ -34,17 +34,24 @@
   background-color: white;
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 // Cuerpo de la seccion de "contactenos"
 .body-contact {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-image: url("back_contact.png");
   background-color: white;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
+}
+
+.body-contact-alone {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
   margin-top: -10px;
 }
 
