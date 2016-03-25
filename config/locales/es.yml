@@ -1,6 +1,37 @@
 es-CR:
-  # Devise spanish locale
+  # Contact us gem
+  contact_us:
+    contact_mailer:
+      contact_email:
+        sent_by_contact_form: "Enviado por el formulario de contacto desde %{email}"
+        sent_by_name: "Enviado por %{name} desde %{email}"
+        subject: "Mensaje del usuario %{email} de AECCI"
+    contacts:
+      new: &new
+        contact_us: "Contáctenos"
+        email: "Correo"
+        message: "Mensaje"
+        name: "Nombre"
+        subject: "Tema"
+        submit: "Enviar correo"
+      new_formtastic:
+        <<: *new
+      new_simple_form:
+        <<: *new
+    notices:
+      error: "Todos los campos son obligatorios."
+      success: "El correo electrónico de contacto fue enviado con éxito."
+
+
+  # Active record
   activerecord:
+    models:
+      user: usuario
+      test: examen
+      ad: anuncio
+      course: curso
+      teacher: profesor
+
     attributes:
       user:
         current_password: Contraseña actual
@@ -8,9 +39,28 @@ es-CR:
         password: Contraseña
         password_confirmation: Confirmación de la contraseña
         remember_me: Recordarme
-    models:
-      user: Usuario
+      test:
+        year: Año
+        teacher_id: Profesor
+        semester: Semestre
+        test_number: Número
+        file_url: Archivo pdf
+        course_id: Curso
+      ad:
+        title: Título
+        description: Descripción
+        image_url: Imagen del anuncio
+        important: Incluir en el carousel
+        image_carousel_url: Imagen del carousel
+      course:
+        name: Nombre
+        initials: Siglas
+        year: Año en el plan de estudios
+      teacher:
+        name: Nombre completo
 
+
+  # Devise spanish locale
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente.
@@ -119,12 +169,8 @@ es-CR:
         one: 'Ocurrió un error al tratar de guardar %{resource}:'
         other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
 
+
   # Plurización errores
   form_has_x_errors:
     one:   "El formulario contiene un error."
     other: "El formulario contiene %{count} errores."
-
-
-  activerecord:
-    models:
-      ad: anuncio

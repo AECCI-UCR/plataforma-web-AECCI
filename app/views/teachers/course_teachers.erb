@@ -1,0 +1,70 @@
+<br/>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <%= link_to 'Regresar', courses_path, class: 'text-footer' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h1><%= @course.name %>
+      <small><%= @course.initials %></small>
+      <hr/>
+    </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <div class="bs-callout bs-callout-default">
+      <h5>Información</h5>
+      <p>A continuación se le presenta la lista de profesores que han dado el curso <%= @course.name %> y de
+        los que se tiene material disponible para consulta.</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <% @tests.each do |teacher_name, tests| %>
+          <%# Acordión para cada profesor %>
+          <% title = "#{teacher_name}" %>
+          <% heading_id = "heading_#{teacher_name.downcase.tr(' ', '_')}" %>
+          <% collapse_id = "collapse_#{teacher_name.downcase.tr(' ', '_')}" %>
+          <%= render layout: 'shared/accordion', locals: {title: title, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+              <div class="col-md-10 col-md-offset-1 col-xs-12">
+                <% test_data = tests.group_by(&:year) %>
+                <% test_data.each do |year, test| %>
+                    <div class="row">
+                      <h4><%= year %></h4>
+                    </div>
+                    <div class="row">
+                      <table class="table table-hover table-condensed">
+                        <thead>
+                        <th class="center-cell">Semestre</th>
+                        <th class="center-cell">Número de examen</th>
+                        <th class="center-cell">Archivo</th>
+                        </thead>
+                        <tbody>
+                        <% test.each do |data| %>
+                            <tr>
+                              <td class="center-cell"><%= data.semester %></td>
+                              <td class="center-cell"><%= data.test_number %></td>
+                              <td class="center-cell">
+                                <%= link_to pdfjs.full_path(file: "#{data.file_url}"), target: '_blank' do %>
+                                    <i class="fa fa-file-pdf-o text-danger"></i>
+                                <% end %>
+                              </td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="row">
+                      <hr/>
+                    </div>
+                <% end %>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

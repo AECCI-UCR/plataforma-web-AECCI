@@ -1,3 +1,76 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Cuando la pantalla llega al tamano "sm" (992px o -) entonces cambian algunos estilos
+@media screen and (max-width: 992px) {
+  .info-asocia {
+    text-align: center;
+  }
+  .body-section {
+    background-image: none !important;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .body-contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: none !important;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    margin-top: -10px;
+  }
+}
+
+// Cuerpo de la seccion de la asociacion en el home
+.body-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: url("back_asocia.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+// Cuerpo de la seccion de "contactenos"
+.body-contact {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url("back_contact.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.body-contact-alone {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
+  margin-top: -10px;
+}
+
+// Esto es para que la imagen abarque el ancho completo del carousel
+.carousel img {
+  min-width: 100%;
+  max-height: 600px;
+}
+
+.image-contact {
+  min-width: 90px;
+  max-height: 90px;
+}
+
+// Seccion de los miembros de la asocia
+.body-about-us {
+  background-color: #383838;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.name {
+  color: white;
+}

@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h1>Cursos impartidos en la ECCI</h1>
+    <hr/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= select_tag :course_name, options_from_collection_for_select(@courses, :id, :name), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <%# Itera sobre cada año %>
+      <% @years_of_courses.sort.each do |year, courses| %>
+          <%# Acordión para cada año lectivo %>
+          <% title = "#{romanize year} Año" %>
+          <% heading_id = "heading_#{year}" %>
+          <% collapse_id = "collapse_#{year}" %>
+
+          <%= render layout: 'shared/accordion', locals: {title: title, initials: nil, heading_id: heading_id, expand: false, collapse_id: collapse_id} do %>
+              <%# Itera por cada curso que pertenece a un año %>
+              <% courses.each do |course| %>
+                  <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                      <h4><%= course.name %></h4>
+                      <h4>
+                        <small><%= course.initials %></small>
+                      </h4>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="pull-right">
+                        <%= link_to 'Ir al curso', teachers_course_path(course), class: 'btn btn-link teachers-course' %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                      <hr/>
+                    </div>
+                  </div>
+              <% end %>
+          <% end %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+<% if policy(Course).rest_operation? %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="pull-right">
+          <%= link_to 'Administrar exámenes', tests_path, class: 'btn btn-primary' %></div>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,54 @@
+<section>
+  <div class="row">
+    <%= render layout: 'shared/panel', locals: {title: 'Información del proyecto', size: 6, offset: 3} do %>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-xs-12">
+            <p>Plataforma AECCI nace como una iniciativa para ayudar a la Asociación de estudiantes de la Escuela de
+              Ciencias de la Computación e Informática de la Universidad de Costa Rica (UCR). El objetivo es proveer un
+              sitio web donde se muestre información relevante para los estudiantes de la escuela.</p>
+            <p>La plataforma está desarrollada hasta este momento para ofrecer el servicio de consultar exámenes de
+              semestres anteriores, con el fin de que los puedan utilizar como una especie de guía para estudiar. Además
+              se puede consultar anuncios que los miembros de la asociación consideren relevantes compartir con la
+              comunidad estudiantil.</p>
+            <hr/>
+            <h4>¡Colabora con la plataforma!</h4>
+            <p>La plataforma es de todos y para todos, por lo que todo el código fuente se encuentra disponible en un
+              repositorio en <a href="https://github.com/fabo49/plataforma_AECCI" target="_blank">GitHub</a> para que
+              colaboren con el desarrollo.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <div class="center-block">
+              <%= link_to 'https://github.com/fabo49/plataforma_AECCI', class: 'btn btn-info btn-block', target: '_blank' do %>
+                  <i class="fa fa-github"></i>
+                  Colabora
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</section><%# Seccion de informacion del proyecto %>
+<section>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
+      <h2>Desarrolladores</h2>
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-3 col-xs-12">
+      <% back_image = 'https://scontent-lga3-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/10450247_873247436038595_7130496896087249442_o.jpg' %>
+      <% usr_image = 'https://avatars0.githubusercontent.com/u/8368584?v=3&s=400' %>
+      <% experience = 'Rellenar con la experiencia' %>
+      <%= render partial: 'shared/rotating_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Kevin Delgado', profession: 'Desarrollador', location: 'San José, Costa Rica', email: 'kefdelgado@gmail.com', motto: '"To be or not to be"', experience: experience, github: 'https://github.com/KefDS'} %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <% back_image = 'back_fabo.png' %>
+      <% usr_image = 'fabo.png' %>
+      <% experience = 'Rellenar con la experiencia' %>
+      <%= render partial: 'shared/rotating_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Fabián Rodríguez', profession: 'Desarrollador', location: 'Heredia, Costa Rica', email: 'farodriguez.49@gmail.com', motto: '"There is no justice in following unjust laws." - Aaron Swartz', experience: experience, github: 'https://github.com/fabo49'} %>
+    </div>
+  </div>
+</section><%# Seccion de los desarrolladores %>

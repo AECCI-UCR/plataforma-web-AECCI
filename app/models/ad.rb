@@ -4,5 +4,5 @@ class Ad < ActiveRecord::Base
 
   validates :title,  presence: true
   validates :description, presence: true
-  validates :image_url, presence:true
+  validates :image_url, presence: true
 end

@@ -11,7 +11,13 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
+//= require selectize
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require data-confirm-modal
+//= require lightbox
+//= require epiceditor
+//= require bootstrap-filestyle
+// require parallax
+// require jquery.parallax
 //= require_tree .

@@ -33,6 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# -- Gemas agregadas por nosotros --
+
+# LightBox2 (preview de imagenes)
+gem 'lightbox2-rails'
+
 # Gema para iconos y fonts
 gem 'font-awesome-sass'
 
@@ -45,10 +50,27 @@ gem 'devise'
 # Modal de confirmacion
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 
+# Para la conversión a Markdown
+gem 'epic-editor-rails'
+gem 'redcarpet'
+gem 'coderay'
+
 # Gemas para subir archivos
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+
+# Para validar el tamaño de archivos
+gem 'file_validators'
+
+# Gema para preview de PDFs
+gem 'pdfjs_viewer-rails'
+
+# Gema de "contact us"
+gem 'contact_us', '~> 1.0.1'
+
+# Gema para estilizar los file_uploaders
+gem 'bootstrap-filestyle-rails'
 
 # Paginación páginas con estilo de boostrap
 gem 'will_paginate-bootstrap'
@@ -56,6 +78,14 @@ gem 'will_paginate-bootstrap'
 # Traducción
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 
+# Selectize is the hybrid of a textbox and <select> box
+gem 'selectize-rails'
+
+# Gema para agregar parallax
+gem 'parallax-rails'
+
+# Pudnit gema para el control de autorización
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

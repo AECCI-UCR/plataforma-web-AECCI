@@ -1,55 +1,74 @@
-// == Variables de los colores ==
-$orange-light: #FF9800;
-$orange-lighter: #ffaa2d;
-$orange-dark: #f2762e;
-$white: #ffffff;
-$link-color: $orange-light;
+// == Variables de los colores (la paleta del sistema) ==
+$primary: #f96816;
+$primary-light: #FF8946;
+$primary-dark: #C94A02;
+$link-color: $primary;
 $grey-dark: #2b2b2b;
 $grey-light: #9d9d9d;
+$grey-text: #666;
+$grey-link-nav-footer: #E0E0E0;
 $body-color: #f3f3f3;
 $shadow-color: #888888;
-
+// == Fin Variables de los colores ==
 
 // Typografia
-$text-color: #666;
-$link-color: $grey-light;
-$link-hover-color: $orange-light;
+$text-color: $grey-text;
+$link-color: $primary;
+$link-hover-color: $primary;
+$link-hover-decoration: underline;
 $font-family-sans-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 $font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 
 // Estilos del navbar
 $navbar-default-bg: $grey-dark;
-$navbar-default-brand-color: $white;
-$navbar-default-link-hover-color: $orange-light;
-$navbar-default-link-hover-color: $orange-light;
-$navbar-default-link-active-color: $orange-light;
+$navbar-default-border: transparent;
+$navbar-default-brand-color: white;
+$navbar-default-link-color: $grey-link-nav-footer;
+$navbar-default-link-hover-color: $primary;
+$navbar-default-link-active-color: $primary;
 $navbar-default-toggle-border-color: transparent;
 $navbar-default-toggle-hover-bg: transparent;
+$navbar-default-toggle-icon-bar-bg: $grey-link-nav-footer;
+$navbar-default-link-active-bg: transparent;
 
 // Botones
-$btn-primary-bg: $orange-light;
-$btn-primary-border: $orange-light;
-$btn-primary-color: $white;
-$btn-border-radius-base: 2px;
+$btn-primary-bg: $primary;
+$btn-primary-border: $primary;
+$btn-primary-color: white;
+$btn-border-radius-base: 3px;
+$btn-default-bg: $grey-dark;
+$btn-default-border: $grey-dark;
+$btn-default-color: white;
+$btn-info-bg: transparent;
+$btn-info-border: $primary;
+$btn-info-color: $primary;
+
+// Dropdowns
+$dropdown-bg: #383838;
+$dropdown-link-color: $grey-link-nav-footer;
+$dropdown-link-hover-bg: transparent;
+$dropdown-link-hover-color: $primary;
 
 // Forms
-$input-border-focus: $orange-light;
-$input-border-radius: 0px;
+$input-border-focus: $primary;
+$input-border-radius: 1px;
+$input-bg-disabled: white;
 
 // Panels
 $panel-border-radius: 2px;
 $panel-default-border: transparent;
+$panel-primary-border: white;
+$panel-primary-heading-bg: white;
 
 // Pagination
-$pagination-active-bg: $orange-light;
-$pagination-active-border: $orange-light;
+$pagination-active-bg: $primary;
+$pagination-active-border: $primary;
 
 // Otros
 $body-bg: $body-color;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// == Fin Variables de los colores ==
 
 // == Botones de Inicio de sesión y registro ==
 .btn-login {
@@ -57,26 +76,27 @@ $body-bg: $body-color;
   padding: 8px 13px;
   margin-left: 3px;
   margin-right: 3px;
-  color: $orange-light;
-  border-color: $orange-light;
+  color: $primary;
+  border-color: $primary;
   transition: all ease 0.2s;
 
   &:hover {
-    color: $white;
-    background-color: $orange-dark;
+    color: white;
+    background-color: $primary;
   }
 }
 
 .btn-registro {
-  background-color: $orange-light;
+  background-color: $primary;
   padding: 8px 13px;
-  color: $white;
-  border-color: $orange-light;
+  color: white;
+  border-color: $primary;
   transition: all ease 0.2s;
 
   &:hover {
-    color: $white;
-    background-color: $orange-dark;
+    color: white;
+    background-color: $primary-dark;
+    border-color: $primary-dark;
   }
 }
 
@@ -84,24 +104,62 @@ $body-bg: $body-color;
 
 // == Varios estilos ==
 
+// Boton para cargar archivos
+.btn-file {
+  background-color: $grey-dark;
+  color: white;
+  border-color: $grey-dark;
+  transition: all ease 0.2s;
+  &:hover {
+    color: $grey-light;
+  }
+}
+
+// Color para el titulo de los paels
+.panel-title {
+  color: $primary;
+}
+
 // Espacio para el navbar
 body {
   padding-top: 60px;
 }
 
-h1, h2, h3, h4, h5, h6{
+textarea {
+  resize: none;
+}
+
+// Estilo de los encabezados
+h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
 }
 
+// Estilo de los párrafos
+p {
+  font-weight: 300; // "Roboto Light"
+}
+
+// Para que el carousel se pegue al navbar
 .fix-carousel {
   margin-top: -10px;
 }
 
-.img-show {
-  width: 80%;
-  height: 80%;
+.btn-primary:hover {
+  background-color: $primary-light;
+  border-color: $primary-light;
 }
 
+.btn-info:hover {
+  border-color: $primary-light;
+  color: $primary-light;
+}
+
+.btn-default:hover {
+  background-color: $grey-dark;
+  color: $grey-light;
+}
+
+// Campos con errores en los forms
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -109,64 +167,131 @@ h1, h2, h3, h4, h5, h6{
   }
 }
 
+// Cuando enfoca un form
 .form-control:focus {
-  box-shadow: 0px 0px 0px transparent;
-  border: 2px solid $orange-light;
+  box-shadow: 1px 1px 1px transparent;
+  border: 2px solid $primary;
 }
 
-.panel {
-  box-shadow: 2px 2px 6px $shadow-color;
-}
-
+// El cuerpo del pie de pagina
 .body-footer {
   background-color: $grey-dark;
   padding: 40px;
 }
 
+// Estilo del texto en el pie de pagina
 .text-footer {
-  color: #9d9d9d;
+  color: $grey-light;
 }
 
+// Cosas resaltadas en el pie de pagina
 .highligh-footer {
-  color: $orange-dark;
-}
-.body-section{
-  background-color: $white;
-}
-.title-footer {
-  color: #E0E0E0;
+  color: $primary;
 }
 
+// Estilo de los titulos de las listas del pie de pagina
+.title-footer {
+  color: $grey-link-nav-footer;
+}
+
+// Para centrar la información de las tablas
 .center-cell {
   text-align: center;
 }
 
-.btn-primary {
-  &:hover {
-    background-color: $orange-lighter;
-    border-color: $orange-lighter;
-  }
-}
-
+// Estilo para centrar imágenes
 .img-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-// Esto es para que la imagen abarque el ancho completo del carousel
-.carousel img {
-  min-width: 100%;
-  max-height: 600px;
+.logo {
+  max-height: 40px;
+  min-width: 90%;
+  margin-top: -10px;
 }
 
-// Agrega una linea gris a la izquierda
-.section {
-  border-left: 1px solid #e6e6e6;
+.social{
+  padding-left: 20px;
 }
 
+// Para marcar labels con el asterizco
+label.required:after {
+  color: $alert-danger-text;
+  content: " *"
+}
+
+// Estilo para la descripccion de mensajes de error
 .error-description-message {
   list-style-type: none;
 }
 
+// Callouts
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.bs-callout h5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bs-callout code {
+  border-radius: 3px;
+}
+
+.bs-callout + .bs-callout {
+  margin-top: -5px;
+}
+
+@mixin bs-mixin($name, $callout-color) {
+
+  // Callout border color
+  .#{$name} {
+    border-left-color: $callout-color;
+  }
+  // Callout header color
+  .#{$name} h5 {
+    color: $callout-color;
+  }
+}
+
+@include bs-mixin(bs-callout-primary, $primary);
+@include bs-mixin(bs-callout-info, $brand-info);
+@include bs-mixin(bs-callout-danger, $brand-danger);
+@include bs-mixin(bs-callout-warning, $brand-warning);
+@include bs-mixin(bs-callout-success, $brand-success);
+@include bs-mixin(bs-callout-default, $grey-text);
+
 // == Fin Varios estilos ==
+
+// Sticky footer
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 75%;
+  height: auto !important;
+  //height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer, .push {
+  height: 4em;
+}
