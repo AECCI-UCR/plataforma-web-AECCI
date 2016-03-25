@@ -15,8 +15,13 @@ La plataforma puede ser extendida para cubrir más necesidades de los estudiante
 * Hasta este momento nos hace mucha falta realizar ***test***. Si desea colaborar en este apartado, no dude en colaborar (De verdad lo necesitamos).
 
 * El código *Javascript* no está bien estructurado, ya que no hemos tenido experiencia en este lenguaje. Si desea ayudar a refactorizar, estructurar, etc el código, no dude en colaborar (De verdad de verdad lo necesitamos).
+
 * Acomodar los CSS.
+
 * Documentación interna.
+
+### Problemas conocidos
+* Al momento de cargar un archivo pdf de examen que supera los 20MB, el sistema da un error que se detalla en este [issue.](https://github.com/fabo49/plataforma_AECCI/issues/2)
 
 - - -
 
