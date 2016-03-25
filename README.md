@@ -3,7 +3,7 @@
 ## Descripción
 **Plataforma AECCI** nace como una iniciativa para ayudar a la **Asociación de estudiantes de la Escuela de Ciencias de la Computación e Informática de la Universidad de Costa Rica** (UCR). El objetivo es proveer un sitio web donde se muestre información relevante para los estudiantes de la escuela.
 
-La plataforma está desarrollada hasta este momento para ofrecer el servicio de consultar exámenes de semestres anteriores, con el fin de que los estudiantes puedan utilizarla como una especie de guía para el estudio. Además se puede consultar anuncios que los miembros de la asociación consideren relevantes compartir con la comunidad estudiantil.
+La plataforma está desarrollada hasta este momento para ofrecer el servicio de consultar exámenes de semestres anteriores, con el fin de que los estudiantes puedan utilizarlos como una especie de guía para el estudio. Además se puede consultar anuncios que los miembros de la asociación consideren relevantes compartir con la comunidad estudiantil.
 
 
 ### ¿Por qué hacer un proyecto de cero si existen alternativas como *Moodle* o *Claroline*?
