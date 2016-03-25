@@ -17,7 +17,7 @@
       <tbody>
       <% @admins.each do |admin| %>
           <tr>
-            <td><%= admin.email.split('@').first %></td>
+            <td class="carne"><%= admin.email.split('@').first %></td>
             <td class="center-cell">
               <% if policy(admin).toggle_admin? %>
                   <%= link_to toggle_admin_path(admin), method: :put, class: 'text-footer' do %>
@@ -57,7 +57,7 @@
           <tbody>
           <% @users.each do |user| %>
               <tr>
-                <td><%= user.email.split('@').first %></td>
+                <td class="carne"><%= user.email.split('@').first %></td>
                 <td class="center-cell">
                   <%= link_to toggle_admin_path(user), method: :put, class: 'text-footer' do %>
                       <span><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Hacer administrador</span>
