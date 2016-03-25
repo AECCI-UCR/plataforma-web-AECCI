@@ -40,6 +40,7 @@
               <li><%= link_to 'Ingresar', new_user_session_path, class: 'text-footer' %></li>
               <li><%= link_to 'Registrarse', new_user_registration_path, class: 'text-footer' %></li>
           <% end %>
+          <li><%= link_to 'Información del proyecto', project_info_url, class: 'text-footer' %></li>
         </ul>
       </div>
       <div class="col-md-4 col-xs-12">
@@ -65,11 +66,6 @@
                     <i class="fa fa-map-marker"></i>
                 <% end %></h4>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <h5><%= link_to 'Información del proyecto', project_info_url, class: 'title-footer' %></h5>
           </div>
         </div>
       </div>
