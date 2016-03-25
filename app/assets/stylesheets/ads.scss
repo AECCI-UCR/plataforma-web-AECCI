@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Cosas propias de los anuncios
+$primary: #f96816;
+$primary-light: #FF8946;
+$primary-dark: #C94A02;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -15,12 +19,12 @@
   a.back-to-top {
     width: 40px !important;
     height: 40px !important;
-    background: #FF9800 url("up-arrow-sm.png") no-repeat center 43% !important;
+    background: $primary url("up-arrow-sm.png") no-repeat center 43% !important;
     box-shadow: 0px 1px 2px #2b2b2b !important;
     right: 20px !important;
   }
   a:hover.back-to-top {
-    background: #ffad33 url("up-arrow-sm.png") no-repeat center 43% !important;
+    background: $primary-light url("up-arrow-sm.png") no-repeat center 43% !important;
   }
 
 }
@@ -41,12 +45,12 @@ a.back-to-top {
   z-index: 999;
   right: 30px;
   bottom: 20px;
-  background: #FF9800 url("up-arrow.png") no-repeat center 43%;
+  background: $primary url("up-arrow.png") no-repeat center 43%;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
 }
 
 a:hover.back-to-top {
-  background: #ffad33 url("up-arrow.png") no-repeat center 43%;
+  background: $primary-light url("up-arrow.png") no-repeat center 43%;
 }

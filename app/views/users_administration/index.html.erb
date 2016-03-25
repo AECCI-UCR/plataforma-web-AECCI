@@ -20,7 +20,7 @@
             <td><%= admin.email %></td>
             <td class="center-cell">
               <% if policy(admin).toggle_admin? %>
-                  <%= link_to toggle_admin_path(admin), method: :put do %>
+                  <%= link_to toggle_admin_path(admin), method: :put, class: 'text-footer' do %>
                       <span><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> Revocar autorización</span>
                   <% end %>
               <% end %>
@@ -59,7 +59,7 @@
               <tr>
                 <td><%= user.email %></td>
                 <td class="center-cell">
-                  <%= link_to toggle_admin_path(user), method: :put do %>
+                  <%= link_to toggle_admin_path(user), method: :put, class: 'text-footer' do %>
                       <span><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Hacer administrador</span>
                   <% end %>
                 </td>
