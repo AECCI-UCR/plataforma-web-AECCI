@@ -3,15 +3,15 @@
     <%= render layout: 'shared/panel', locals: {title: 'Información del proyecto', size: 6, offset: 3} do %>
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-xs-12">
-            <p>La idea del proyecto nace como una iniciativa para ayudar a la asociación de estudiantes de la Escuela de
-              Ciencias de la Computación e Informática de la UCR para montar un sitio donde se muestre información
-              relevante para los estudiantes de la escuela.</p>
-            <p>La plataforma brinda acceso para que los estudiantes puedan consultar examenes de semestres ateriores,
-              con el fin de que los puedan utilizar como una especie de guía para estudiar. Junto con el material de
-              exámenes pasados, también se pueden consultar anuncios que los miembros de la asociación consideren
-              relevantes compartir con la comunidad estudiantil.</p>
+            <p>Plataforma AECCI nace como una iniciativa para ayudar a la Asociación de estudiantes de la Escuela de
+              Ciencias de la Computación e Informática de la Universidad de Costa Rica (UCR). El objetivo es proveer un
+              sitio web donde se muestre información relevante para los estudiantes de la escuela.</p>
+            <p>La plataforma está desarrollada hasta este momento para ofrecer el servicio de consultar exámenes de
+              semestres anteriores, con el fin de que los puedan utilizar como una especie de guía para estudiar. Además
+              se puede consultar anuncios que los miembros de la asociación consideren relevantes compartir con la
+              comunidad estudiantil.</p>
             <hr/>
-            <h5>¡Colabora con la plataforma!</h5>
+            <h4>¡Colabora con la plataforma!</h4>
             <p>La plataforma es de todos y para todos, por lo que todo el código fuente se encuentra disponible en un
               repositorio en <a href="https://github.com/fabo49/plataforma_AECCI" target="_blank">GitHub</a> para que
               colaboren con el desarrollo.</p>
@@ -20,8 +20,8 @@
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
             <div class="center-block">
-              <%= link_to 'https://github.com/fabo49/plataforma_AECCI', class: 'btn btn-primary btn-block', target: '_blank' do %>
-                  <i class="fa fa-github-alt"></i>
+              <%= link_to 'https://github.com/fabo49/plataforma_AECCI', class: 'btn btn-info btn-block', target: '_blank' do %>
+                  <i class="fa fa-github"></i>
                   Colabora
               <% end %>
             </div>
@@ -39,108 +39,16 @@
   </div>
   <div class="row">
     <div class="col-md-3 col-md-offset-3 col-xs-12">
-      <div class="card-container">
-        <div class="card">
-          <div class="front">
-            <div class="cover">
-              <%= image_tag 'https://scontent-lga3-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/10450247_873247436038595_7130496896087249442_o.jpg' %>
-            </div>
-            <div class="user">
-              <%= image_tag 'https://avatars0.githubusercontent.com/u/8368584?v=3&s=400', class: 'img-circle' %>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h3 class="name">Kevin Delgado</h3>
-                <p class="profession">Product Manager</p>
-                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> San José, Costa Rica</h5>
-                <h5><i class="fa fa-envelope-o fa-fw text-muted"></i> kefdelgado@gmail.com</h5>
-              </div>
-              <div class="footer">
-                <div class="rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div> <!-- end front panel -->
-          <div class="back">
-            <div class="header">
-              <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h4 class="text-center">Experince</h4>
-                <p>Inna was working with our team since 2012.</p>
-                <h4 class="text-center">Areas of Expertise</h4>
-                <p>Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-              </div>
-            </div>
-            <div class="footer">
-              <div class="social-links text-center">
-                <%= link_to 'https://github.com/KefDS', target: '_blank' do %><i class="fa fa-github fa-fw"></i>
-                <% end %>
-                <%= mail_to 'kefdelgado@gmail.com' do %><i class="fa fa-envelope fa-fw"></i>
-                <% end %>
-              </div>
-            </div>
-          </div> <!-- end back panel -->
-        </div> <!-- end card -->
-      </div> <!-- end card-container -->
+      <% back_image = 'https://scontent-lga3-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/10450247_873247436038595_7130496896087249442_o.jpg' %>
+      <% usr_image = 'https://avatars0.githubusercontent.com/u/8368584?v=3&s=400' %>
+      <% experience = 'Rellenar con la experiencia' %>
+      <%= render partial: 'shared/rotating_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Kevin Delgado', profession: 'Desarrollador', location: 'San José, Costa Rica', email: 'kefdelgado@gmail.com', motto: '"To be or not to be"', experience: experience, github: 'https://github.com/KefDS'} %>
     </div>
     <div class="col-md-3 col-xs-12">
-      <div class="card-container">
-        <div class="card">
-          <div class="front">
-            <div class="cover">
-              <%= image_tag 'back_fabo.png' %>
-            </div>
-            <div class="user">
-              <%= image_tag 'fabo.png', class: 'img-circle' %>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h3 class="name">Fabián Rodríguez</h3>
-                <p class="profession">Product Manager</p>
-                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Heredia, Costa Rica</h5>
-                <h5><i class="fa fa-envelope-o fa-fw text-muted"></i> farodriguez.49@gmail.com</h5>
-              </div>
-              <div class="footer">
-                <div class="rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div> <!-- end front panel -->
-          <div class="back">
-            <div class="header">
-              <h5 class="motto">"There is no justice in following unjust laws." - Aaron Swartz</h5>
-            </div>
-            <div class="content">
-              <div class="main">
-                <h4 class="text-center">Experince</h4>
-                <p>Inna was working with our team since 2012.</p>
-                <h4 class="text-center">Areas of Expertise</h4>
-                <p>Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-              </div>
-            </div>
-            <div class="footer">
-              <div class="social-links text-center">
-                <%= link_to 'https://github.com/fabo49', target: '_blank' do %><i class="fa fa-github fa-fw"></i>
-                <% end %>
-                <%= mail_to 'farodriguez.49@gmail.com' do %><i class="fa fa-envelope fa-fw"></i>
-                <% end %>
-              </div>
-            </div>
-          </div> <!-- end back panel -->
-        </div> <!-- end card -->
-      </div> <!-- end card-container -->
+      <% back_image = 'back_fabo.png' %>
+      <% usr_image = 'fabo.png' %>
+      <% experience = 'Rellenar con la experiencia' %>
+      <%= render partial: 'shared/rotating_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Fabián Rodríguez', profession: 'Desarrollador', location: 'Heredia, Costa Rica', email: 'farodriguez.49@gmail.com', motto: '"There is no justice in following unjust laws." - Aaron Swartz', experience: experience, github: 'https://github.com/fabo49'} %>
     </div>
   </div>
 </section><%# Seccion de los desarrolladores %>

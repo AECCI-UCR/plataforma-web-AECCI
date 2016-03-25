@@ -59,6 +59,19 @@ es-CR:
       teacher:
         name: Nombre completo
 
+  # Para unidades de almacenamiento
+  number:
+    human:
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
 
   # Devise spanish locale
   devise:
