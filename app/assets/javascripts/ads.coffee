@@ -14,11 +14,11 @@ hide_carousel_part = ->
   if $('#check_important').is(':checked')
     $('#carousel_part').show()
   else
-  $('#carousel_part').hide()
+    $('#carousel_part').hide()
   return
 
 jQuery ($) ->
-  # Esto es para el boton de "take me to top"
+# Esto es para el boton de "take me to top"
   amountScrolled = 300
   $(window).scroll ->
     if $(window).scrollTop() > amountScrolled
@@ -29,14 +29,13 @@ jQuery ($) ->
 
 
   $(document).on 'ready page:load', ->
-
     initialize_file_style()
 
     $('#title_alert').hide()
     $('#description_alert').hide()
 
     $('a.back-to-top').click ->
-      $('html, body').animate { scrollTop: 0 }, 700
+      $('html, body').animate {scrollTop: 0}, 700
       false
 
     hide_carousel_part()
