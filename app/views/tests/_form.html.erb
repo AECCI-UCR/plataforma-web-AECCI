@@ -8,10 +8,10 @@
       <div class="form-horizontal">
         <%= form_for @test do |f| %>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-4 col-lg-3">
                 <%= f.label :course_id, class: 'required' %>
               </div>
-              <div class="col-md-8 col-lg-9">
+              <div class="col-sm-8 col-lg-9">
                 <%= f.select :course_id, options_from_collection_for_select(@courses, :id, :name, @test.course ? @test.course.id : nil), prompt: 'Escriba el nombre del curso', class: 'form-control' %>
                 <span class="pull-right"><%= link_to 'Agregar un nuevo curso', new_course_path, remote: true, class: 'btn btn-link btn-sm' %></span>
                 <p class="text-danger" id="course_alert">
@@ -20,10 +20,10 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-4 col-lg-3">
                 <%= f.label :teacher_id, class: 'required' %>
               </div>
-              <div class="col-md-8 col-lg-9">
+              <div class="col-sm-8 col-lg-9">
                 <%= f.select :teacher_id, options_from_collection_for_select(@teachers, :id, :name, @test.teacher ? @test.teacher.id : nil), prompt: 'Escriba el nombre del profesor', class: 'form-control' %>
                 <span class="pull-right"><%= link_to 'Agregar un nuevo profesor', new_teacher_path, remote: true, class: 'btn btn-link btn-sm' %></span>
                 <p class="text-danger" id="teacher_alert">
@@ -33,10 +33,10 @@
             </div>
             <hr/>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-4 col-lg-3">
                 <%= f.label :year, class: 'required' %>
               </div>
-              <div class="col-md-8 col-lg-9">
+              <div class="col-sm-8 col-lg-9">
                 <%= f.number_field :year, class: 'form-control', placeholder: 'Año del examen' %>
                 <p class="text-danger" id="year_alert">
                   <small>Tiene que ingresar el año en que se hizo el examen.</small>
@@ -44,10 +44,10 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-4 col-lg-3">
                 <%= f.label :semester, class: 'required' %>
               </div>
-              <div class="col-md-8 col-lg-9">
+              <div class="col-sm-8 col-lg-9">
                 <%= f.number_field :semester, class: 'form-control', placeholder: 'Semestre del examen' %>
                 <p class="text-danger" id="semester_alert">
                   <small>Tiene que ingresar el semestre en que se aplicó el examen.</small>
@@ -55,10 +55,10 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-4 col-lg-3">
                 <%= f.label :test_number, class: 'required' %>
               </div>
-              <div class="col-md-8 col-lg-9">
+              <div class="col-sm-8 col-lg-9">
                 <%= f.number_field :test_number, class: 'form-control', placeholder: 'Número de examen' %>
                 <p class="text-danger" id="test_number_alert">
                   <small>Tiene que ingresar el número del examen.</small>
@@ -66,10 +66,10 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-4 col-lg-3">
                 <%= f.label :file_url, class: 'required' %>
               </div>
-              <div class="col-md-8 col-lg-9">
+              <div class="col-sm-8 col-lg-9">
                 <%= f.file_field :file_url %>
                 <span class="pull-left">
                   <p class="text-warning">

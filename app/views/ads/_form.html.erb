@@ -57,11 +57,11 @@
                 </div>
             <% end %>
             <div class="form-group">
-              <div class="col-md-4 col-lg-3 col-xs-6">
-                <%= f.label :important %>
-              </div>
-              <div class="col-md-1 col-md-1 col-xs-1">
-                <%= f.check_box :important, id: 'check_important' %>
+              <div class="col-xs-12">
+                <div class="pull-right">
+                  <%= f.check_box :important %>
+                  <%= f.label :important %>
+                </div>
               </div>
             </div>
             <div id="carousel_part">

@@ -11,7 +11,7 @@ initialize_file_style = ->
     iconName: 'glyphicon-file'
 
 hide_carousel_part = ->
-  if $('#check_important').is(':checked')
+  if $('#ad_important').is(':checked')
     $('#carousel_part').show()
   else
     $('#carousel_part').hide()
@@ -40,7 +40,7 @@ jQuery ($) ->
 
     hide_carousel_part()
 
-    $('#check_important').click ->
+    $('#ad_important').click ->
       if $(this).is(':checked')
         $('#carousel_part').fadeIn()
       else
