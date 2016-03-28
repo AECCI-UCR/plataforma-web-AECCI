@@ -27,3 +27,45 @@
     display: table-cell;
   }
 }
+
+// Boton de Back to Top
+$primary: #f96816;
+$primary-light: #FF8946;
+$primary-dark: #C94A02;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@media screen and (max-width: $screen-xs-max) {
+  a.back-to-top {
+    width: 40px !important;
+    height: 40px !important;
+    background: $primary url("up-arrow-sm.png") no-repeat center 43% !important;
+    box-shadow: 0px 1px 2px #2b2b2b !important;
+    right: 20px !important;
+  }
+  a:hover.back-to-top {
+    background: $primary-light url("up-arrow-sm.png") no-repeat center 43% !important;
+  }
+
+}
+
+a.back-to-top {
+  display: none;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+  box-shadow: 0px 1px 4px #2b2b2b;
+  position: fixed;
+  z-index: 999;
+  right: 30px;
+  bottom: 20px;
+  background: $primary url("up-arrow.png") no-repeat center 43%;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+a:hover.back-to-top {
+  background: $primary-light url("up-arrow.png") no-repeat center 43%;
+}
