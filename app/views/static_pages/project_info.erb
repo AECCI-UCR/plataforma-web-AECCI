@@ -1,6 +1,6 @@
 <section>
   <div class="row">
-    <%= render layout: 'shared/panel', locals: {title: 'Información del proyecto', size: 6, offset: 3} do %>
+    <%= render layout: 'shared/panel', locals: {title: 'Información del proyecto', size: 8, offset: 2} do %>
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-xs-12">
             <p>Plataforma AECCI nace como una iniciativa para ayudar a la Asociación de estudiantes de la Escuela de
@@ -38,17 +38,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 col-md-offset-3 col-xs-12">
+    <div class="col-md-3 col-md-offset-3 col-xs-12 col-sm-6">
       <% back_image = 'https://scontent-lga3-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/10450247_873247436038595_7130496896087249442_o.jpg' %>
       <% usr_image = 'https://avatars0.githubusercontent.com/u/8368584?v=3&s=400' %>
-      <% experience = 'Rellenar con la experiencia' %>
-      <%= render partial: 'shared/rotating_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Kevin Delgado', profession: 'Desarrollador', location: 'San José, Costa Rica', email: 'kefdelgado@gmail.com', motto: '"To be or not to be"', experience: experience, github: 'https://github.com/KefDS'} %>
+      <%= render partial: 'shared/user_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Kevin Delgado', profession: 'Desarrollador', location: 'San José, Costa Rica', email: 'kefdelgado@gmail.com', github: 'https://github.com/KefDS'} %>
     </div>
-    <div class="col-md-3 col-xs-12">
+    <div class="col-md-3 col-xs-12 col-sm-6">
       <% back_image = 'back_fabo.png' %>
       <% usr_image = 'fabo.png' %>
-      <% experience = 'Rellenar con la experiencia' %>
-      <%= render partial: 'shared/rotating_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Fabián Rodríguez', profession: 'Desarrollador', location: 'Heredia, Costa Rica', email: 'farodriguez.49@gmail.com', motto: '"There is no justice in following unjust laws." - Aaron Swartz', experience: experience, github: 'https://github.com/fabo49'} %>
+      <%= render partial: 'shared/user_card', locals: {backgroud_image: back_image, user_image: usr_image, name: 'Fabián Rodríguez', profession: 'Desarrollador', location: 'Heredia, Costa Rica', email: 'farodriguez.49@gmail.com', github: 'https://github.com/fabo49'} %>
     </div>
   </div>
 </section><%# Seccion de los desarrolladores %>

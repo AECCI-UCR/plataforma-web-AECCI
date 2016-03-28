@@ -1,0 +1,40 @@
+<%# Layout de un rotating card, necesita las siguientes variables:
+    * backgroud_image: ruta de la imagen que quiere desplegar en el fondo
+    * user_image: imagen del usuario
+    * name: nombre del usuario
+    * profession: profesion del usuario
+    * location: lugar donde vive el usuario (provincia, pais)
+    * email: correo del usuario
+    * github: url al perfil de github
+%>
+<div class="card-container manual-flip">
+  <div class="card">
+    <div class="front">
+      <div class="cover">
+        <%= image_tag backgroud_image %>
+      </div>
+      <div class="user">
+        <%= image_tag user_image, class: 'img-circle' %>
+      </div>
+      <div class="content">
+        <div class="main text-center">
+          <h3 class="name"><%= name %></h3>
+          <p class="profession"><%= profession %></p>
+          <h5><i class="fa fa-map-marker fa-fw text-muted"></i> <%= location %></h5>
+          <h5>
+            <i class="fa fa-envelope-o fa-fw text-muted"></i>
+            <%= email %>
+          </h5>
+          <br/>
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <div class="center-block">
+                <%= link_to 'Ver GitHub', github, class: 'btn btn-primary btn-block btn-sm', target: '_blank' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end front panel -->
+  </div> <!-- end card -->
+</div> <!-- end card-container -->
