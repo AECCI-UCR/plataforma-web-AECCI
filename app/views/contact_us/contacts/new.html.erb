@@ -1,6 +1,4 @@
 <div class="body-contact-alone">
-  <br/>
-  <br/>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-xs-12">
@@ -17,45 +15,43 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 col-xs-12">
             <div class="form-horizontal">
-              <div class="form-group">
-                <div class="col-md-6 col-xs-12">
-                  <% if ContactUs.require_name %>
+              <% if ContactUs.require_name %>
+                  <div class="col-md-5 col-xs-12">
+                    <div class="form-group">
                       <div class='string required' id='contact_us_contact_name_input'>
                         <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
-                        <% if f.object.errors[:name].present? %>
-                            <p class='inline-error text-danger'><%= f.object.errors[:name].join(' y ') %></p>
-                        <% end %>
                       </div>
-                  <% end %>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                  <div class='string required' id='contact_us_contact_email_input'>
-                    <%= f.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
-                    <% if f.object.errors[:email].present? %>
-                        <p class='inline-error text-danger'><%= f.object.errors[:email].join(' y ') %></p>
-                    <% end %>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <% if ContactUs.require_subject %>
-                  <div class="form-group">
-                    <div class="col-xs-12">
-                      <div class='string required' id='contact_us_contact_subject_input'>
-                        <%= f.text_field :subject, placeholder: 'Asunto' %>
-                        <% if f.object.errors[:subject].present? %>
-                            <p class='inline-error text-danger'><%= f.object.errors[:subject].join(' y ') %></p>
-                        <% end %>
+                  <div class="col-md-5 col-md-offset-2 col-xs-12">
+                    <div class="form-group">
+                      <div class='string required' id='contact_us_contact_email_input'>
+                        <%= f.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
+                      </div>
+                    </div>
+                  </div>
+              <% else %>
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <div class='string required' id='contact_us_contact_email_input'>
+                        <%= f.text_field :email, class: 'form-control', placeholder: 'Correo electrónico' %>
                       </div>
                     </div>
                   </div>
               <% end %>
-              <div class="form-group">
-                <div class="col-xs-12">
+              <% if ContactUs.require_subject %>
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <div class='string required' id='contact_us_contact_subject_input'>
+                        <%= f.text_field :subject, placeholder: 'Asunto' %>
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
+              <div class="col-xs-12">
+                <div class="form-group">
                   <div class='text required' id='contact_us_contact_message_input'>
                     <%= f.text_area :message, class: 'form-control', rows: '5', placeholder: 'Mensaje' %>
-                    <% if f.object.errors[:message].present? %>
-                        <p class='inline-error text-danger'><%= f.object.errors[:message].join(' y ') %></p>
-                    <% end %>
                   </div>
                 </div>
               </div>

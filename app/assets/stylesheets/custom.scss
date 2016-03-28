@@ -9,6 +9,8 @@ $grey-text: #666;
 $grey-link-nav-footer: #E0E0E0;
 $body-color: #f3f3f3;
 $shadow-color: #888888;
+
+$brand-primary: $primary;
 // == Fin Variables de los colores ==
 
 // Typografia
@@ -139,11 +141,6 @@ p {
   font-weight: 300; // "Roboto Light"
 }
 
-// Para que el carousel se pegue al navbar
-.fix-carousel {
-  margin-top: -10px;
-}
-
 .btn-primary:hover {
   background-color: $primary-light;
   border-color: $primary-light;
@@ -177,6 +174,7 @@ p {
 .body-footer {
   background-color: $grey-dark;
   padding: 40px;
+  margin: 0px;
 }
 
 // Estilo del texto en el pie de pagina
@@ -212,7 +210,7 @@ p {
   margin-top: -10px;
 }
 
-.social{
+.social {
   padding-left: 20px;
 }
 
@@ -289,7 +287,7 @@ html, body {
   min-height: 75%;
   height: auto !important;
   //height: 100%;
-  margin: 0 auto -4em;
+  margin: 0 0 -4em;
 }
 
 .footer, .push {
