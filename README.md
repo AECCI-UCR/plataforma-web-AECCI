@@ -20,9 +20,6 @@ La plataforma puede ser extendida para cubrir más necesidades de los estudiante
 
 * Documentación interna.
 
-### Problemas conocidos
-* Al momento de cargar un archivo pdf de examen que supera los 20MB, el sistema da un error que se detalla en este [issue.](https://github.com/fabo49/plataforma_AECCI/issues/2)
-
 - - -
 
 ## Como empezar
