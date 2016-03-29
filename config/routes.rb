@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   put 'user/:id' => 'users_administration#toggle_admin', as: :toggle_admin
 
   resources :ads
-  resources :tests
+  resources :tests, except: [:show]
   resources :teachers, only: [:new, :create]
   resources :courses, only: [:index, :new, :create] do
     get :teachers, on: :member, controller: :teachers, action: :course_teachers
