@@ -188,10 +188,10 @@ es-CR:
       carrierwave_download_error: "No se pudo descargar la imagen."
       extension_blacklist_error: "No puede ser de tipo %{extension}, tipos prohibidos: %{prohibited_types}"
       extension_white_list_error: "no puede ser de tipo %{extension}, tipos permitidos: %{allowed_types}"
-      file_size_is_in: ! 'el tamaño debe estar entre %{min} y %{max}'
-      file_size_is_less_than: ! 'el tamaño debe ser menor a %{count}'
-      file_size_is_less_than_or_equal_to: ! 'el tamaño debe ser menor o igual a %{count}'
-      file_size_is_greater_than: ! 'el tamaño debe ser mayor a %{count}'
+      file_size_is_in: ! 'debe estar entre %{min} y %{max}'
+      file_size_is_less_than: ! 'debe ser menor a %{count}'
+      file_size_is_less_than_or_equal_to: ! 'debe ser menor o igual a %{count}'
+      file_size_is_greater_than: ! 'debe ser mayor a %{count}'
       file_size_is_greater_than_or_equal_to: ! 'el tamaño debe ser mayor o igual a %{count}'
       spoofed_file_media_type: la extensión no concide con su contenido
       allowed_file_content_types: ! 'debe ser de los siguientes tipos: %{types}'

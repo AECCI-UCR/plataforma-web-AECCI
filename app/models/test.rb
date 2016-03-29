@@ -15,11 +15,10 @@ class Test < ActiveRecord::Base
 
   # Validations
   validates :year, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1981, less_than_or_equal_to: Time.now.year}
-  validates :teacher_id, presence: true
+  validates :teacher_id, presence: true, numericality: {only_integer: true}
   validates :semester, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: min_semester, less_than_or_equal_to: max_semester}
   validates :test_number, presence: true, numericality: {only_integer: true, greater_than: 0}
-  validates :file_url, presence: true, file_size: {less_than_or_equal_to: 20.megabytes, message: ' debe ser menor a %{count}'}, file_content_type: {allow: 'application/pdf', mode: :strict}
-  validates :course_id, presence: true
-
+  validates :file_url, presence: true, file_size: {less_than_or_equal_to: 20.megabytes}, file_content_type: {allow: 'application/pdf', mode: :strict}
+  validates :course_id, presence: true, numericality: {only_integer: true}
 
 end
