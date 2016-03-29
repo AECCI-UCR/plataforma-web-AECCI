@@ -43,7 +43,7 @@ es-CR:
         teacher_id: Profesor
         semester: Semestre
         test_number: Número
-        file_url: Archivo pdf
+        file_url: Archivo
         course_id: Curso
       ad:
         title: Título
@@ -170,6 +170,9 @@ es-CR:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       unlocked: Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión.
+
+
+  # Mensajes de error para Devise, Carrierwave y File Validator
   errors:
     messages:
       already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión
@@ -180,7 +183,19 @@ es-CR:
       not_saved:
         one: 'Ocurrió un error al tratar de guardar %{resource}:'
         other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
-
+      carrierwave_processing_error: "No se pudo cambiarle el tamaño a la imagen."
+      carrierwave_integrity_error: "No es una imagen."
+      carrierwave_download_error: "No se pudo descargar la imagen."
+      extension_blacklist_error: "No puede subir archivos de tipo %{extension}, tipos prohibidos: %{prohibited_types}"
+      extension_white_list_error: "no puede subir archivos de tipo %{extension}, tipos permitidos: %{allowed_types}"
+      file_size_is_in: ! 'el tamaño del archivo debe estar entre %{min} y %{max}'
+      file_size_is_less_than: ! 'el tamaño del archivo debe ser menor a %{count}'
+      file_size_is_less_than_or_equal_to: ! 'el tamaño del archivo debe ser menor o igual a %{count}'
+      file_size_is_greater_than: ! 'el tamaño del archivo debe ser mayor a %{count}'
+      file_size_is_greater_than_or_equal_to: ! 'el tamaño del archivo debe ser mayor o igual a %{count}'
+      spoofed_file_media_type: la extensión del archivo no concide con su contenido
+      allowed_file_content_types: ! 'el archivo debe ser de los siguientes tipos: %{types}'
+      excluded_file_content_types: ! 'el archivo no puede ser de tipo %{types}'
 
   # Plurización errores
   form_has_x_errors:
