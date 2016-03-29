@@ -9,6 +9,7 @@ initialize_file_style = ->
     buttonText: ' Subir archivo'
     size: 'sm'
     iconName: 'glyphicon-file'
+    placeholder: 'Sin archivo'
 
 hide_carousel_part = ->
   if $('#ad_important').is(':checked')
