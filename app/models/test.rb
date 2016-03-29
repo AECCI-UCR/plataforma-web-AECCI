@@ -10,10 +10,10 @@ class Test < ActiveRecord::Base
   mount_uploader :file_url, PdfUploader
 
   # Validations
-  validates :year, presence: true
+  validates :year, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1981, less_than_or_equal_to: Time.now.year}
   validates :teacher_id, presence: true
-  validates :semester, presence: true
-  validates :test_number, presence: true
+  validates :semester, presence: true, numericality: {only_integer: true, greater_than: 0}
+  validates :test_number, presence: true, numericality: {only_integer: true, greater_than: 0}
   validates :file_url, presence: true, file_size: {less_than_or_equal_to: 20.megabytes, message: ' debe ser menor a %{count}.'}
   validates :course_id, presence: true
 

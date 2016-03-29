@@ -31,7 +31,6 @@ es-CR:
       ad: anuncio
       course: curso
       teacher: profesor
-
     attributes:
       user:
         current_password: Contraseña actual
