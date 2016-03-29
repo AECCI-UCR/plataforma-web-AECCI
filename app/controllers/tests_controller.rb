@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   before_filter :authenticate_user!
   before_action :require_admin
-  before_action :fill_data, only: [:edit, :new, :create]
+  before_action :fill_data, only: [:edit, :new, :create, :update]
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   # GET /tests
