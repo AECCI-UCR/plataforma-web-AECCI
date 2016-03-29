@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   before_filter :authenticate_user!
   before_action :require_admin
-  before_action :fill_data, only:[:edit, :new]
+  before_action :fill_data, only: [:edit, :new, :create]
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   # GET /tests
@@ -64,19 +64,19 @@ class TestsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_test
-      @test = Test.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_test
+    @test = Test.find(params[:id])
+  end
 
-    def fill_data
-      @test = Test.new
-      @teachers = Teacher.all
-      @courses = Course.all
-    end
+  def fill_data
+    @test = Test.new
+    @teachers = Teacher.all
+    @courses = Course.all
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def test_params
-      params.require(:test).permit(:year, :teacher_id, :semester, :test_number, :file_url, :course_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def test_params
+    params.require(:test).permit(:year, :teacher_id, :semester, :test_number, :file_url, :course_id)
+  end
 end
