@@ -14,7 +14,7 @@ class Test < ActiveRecord::Base
   validates :teacher_id, presence: true
   validates :semester, presence: true
   validates :test_number, presence: true
-  validates :file_url, presence: true, file_size: {less_than_or_equal_to: 20.megabytes, message: 'El archivo debe ser menor a %{count}.'}
+  validates :file_url, presence: true, file_size: {less_than_or_equal_to: 20.megabytes, message: ' debe ser menor a %{count}.'}
   validates :course_id, presence: true
 
 end
