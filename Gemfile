@@ -63,6 +63,9 @@ gem 'fog'
 # Para validar el tamaño de archivos
 gem 'file_validators'
 
+# A small library for doing (command) lines.
+gem 'cocaine', '~> 0.5.8'
+
 # Gema para preview de PDFs
 gem 'pdfjs_viewer-rails'
 
