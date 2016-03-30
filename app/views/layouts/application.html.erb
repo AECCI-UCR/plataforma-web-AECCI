@@ -14,9 +14,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render 'layouts/navbar' %>
 <div class="wrapper">
-  <%= render 'layouts/navbar' %>
-
   <% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
   <% if ruta == root_url || ruta == contacts_url || ruta == contact_us_url %>
       <%# Se quita el container-fluid %>

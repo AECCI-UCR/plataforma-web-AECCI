@@ -1,9 +1,3 @@
-$(document).on 'ready page:load', ->
-  $('.link_nav').click ->
-    alert('Boom')
-    $('.active').remove()
-    $(@).addClass('active')
-
 ###
 jQuery ($) ->
   # Métodos
