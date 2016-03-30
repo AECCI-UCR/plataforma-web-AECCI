@@ -2,7 +2,7 @@
   <div class="body-carousel">
     <% ads = Ad.where(important: true) %>
     <% if ads.count > 0 %>
-        <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3500">
           <%# Indicadores %>
           <ol class="carousel-indicators">
             <% ads.each_index do |count| %>

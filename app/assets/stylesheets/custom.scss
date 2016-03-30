@@ -170,6 +170,10 @@ ul {
   }
 }
 
+.active {
+  background-color: $grey-light;
+}
+
 // Cuando enfoca un form
 .form-control:focus {
   box-shadow: 1px 1px 1px transparent;
@@ -178,7 +182,7 @@ ul {
 
 // El cuerpo del pie de pagina
 .body-footer {
-  background-color: #383838;
+  background-color: $grey-dark;
   padding: 40px;
   margin: 0px;
 }

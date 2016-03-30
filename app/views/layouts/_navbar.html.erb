@@ -15,17 +15,17 @@
     <div class="collapse navbar-collapse" id="opciones-navbar">
       <%# Menú de la derecha %>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Anuncios', ads_path, id: 'nav_anuncios' %></li>
+        <li><%= link_to 'Anuncios', ads_path, id: 'nav_anuncios', class: 'link_nav' %></li>
         <% if user_signed_in? %>
-            <li><%= link_to 'Banco de exámenes', courses_path %>
+            <li><%= link_to 'Banco de exámenes', courses_path, class: 'link_nav' %>
             </li>
             <% if current_user.admin? %>
-                <li><%= link_to 'Usuarios', users_path, id: 'nav_administracion_usuarios' %></li>
+                <li><%= link_to 'Usuarios', users_path, id: 'nav_administracion_usuarios', class: 'link_nav' %></li>
             <% end %>
-            <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'link_nav' %></li>
         <% else %>
-            <li><%= button_to 'Ingresar', new_user_session_path, method: :get, class: 'btn navbar-btn btn-login btn-sm' %></li>
-            <li><%= button_to 'Registrarse', new_user_registration_path, method: :get, class: 'btn navbar-btn btn-registro btn-sm' %></li>
+            <li><%= button_to 'Ingresar', new_user_session_path, method: :get, class: 'btn navbar-btn btn-login btn-sm', class: 'link_nav' %></li>
+            <li><%= button_to 'Registrarse', new_user_registration_path, method: :get, class: 'btn navbar-btn btn-registro btn-sm', class: 'link_nav' %></li>
         <% end %>
       </ul>
     </div>
