@@ -80,9 +80,10 @@
           </div>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <h6>
-                <small><b>Última modificación: </b> <%= ad.updated_at.to_date %></small>
-              </h6>
+              <h5>
+                <% date = ad.updated_at.to_date.to_s.split('-') %>
+                <small><i class="fa fa-calendar"></i>  <%= date[2]<<'-'<<date[1]<<'-'<<date[0] %></small>
+              </h5>
             </div>
           </div>
       <% end %>

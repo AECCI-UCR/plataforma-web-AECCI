@@ -11,15 +11,18 @@ initialize_file_style = ->
     iconName: 'glyphicon-file'
     placeholder: 'Sin archivo'
 
-hide_carousel_part = ->
-  if $('#ad_important').is(':checked')
-    $('#carousel_part').show()
-  else
-    $('#carousel_part').hide()
-  return
+
 
 jQuery ($) ->
-# Esto es para el boton de "take me to top"
+
+  hide_carousel_part = ->
+    if $('#ad_important').is(':checked')
+      $('#carousel_part').show()
+    else
+      $('#carousel_part').hide()
+    return
+
+  # Esto es para el boton de "take me to top"
   amountScrolled = 300
   $(window).scroll ->
     if $(window).scrollTop() > amountScrolled

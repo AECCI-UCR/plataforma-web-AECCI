@@ -7,35 +7,13 @@
   .info-asocia {
     text-align: center;
   }
-  .body-section {
-    background-image: none !important;
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
 
-}
-// Cuando la pantalla llega al tamano "xs" (768px o -) entonces cambian algunos estilos
-@media screen and (max-width: 768px) {
-  .body-contact {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-image: none !important;
-    background-color: white;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-  }
 }
 
 // Cuerpo de la seccion de la asociacion en el home
 .body-section {
   padding-top: 30px;
   padding-bottom: 30px;
-  background-image: url("back_asocia.png");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: 100%;
   margin: 0px;
 }
 
@@ -43,10 +21,7 @@
 .body-contact {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-image: url("back_contact.png");
   background-color: white;
-  background-repeat: no-repeat;
-  background-size: 100%;
   margin: 0px;
 }
 
