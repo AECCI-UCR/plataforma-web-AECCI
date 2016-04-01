@@ -141,7 +141,7 @@
         </div>
       </div>
       <br/>
-      <%= form_for :contact_us_contact, url: contacts_path, html: { onsubmit: 'validate_contact_form;' } do |f| %>
+      <%= form_for :contact_us_contact, url: contacts_path, html: {id: 'contact_us_form'} do |f| %>
           <div class="row">
             <div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-6 col-sm-offset-3">
               <div class="form-horizontal">
@@ -195,7 +195,7 @@
           </div>
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-              <%= f.submit 'Enviar mensaje', class: 'btn btn-primary btn-block'%>
+              <%= f.submit 'Enviar mensaje', class: 'btn btn-primary btn-block', id: 'btn_contact_us' %>
             </div>
           </div>
       <% end %>
