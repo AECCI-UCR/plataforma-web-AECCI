@@ -28,8 +28,10 @@
               <% end %>
             </li>
         <% else %>
-            <li><%= button_to 'Ingresar', new_user_session_path, method: :get, class: 'btn navbar-btn btn-login btn-sm' %></li>
-            <li><%= button_to 'Registrarse', new_user_registration_path, method: :get, class: 'btn navbar-btn btn-registro btn-sm' %></li>
+            <li><%= button_to 'Ingresar', new_user_session_path, method: :get, class: 'btn navbar-btn btn-login btn-sm hidden-xs' %>
+            <%= link_to 'Ingresar', new_user_session_path, method: :get, class: 'hidden-sm hidden-md hidden-lg' %></li>
+            <li><%= button_to 'Registrarse', new_user_registration_path, method: :get, class: 'btn navbar-btn btn-registro btn-sm hidden-xs' %>
+            <%= link_to 'Registrarse', new_user_registration_path, method: :get, class:'hidden-sm hidden-md hidden-lg' %></li>
         <% end %>
       </ul>
     </div>
