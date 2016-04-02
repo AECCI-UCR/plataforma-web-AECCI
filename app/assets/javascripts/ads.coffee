@@ -22,7 +22,6 @@ hide_ad_carousel_part = ->
     $('#carousel_part').show()
   else
     $('#carousel_part').hide()
-  return
 
 validate_ad_title = ->
   if $('#input_title').val() == ''
@@ -56,7 +55,7 @@ validate_ad_image_url = ->
 
 validate_ad_image_carousel_url = ->
   if $('#ad_important').is ':checked'
-    if $('#image_carousel_url').val() == ''
+    if $('#ad_image_carousel_url').val() == ''
       $('#image_carousel_url_alert').fadeIn()
       $('#ad_image_carousel_url_input').addClass 'has-error'
       return false
@@ -69,7 +68,8 @@ validate_ad_form = ->
   validate_title = validate_ad_title()
   validate_description = validate_ad_description()
   validate_image_url = validate_ad_image_url()
-  if $('#ad_important').is ':checked'
+  validation = true
+  if $('#ad_important').is ':checked' == true
     validate_image_carousel = validate_ad_image_carousel_url()
     return validate_title and validate_description and validate_image_url and validate_image_carousel
   else
@@ -93,7 +93,6 @@ jQuery ($) ->
       $('a.back-to-top').fadeOut 'slow'
     return
 
-
   $(document).on 'ready page:load', ->
     initialize_file_style()
     hide_ad_alerts()
@@ -109,11 +108,10 @@ jQuery ($) ->
         $('#carousel_part').fadeIn()
       else
         $('#carousel_part').fadeOut()
-      return
 
     validate_ad_form_realtime()
 
-    $('#new_ad').submit (event) ->
+    $('#btn_ad_submit').click (event) ->
       event.preventDefault()
       if validate_ad_form()
-        $('#new_ad').submit()
+        $('#new_ad_form').submit()
