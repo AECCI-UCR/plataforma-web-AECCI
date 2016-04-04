@@ -7,7 +7,7 @@
   <%= render layout: 'shared/panel', locals: {title: 'Datos del examen', size: 8, offset: 2} do %>
       <div class="form-horizontal">
         <%= form_for @test do |f| %>
-            <div class="form-group">
+            <div class="form-group" id="test_course_id_input">
               <div class="col-sm-4 col-lg-3">
                 <%= f.label :course_id, class: 'required' %>
               </div>
@@ -19,7 +19,7 @@
                 </p>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="test_teacher_id_input">
               <div class="col-sm-4 col-lg-3">
                 <%= f.label :teacher_id, class: 'required' %>
               </div>
@@ -32,7 +32,7 @@
               </div>
             </div>
             <hr/>
-            <div class="form-group">
+            <div class="form-group" id="test_year_input">
               <div class="col-sm-4 col-lg-3">
                 <%= f.label :year, class: 'required' %>
               </div>
@@ -43,7 +43,7 @@
                 </p>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="test_semester_input">
               <div class="col-sm-4 col-lg-3">
                 <%= f.label :semester, class: 'required' %>
               </div>
@@ -54,7 +54,7 @@
                 </p>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="test_number_input">
               <div class="col-sm-4 col-lg-3">
                 <%= f.label :test_number, class: 'required' %>
               </div>
@@ -65,7 +65,7 @@
                 </p>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="test_file_url_input">
               <div class="col-sm-4 col-lg-3">
                 <%= f.label :file_url, class: 'required' %>
               </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="col-xs-12">
               <div class="pull-right">
-                <%= f.submit class: 'btn btn-primary' %>
+                <%= f.submit class: 'btn btn-primary', id: 'btn_test_submit' %>
               </div>
             </div>
         <% end %>

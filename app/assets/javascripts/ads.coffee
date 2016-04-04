@@ -68,8 +68,7 @@ validate_ad_form = ->
   validate_title = validate_ad_title()
   validate_description = validate_ad_description()
   validate_image_url = validate_ad_image_url()
-  validation = true
-  if $('#ad_important').is ':checked' == true
+  if $('#ad_important').is ':checked'
     validate_image_carousel = validate_ad_image_carousel_url()
     return validate_title and validate_description and validate_image_url and validate_image_carousel
   else
