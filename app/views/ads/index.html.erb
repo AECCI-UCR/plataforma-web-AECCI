@@ -73,17 +73,17 @@
       <%= render layout: 'shared/panel', locals: {title: ad.title, size: 10, offset: 1} do %>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
-              <%= markdown(ad.description) %>
-              <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
+              <h6>
+                <% date = ad.updated_at.to_date.to_s.split('-') %>
+                <small><i class="fa fa-calendar"></i>  <%= date[2]<<'-'<<date[1]<<'-'<<date[0] %></small>
+              </h6>
             </div>
           </div>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <h5>
-                <% date = ad.updated_at.to_date.to_s.split('-') %>
-                <small><i class="fa fa-calendar"></i>  <%= date[2]<<'-'<<date[1]<<'-'<<date[0] %></small>
-              </h5>
+              <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
+              <%= markdown(ad.description) %>
+              <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
             </div>
           </div>
       <% end %>
