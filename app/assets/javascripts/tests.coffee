@@ -46,16 +46,6 @@ validate_test_number = ->
     $('#test_number_input').removeClass 'has-error'
     return true
 
-validate_test_file_url = ->
-  if $('#test_file_url').val() == ''
-    $('#file_url_alert').fadeIn()
-    $('#test_file_url_input').addClass 'has-error'
-    return false
-  else
-    $('#file_url_alert').fadeOut()
-    $('#test_file_url_input').removeClass 'has-error'
-    return true
-
 validate_test_course_id = ->
   if $('#test_course_id').val() == ''
     $('#course_alert').fadeIn()
@@ -76,8 +66,6 @@ validate_test_form_realtime = ->
     validate_test_semester()
   $('#test_test_number').blur ->
     validate_test_number()
-  $('#test_file_url').blur ->
-    validate_test_file_url()
   $('#test_course_id').blur ->
     validate_test_course_id()
 
@@ -86,9 +74,8 @@ validate_test_form = ->
   validate_teacher = validate_test_teacher_id()
   validate_semester = validate_test_semester()
   validate_number = validate_test_number()
-  validate_file = validate_test_file_url()
   validate_course = validate_test_course_id()
-  return validate_year and validate_teacher and validate_semester and validate_number and validate_file and validate_course
+  return validate_year and validate_teacher and validate_semester and validate_number and validate_course
 
 jQuery ($) ->
   $(document).on 'ready page:load', ->
