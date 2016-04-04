@@ -55,7 +55,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="pull-right">
-              <%= link_to 'Agregar un anuncio', new_ad_path, class: 'btn btn-primary' %>
+              <%= link_to 'Agregar un anuncio', new_ad_path, class: 'btn btn-primary visible-xs-inline-block' %>
             </div>
           </div>
         </div>
@@ -81,9 +81,9 @@
           </div>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <%= link_to image_tag(ad.image_url, class: 'img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
+              <%= link_to image_tag(ad.image_url, class: 'hidden-xs img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
               <%= markdown(ad.description) %>
-              <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-ad', style: 'display: none' %>
+              <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-sm btn-block hidden-sm hidden-md hidden-lg' %>
             </div>
           </div>
       <% end %>
