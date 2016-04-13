@@ -75,6 +75,7 @@ validate_test_form = ->
   validate_semester = validate_test_semester()
   validate_number = validate_test_number()
   validate_course = validate_test_course_id()
+  console.log validate_year, validate_teacher, validate_semester, validate_number, validate_course
   return validate_year and validate_teacher and validate_semester and validate_number and validate_course
 
 jQuery ($) ->
@@ -94,4 +95,4 @@ jQuery ($) ->
     $('#btn_test_submit').click (event) ->
       event.preventDefault()
       if validate_test_form()
-        $('#new_test').submit()
+        $('#test_form').submit()

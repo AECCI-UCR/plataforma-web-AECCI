@@ -87,4 +87,4 @@ jQuery ($) ->
     $('#btn_ad_submit').click (event) ->
       event.preventDefault()
       if validate_ad_form()
-        $('#new_ad_form').submit()
+        $('#ad_form').submit()

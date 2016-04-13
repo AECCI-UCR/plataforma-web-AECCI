@@ -44,7 +44,7 @@ class TestsController < ApplicationController
   def update
     respond_to do |format|
       if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'El examen se actualizó correctamente.' }
+        format.html { redirect_to tests_url, notice: 'El examen se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @test }
       else
         format.html { render :edit }
