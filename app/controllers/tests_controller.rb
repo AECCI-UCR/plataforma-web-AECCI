@@ -4,63 +4,40 @@ class TestsController < ApplicationController
   before_action :fill_data, only: [:edit, :new, :create, :update]
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
-  # GET /tests
-  # GET /tests.json
   def index
-    @tests = Test.all.order_for_table.group_by(&:course)
+    @tests = Test.by_courses_and_teachers
   end
 
-  # GET /tests/1
-  # GET /tests/1.json
   def show
   end
 
-  # GET /tests/new
   def new
   end
 
-  # GET /tests/1/edit
   def edit
   end
 
-  # POST /tests
-  # POST /tests.json
   def create
     @test = Test.new(test_params)
 
-    respond_to do |format|
-      if @test.save
-        format.html { redirect_to tests_url, notice: 'El examen se agregó correctamente.' }
-        format.json { render :show, status: :created, location: @test }
-      else
-        format.html { render :new }
-        format.json { render json: @test.errors, status: :unprocessable_entity }
-      end
+    if @test.save
+      redirect_to tests_url, notice: 'El examen se agregó correctamente.'
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /tests/1
-  # PATCH/PUT /tests/1.json
   def update
-    respond_to do |format|
-      if @test.update(test_params)
-        format.html { redirect_to tests_url, notice: 'El examen se actualizó correctamente.' }
-        format.json { render :show, status: :ok, location: @test }
-      else
-        format.html { render :edit }
-        format.json { render json: @test.errors, status: :unprocessable_entity }
-      end
+    if @test.update(test_params)
+      redirect_to tests_url, notice: 'El examen se actualizó correctamente.'
+    else
+      render :edit
     end
   end
 
-  # DELETE /tests/1
-  # DELETE /tests/1.json
   def destroy
     @test.destroy
-    respond_to do |format|
-      format.html { redirect_to tests_url, notice: 'El examen se eliminó correctamente.' }
-      format.json { head :no_content }
-    end
+    redirect_to tests_url, notice: 'El examen se eliminó correctamente.'
   end
 
   private
@@ -71,8 +48,8 @@ class TestsController < ApplicationController
 
   def fill_data
     @test = Test.new
-    @teachers = Teacher.all
-    @courses = Course.all
+    @teachers = Teacher.all.select(:id, :name)
+    @courses = Course.all.select(:id, :name)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
