@@ -49,17 +49,19 @@ validate_contact_form_realtime = ->
   $('#contact_us_contact_message').blur ->
     validate_contact_message()
 
-jQuery ($) ->
-  hide_contact_alerts = ->
-    $('#name_alert').hide()
-    $('#message_alert').hide()
-    $('#mail_alert').hide()
+hide_contact_alerts = ->
+  $('#name_alert').hide()
+  $('#message_alert').hide()
+  $('#mail_alert').hide()
 
+jQuery ($) ->
   $(document).on 'ready page:load', ->
     hide_contact_alerts()
+
+    validate_contact_form_realtime()
+
     $('#contact_us_form').submit (event) ->
       event.preventDefault()
       if validate_contact_form()
         $('#contact_us_form').submit()
 
-    validate_contact_form_realtime()

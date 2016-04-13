@@ -10,12 +10,6 @@ $primary-dark: #C94A02;
 @import "bootstrap";
 
 @media screen and (max-width: $screen-xs-max) {
-  .img-ad {
-    display: none;
-  }
-  .btn-ad {
-    display: block !important;
-  }
   a.back-to-top {
     width: 40px !important;
     height: 40px !important;
