@@ -6,6 +6,9 @@ gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+# PostgresSQL
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -32,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 
 # -- Gemas agregadas por nosotros --
 
@@ -79,7 +83,7 @@ gem 'bootstrap-filestyle-rails'
 gem 'will_paginate-bootstrap'
 
 # Traducción
-gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
 
 # Selectize is the hybrid of a textbox and <select> box
 gem 'selectize-rails'
@@ -89,6 +93,9 @@ gem 'parallax-rails'
 
 # Pudnit gema para el control de autorización
 gem 'pundit'
+
+# Variables de ambiente
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
