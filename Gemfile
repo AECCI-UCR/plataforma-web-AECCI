@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '~> 4.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-# PostgresSQL
+# PostgresSQL (Ojo: Se requiere biblioteca en debian-derivated: apt install libpq-dev)
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -17,9 +17,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -32,9 +29,6 @@ gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 
 # -- Gemas agregadas por nosotros --
@@ -61,8 +55,7 @@ gem 'coderay'
 
 # Gemas para subir archivos
 gem 'carrierwave'
-gem 'mini_magick'
-gem 'fog'
+gem 'mini_magick' # Rquiere biblioteca
 
 # Para validar el tamaño de archivos
 gem 'file_validators'
@@ -88,14 +81,14 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
 # Selectize is the hybrid of a textbox and <select> box
 gem 'selectize-rails'
 
-# Gema para agregar parallax
-gem 'parallax-rails'
-
 # Pudnit gema para el control de autorización
 gem 'pundit'
 
 # Variables de ambiente
 gem "figaro"
+
+# La versión 11.1.2 ha dado problema al ser llamada
+gem 'rake', '11.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
