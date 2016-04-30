@@ -6,9 +6,6 @@ gem 'rails', '~> 4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-# PostgresSQL (Ojo: Se requiere biblioteca en debian-derivated: apt install libpq-dev)
-gem 'pg'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -114,3 +111,10 @@ end
 
 # Servidor de aplicación
 gem 'puma'
+
+group :production do
+  # Ambiente javascript
+  gem 'therubyracer'
+  # PostgresSQL (Ojo: Se requiere biblioteca en debian-derivated: apt install libpq-dev)
+  gem 'pg'
+end

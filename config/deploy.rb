@@ -6,7 +6,13 @@ bundle exec cap production ssh:doctor
 # Figaro
 bundle exec cap production setup
 # Primer deploy a servidor
-cap production deploy:initial 
+cap production deploy:initial
+# Después de deploy:initial
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -nfs "/home/rails/apps/PlataformaAecci/current/config/nginx.conf" "/etc/nginx/sites-enabled/PlataformaAecci"
+
+# Deploy no inicial
+cap production deploy
 =end
 
 lock '3.5.0'
