@@ -60,12 +60,12 @@ a.back-to-top {
   z-index: 999;
   right: 30px;
   bottom: 20px;
-  background: $primary url("up-arrow.png") no-repeat center 43%;
+  background: $primary image-url("up-arrow.png") no-repeat center 43%;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
 }
 
 a:hover.back-to-top {
-  background: $primary-light url("up-arrow.png") no-repeat center 43%;
+  background: $primary-light image-url("up-arrow.png") no-repeat center 43%;
 }
