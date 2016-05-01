@@ -13,8 +13,7 @@ class TeachersController < ApplicationController
 
   def course_teachers
     @course = Course.find(params[:id])
-    # TODO: refect esta vara :)
-    @tests = @course.tests.select(:id, :teacher_id, :year, :file_url, :semester, :test_number).order(year: :desc, semester: :desc, test_number: :asc).group_by { |test| test.teacher.name }
+    @tests = @course.tests.select(:id, :teacher_id, :course_id, :year, :file_url, :semester, :test_number).order(year: :desc, semester: :desc, test_number: :asc).group_by { |test| test.teacher.name }
   end
 
 

@@ -46,7 +46,7 @@
                         <tbody>
                         <% test.each do |data| %>
                             <tr>
-                              <td class="center-cell"><%= data.semester %></td>
+                              <td class="center-cell"><%= romanize(data.semester) %></td>
                               <td class="center-cell"><%= data.test_number %></td>
                               <td class="center-cell">
                                 <%= link_to pdfjs.full_path(file: "#{data.file_url}"), target: '_blank' do %>
