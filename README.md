@@ -40,7 +40,7 @@ Luego debe familiarizarse con el *framework Rails*. [Puede empezar aquí](https:
 1. Instalar Ruby.
 1. Instalar la gema `bundle` y `rails` (Se está usando la versión 4.2.5.1).
 1. Instalar *NodeJS*
-1. Ingresar a la carpeta del proyecto y digitar `bundle install`
+1. Ingresar a la carpeta del proyecto y digitar `bundle install --without production`
 1. `rake db:migrate`
 1. Listo!
 
