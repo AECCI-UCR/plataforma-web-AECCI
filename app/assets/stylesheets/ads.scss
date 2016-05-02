@@ -13,12 +13,12 @@ $primary-dark: #C94A02;
   a.back-to-top {
     width: 40px !important;
     height: 40px !important;
-    background: $primary url("up-arrow-sm.png") no-repeat center 43% !important;
+    background: $primary image-url("up-arrow-sm.png") no-repeat center 43% !important;
     box-shadow: 0px 1px 2px #2b2b2b !important;
     right: 20px !important;
   }
   a:hover.back-to-top {
-    background: $primary-light url("up-arrow-sm.png") no-repeat center 43% !important;
+    background: $primary-light image-url("up-arrow-sm.png") no-repeat center 43% !important;
   }
 }
 
