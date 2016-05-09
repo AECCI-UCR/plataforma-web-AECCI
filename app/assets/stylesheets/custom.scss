@@ -81,6 +81,10 @@ $body-bg: $body-color;
   .btn-registro {
     margin-left: 15px !important;
   }
+
+  .container-grande {
+    padding: 20px 0;
+  }
 }
 
 .btn-login {
@@ -178,6 +182,10 @@ ul {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.container-grande {
+  padding: 40px 0;
 }
 
 // Cuando enfoca un form

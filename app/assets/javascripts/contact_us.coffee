@@ -60,7 +60,7 @@ jQuery ($) ->
 
     validate_contact_form_realtime()
 
-    $('#contact_us_form').submit (event) ->
+    $('#btn_contact_us').click (event) ->
       event.preventDefault()
       if validate_contact_form()
         $('#contact_us_form').submit()
