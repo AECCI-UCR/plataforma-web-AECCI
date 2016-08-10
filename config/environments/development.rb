@@ -17,17 +17,17 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Si desea que el correo electrónico se muestre en consola comente estas 3 lineas
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #     address: ENV['EMAIL_HOST'],
-  #     port: ENV['EMAIL_PORT'],
-  #     domain: ENV['EMAIL_DOMAIN'],
-  #     authentication: 'plain',
-  #     user_name: ENV['EMAIL_USERNAME'],
-  #     password: ENV['EMAIL_PASSWORD'],
-  #     enable_starttls_auto: true
-  # }
+   config.action_mailer.perform_deliveries = true
+   config.action_mailer.delivery_method = :smtp
+   config.action_mailer.smtp_settings = {
+       address: ENV['EMAIL_HOST'],
+       port: ENV['EMAIL_PORT'],
+       domain: ENV['EMAIL_DOMAIN'],
+       authentication: 'plain',
+       user_name: ENV['EMAIL_USERNAME'],
+       password: ENV['EMAIL_PASSWORD'],
+       enable_starttls_auto: true
+   }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true

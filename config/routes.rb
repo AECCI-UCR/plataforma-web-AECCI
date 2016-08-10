@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'not_authorized' => 'static_pages#not_authorized', as: :not_authorized
   get 'project_info' => 'static_pages#project_info', as: :project_info
 
+  # Confirmacion envio de correo
+  get 'contact_success' => 'static_pages#contact_success', as: :contact_success
+
   # Rutas para la administración de usuarios
   devise_for :users
   get 'users_administration' => 'users_administration#index', as: :users

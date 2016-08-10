@@ -1,7 +1,17 @@
-<div class="parallax">
-  <ul id="scene_not_pass">
-    <li class="layer" data-depth="0.00"><%= image_tag 'fondo.png', class: 'img-responsive' %></li>
-    <li class="layer" data-depth="0.5"><%= image_tag 'gandalf.png', class: 'img-responsive' %></li>
-    <li class="layer" data-depth="0.8"><%= image_tag 'texto.png', class: 'img-responsive' %></li>
-  </ul>
+<div class="container">
+  <div class="container-grande">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= image_tag 'gandalf.png', class: 'img-responsive center-block', style: 'max-height:350px' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <br/>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="alert alert-danger" role="alert">
+        <strong>¡Cuidado!</strong> Gandalf está cuidando de que no accedas a sitios que no tienes permisos. <%= link_to 'Vuelve al inicio', root_path , class:'alert-link' %> para que no lo hagas enojar.
+      </div>
+    </div>
+  </div>
 </div>
