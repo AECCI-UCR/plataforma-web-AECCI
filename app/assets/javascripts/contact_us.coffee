@@ -63,5 +63,7 @@ jQuery ($) ->
     $('#btn_contact_us').click (event) ->
       event.preventDefault()
       if validate_contact_form()
+        $('#btn_contact_us').prop('disabled', true)
+        $('#btn_contact_us').attr('value', "Enviando...")
         $('#contact_us_form').submit()
 

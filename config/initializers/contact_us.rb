@@ -6,10 +6,10 @@ ContactUs.setup do |config|
   # Configure the e-mail address which email notifications should be sent from.  If emails must be sent from a verified email address you may set it here.
   # Example:
   # config.mailer_from = "contact@please-change-me.com"
-  config.mailer_from = ENV['EMAIL_HOST']
+  config.mailer_from = ENV['EMAIL_USERNAME']
 
   # Configure the e-mail address which should receive the contact form email notifications.
-  config.mailer_to = ENV['EMAIL_HOST']
+  config.mailer_to = ENV['EMAIL_USERNAME']
 
   # ==> Form Configuration
 
@@ -25,6 +25,6 @@ ContactUs.setup do |config|
   config.form_gem = nil
 
   # Configure the redirect URL after a successful submission
-  config.success_redirect = '/home'
+  config.success_redirect = '/'
 
 end
