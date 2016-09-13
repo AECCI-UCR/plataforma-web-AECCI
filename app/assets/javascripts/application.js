@@ -21,3 +21,7 @@
 // require parallax
 // require jquery.parallax
 //= require_tree .
+
+$(document).on('ready page:load', function () {
+    $('.flash-messages').delay(7000).fadeOut(); // Para que los mensajes flash se desaparezcan despues de 7 segundos
+});

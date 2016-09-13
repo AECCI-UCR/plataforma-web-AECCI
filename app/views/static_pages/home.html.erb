@@ -60,30 +60,37 @@
         </div>
         <div class="col-xs-12 col-md-5">
           <p class="info-asocia">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer posuere erat a ante. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Integer posuere erat a ante.
+            La AECCI es una agrupación sin ninguna adhesión religiosa, política o ideológica; respetándose las
+            preferencias de cada uno de los integrantes de la misma.
           </p>
           <br/>
           <p class="info-asocia">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer posuere erat a ante. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Integer posuere erat a ante.
-          </p>
-          <br/>
-          <p class="info-asocia">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer posuere erat a ante. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Integer posuere erat a ante.
+            Los objetivos específicos de la asociación de estudiantes de la ECCI son:
+            <ul>
+              <li>
+          <p>Promover la capacitación humanística, técnica y científica de los estudiantes de Ciencias de
+            la Computación e Informática de la Universidad de Costa Rica, respondiendo a nuestra
+            realidad nacional y a la vez consciente del papel del estudiante en ella.</p>
+          </li>
+          <li>
+            <p>Promover el fortalecimiento y la unión fraternal y provechosa de los estudiantes de Ciencias
+              de la Computación e Informática.</p>
+          </li>
+          <li>
+            <p>Estimular la formación de un estudiante consciente, crítico y responsable.</p>
+          </li>
+          <li>
+            <p>Orientar a sus asociados para el cumplimiento de sus deberes y derechos para la con la
+              Universidad y el país.</p>
+          </li>
+          <li>
+            <p>Velar por la solución de los problemas individuales o colectivos que enfrenten sus
+              miembros.</p>
+          </li>
+          <li>
+            <p>Promover el desarrollo de actividades culturales, deportivas, recreativas y de cualquier otra</p>
+          </li>
+          </ul>
           </p>
         </div>
       </div>
@@ -93,43 +100,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-4">
-          <%= link_to 'Hablemos', '#contact_us', class: 'btn btn-primary btn-block' %>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-2">
-          <%= link_to 'Conócenos', '#about_us', class: 'btn btn-info btn-block' %>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+          <%= link_to 'Hablemos', '#contact_us', class: 'btn btn-info btn-block' %>
         </div>
       </div>
       <br/>
     </div>
   </div>
 </section><%# Info de la asocia %>
-<section>
-  <div class="body-about-us" id="about_us">
-    <%# Aquí se debe modificar el contenido de description por la descripción de cada integrante %>
-    <% description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus ligula,
-                    euismod cursus pulvinar id, ultrices in diam. Vivamus a aliquam lorem. Nulla tincidunt nibh quis
-                    imperdiet tincidunt. Etiam tortor arcu, suscipit eget elementum nec, malesuada non nunc.'
-    %>
-    <div class="container">
-      <br/>
-      <br/>
-      <div class="row">
-        <%= render partial: 'static_pages/member_info', locals: {image_file: 'dragon-drop.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
-        <%= render partial: 'static_pages/member_info', locals: {image_file: 'dragon-drop.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
-        <%= render partial: 'static_pages/member_info', locals: {image_file: 'dragon-drop.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
-      </div>
-      <br/>
-      <div class="row">
-        <%= render partial: 'static_pages/member_info', locals: {image_file: 'dragon-drop.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
-        <%= render partial: 'static_pages/member_info', locals: {image_file: 'dragon-drop.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
-        <%= render partial: 'static_pages/member_info', locals: {image_file: 'dragon-drop.png', name: 'Nombre Apellido', position: 'puesto', description: description} %>
-      </div>
-      <br/>
-      <br/>
-    </div>
-  </div>
-</section><%# About us %>
 <section>
   <div class="body-contact" id="contact_us">
     <div class="container-fluid">

@@ -23,14 +23,13 @@
           <li>
             <%= link_to 'eMatricula', 'https://ematricula.ucr.ac.cr/ematricula/', class: 'text-footer', target: '_blank' %>
           </li>
-          <li><%= link_to 'Proyecto en GitHub', 'https://github.com/fabo49/plataforma_AECCI', class: 'text-footer', target: '_blank' %></li>
+          <li><%= link_to 'Proyecto en GitHub', 'https://github.com/AECCI-UCR/plataforma-web-AECCI', class: 'text-footer', target: '_blank' %></li>
         </ul>
       </div>
       <div class="col-sm-6 col-md-4 col-xs-12">
         <h5 class="title-footer">Mapa del sitio</h5>
         <ul>
           <li><%= link_to 'Inicio', root_url, class: 'text-footer' %></li>
-          <li><%= link_to '¿Quiénes somos?', root_url<<'#about_us', class: 'text-footer' %></li>
           <li><%= link_to 'Anuncios', ads_path, class: 'text-footer' %></li>
           <% if user_signed_in? %>
               <li><%= link_to 'Banco de exámenes', courses_path, class: 'text-footer' %>
@@ -64,7 +63,7 @@
                 <% end %></h4>
             </div>
             <div class="col-xs-1">
-              <h4 class="text-center"><%= link_to 'https://goo.gl/maps/qce48V5g1F52', class: 'text-footer', target: '_blank' do %>
+              <h4 class="text-center"><%= link_to 'https://goo.gl/maps/sabdDvd4sDm', class: 'text-footer', target: '_blank' do %>
                     <i class="fa fa-map-marker"></i>
                 <% end %></h4>
             </div>

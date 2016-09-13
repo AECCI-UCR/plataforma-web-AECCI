@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
 
   def not_authorized
   end
+
+  def contact_success
+  end
+
 end
