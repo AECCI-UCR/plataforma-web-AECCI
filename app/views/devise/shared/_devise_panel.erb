@@ -1,6 +1,5 @@
 <%= render layout: 'shared/panel', locals: {title: title, size: 6, offset: 3} do %>
     <%= yield %>
-
     <% content_for :outside_panel do %>
         <%= render 'devise/shared/links' %>
     <% end %>

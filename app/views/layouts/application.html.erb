@@ -17,7 +17,17 @@
 <%= render 'layouts/navbar' %>
 <%= render 'shared/flash_messages' %>
 <div class="wrapper">
-  <%= yield %>
+
+  <% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
+  <% if ruta == root_url %>
+      <%= yield %>
+  <% else %>
+      <div class="container-fluid">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+  <% end %>
   <div class="push"></div>
 </div>
 
