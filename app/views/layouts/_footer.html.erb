@@ -30,7 +30,6 @@
         <h5 class="title-footer">Mapa del sitio</h5>
         <ul>
           <li><%= link_to 'Inicio', root_url, class: 'text-footer' %></li>
-          <li><%= link_to '¿Quiénes somos?', root_url<<'#about_us', class: 'text-footer' %></li>
           <li><%= link_to 'Anuncios', ads_path, class: 'text-footer' %></li>
           <% if user_signed_in? %>
               <li><%= link_to 'Banco de exámenes', courses_path, class: 'text-footer' %>
