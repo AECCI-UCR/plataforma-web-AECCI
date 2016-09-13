@@ -43,7 +43,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 # Modal de confirmacion
-gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem 'data-confirm-modal'
 
 # Para la conversión a Markdown
 gem 'epic-editor-rails'
@@ -73,7 +73,7 @@ gem 'bootstrap-filestyle-rails'
 gem 'will_paginate-bootstrap'
 
 # Traducción
-gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 # Selectize is the hybrid of a textbox and <select> box
 gem 'selectize-rails'
