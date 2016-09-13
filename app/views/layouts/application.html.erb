@@ -15,26 +15,9 @@
 </head>
 <body>
 <%= render 'layouts/navbar' %>
+<%= render 'shared/flash_messages' %>
 <div class="wrapper">
-  <% ruta = "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-  <% if ruta == root_url || ruta == contacts_url || ruta == contact_us_url %>
-      <%# Se quita el container-fluid %>
-      <%= yield %>
-      <div style="display: none">
-        <%= render 'shared/flash_messages' %>
-      </div>
-  <% else %>
-      <%# Flash messages %>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 col-xs-12">
-            <%= render 'shared/flash_messages' %>
-          </div>
-        </div>
-        <%= yield %>
-        <br/>
-      </div>
-  <% end %>
+  <%= yield %>
   <div class="push"></div>
 </div>
 

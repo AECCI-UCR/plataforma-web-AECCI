@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,700,900,300); // Se importa el font Lato
+
 // == Variables de los colores (la paleta del sistema) ==
 $primary: #f96816;
 $primary-light: #FF8946;
@@ -9,6 +11,9 @@ $grey-link-nav-footer: #E0E0E0;
 $body-color: #fafafa;
 $shadow-color: #888888;
 
+$brand-danger: #d9534f;
+$brand-success: #4CAF50;
+
 $brand-primary: $primary;
 // == Fin Variables de los colores ==
 
@@ -17,8 +22,7 @@ $text-color: $grey-text;
 $link-color: $primary;
 $link-hover-color: $primary;
 $link-hover-decoration: underline;
-$font-family-sans-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
-$font-family-serif: 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
+$font-family-sans-serif: 'Lato', "Helvetica Neue", 'Roboto', 'FontAwesome', Arial, Helvetica, sans-serif;
 
 // Estilos del navbar
 $navbar-default-bg: $grey-dark;
@@ -64,6 +68,14 @@ $panel-primary-heading-bg: white;
 // Pagination
 $pagination-active-bg: $primary;
 $pagination-active-border: $primary;
+
+// Alerts
+$alert-success-bg: white;
+$alert-success-text: $brand-success;
+$alert-success-border: $brand-success;
+$alert-danger-bg: white;
+$alert-danger-text: $brand-danger;
+$alert-danger-border: $brand-danger;
 
 // Otros
 $body-bg: $body-color;
@@ -152,7 +164,8 @@ h1, h2, h3, h4, h5, h6 {
 
 // Estilo de los párrafos
 p {
-  font-weight: 300; // "Roboto Light"
+  font-weight: 300; // "Loto"
+  font-size: 11pt;
 }
 
 ul {
@@ -247,6 +260,29 @@ label.required:after {
 // Estilo para la descripccion de mensajes de error
 .error-description-message {
   list-style-type: none;
+}
+
+// Mensajes de alerta
+.flash-messages {
+  position: fixed;
+  width: 33.3333%;
+  bottom: 15px;
+  left: 15px;
+  z-index: 1020;
+}
+
+.alert {
+  box-shadow: 1px 1px 5px #2b2b2b;
+}
+
+@media screen and (max-width: 767px) {
+  .flash-messages {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    z-index: 1020;
+  }
 }
 
 // Callouts
