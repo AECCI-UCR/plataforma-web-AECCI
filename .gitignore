@@ -24,3 +24,6 @@ public/uploads/
 
 # Ignore application configuration
 /config/application.yml
+
+# Archivo producción capistrano
+/config/deploy/

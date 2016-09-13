@@ -82,7 +82,7 @@ gem 'selectize-rails'
 gem 'pundit'
 
 # Variables de ambiente
-gem "figaro"
+gem 'figaro'
 
 # La versión 11.1.2 ha dado problema al ser llamada
 gem 'rake', '11.1.1'
@@ -100,11 +100,11 @@ group :development do
   gem 'spring'
 
   # Deploy
-  gem 'capistrano',         require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-rbenv',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano', '3.6.0', require: false
+  gem 'capistrano-rails',    require: false
+  gem 'capistrano-rbenv',    require: false
+  gem 'capistrano-bundler',  require: false
+  gem 'capistrano3-puma',    require: false
   gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem 'capistrano-ssh-doctor', '~> 1.0'
 end
@@ -115,6 +115,6 @@ gem 'puma'
 group :production do
   # Ambiente javascript
   gem 'therubyracer'
-  # PostgresSQL (Ojo: Se requiere biblioteca en debian-derivated: apt install libpq-dev)
+  # PostgresSQL (Ojo: Se requiere biblioteca. En debian-derivated: apt install libpq-dev)
   gem 'pg'
 end
