@@ -19,21 +19,12 @@
               </div>
             </div>
             <div class="form-group" id="ad_description_input">
-              <div class="col-md-4 col-lg-3">
+              <div class="col-sm-12">
                 <%= f.label :description, class: 'required' %>
-              </div>
-              <div class="col-md-8 col-lg-9">
-                <div id="epiceditor">
-                  <%= f.text_area :description, id: 'input_description', style: 'display: none' %>
-                </div>
-                <p class="text-muted">
-                  <small>La descripción la puede hacer utilizando html o
-                    <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown</a>
-                  </small>
-                </p>
+                <%= f.cktext_area :description, id: 'input_description', ckeditor: {language: 'es', height: 300} %>
+                <%#= cktext_area :page, :info, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' }%>
                 <p class="text-danger" id="description_alert">
-                  <small>Tiene que ingresar una descripción para el
-                    anuncio.
+                  <small>Tiene que ingresar una descripción para el anuncio.
                   </small>
                 </p>
               </div>
@@ -71,7 +62,7 @@
             <div id="carousel_part">
               <div class="form-group" id="ad_image_carousel_url_input">
                 <div class="col-md-4 col-lg-3">
-                  <%= f.label :image_carousel_url%>
+                  <%= f.label :image_carousel_url %>
                 </div>
                 <div class="col-md-8 col-lg-9">
                   <%= f.file_field :image_carousel_url %>
@@ -114,4 +105,3 @@
       <% end %>
     </div>
 <% end %>
-<script src="epiceditor.min.js"></script>
