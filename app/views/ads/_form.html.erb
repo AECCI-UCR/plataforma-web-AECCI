@@ -21,7 +21,7 @@
             <div class="form-group" id="ad_description_input">
               <div class="col-sm-12">
                 <%= f.label :description, class: 'required' %>
-                <%= f.cktext_area :description, id: 'input_description', ckeditor: {language: 'es', height: 300} %>
+                <%= f.cktext_area :description, id: 'input_description'%>
                 <%#= cktext_area :page, :info, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' }%>
                 <p class="text-danger" id="description_alert">
                   <small>Tiene que ingresar una descripción para el anuncio.

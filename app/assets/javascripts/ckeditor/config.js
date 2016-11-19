@@ -1,9 +1,12 @@
 /**
  * Created by fabian on 19/11/16.
  */
+
+// El config original se puede encontrar en: https://github.com/galetahub/ckeditor/blob/master/app/assets/javascripts/ckeditor/config.js
 CKEDITOR.editorConfig = function (config) {
     // Define changes to default configuration here. For example:
-    // config.language = 'fr';
+    config.language = 'es';
+    config.height = 300;
     // config.uiColor = '#AADC6E';
 
     /* Filebrowser routes */
@@ -38,7 +41,7 @@ CKEDITOR.editorConfig = function (config) {
             groups: ['clipboard', 'undo'],
             items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']
         },
-        // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+        //{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
         // { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
         {name: 'links', items: ['Link', 'Unlink', 'Anchor']},
         {name: 'insert', items: ['HorizontalRule', 'SpecialChar']},
