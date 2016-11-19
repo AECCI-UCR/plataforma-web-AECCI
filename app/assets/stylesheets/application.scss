@@ -20,9 +20,3 @@
 @import "font-awesome";
 // Preview de imagenes
 @import "lightbox";
-
-@-moz-document url-prefix() {
-  fieldset {
-    display: table-cell;
-  }
-}
