@@ -16,10 +16,8 @@
 //= require bootstrap-sprockets
 //= require data-confirm-modal
 //= require lightbox
-//= require epiceditor
 //= require bootstrap-filestyle
-// require parallax
-// require jquery.parallax
+//= require ckeditor/init
 //= require_tree .
 
 $(document).on('ready page:load', function () {
