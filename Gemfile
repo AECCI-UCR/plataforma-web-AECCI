@@ -46,7 +46,6 @@ gem 'devise'
 gem 'data-confirm-modal'
 
 # Para la conversión a Markdown
-gem 'epic-editor-rails'
 gem 'redcarpet'
 gem 'coderay'
 
@@ -62,6 +61,9 @@ gem 'cocaine', '~> 0.5.8'
 
 # Gema para preview de PDFs
 gem 'pdfjs_viewer-rails'
+
+# Gema para CKEditor
+gem 'ckeditor'
 
 # Gema de "contact us"
 gem 'contact_us', '~> 1.0.1'

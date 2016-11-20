@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1>Anuncios del sitio</h1>
-    <hr/>
+    <h1 class="text-uppercase text-center" style="color:#f96816; font-weight: 200;">Anuncios de la asocia</h1>
   </div>
 </div>
 <%# Esta deberia de ser la vista para los miembros de la asocia %>
@@ -66,26 +65,34 @@
       </div>
     </div>
 <% end %>
-
-<%# Vista de usuarios %>
-<% @ads.each_with_index do |ad, index| %>
-    <div class="row" id="<%= ad.title %>">
-      <%= render layout: 'shared/panel', locals: {title: ad.title, size: 10, offset: 1} do %>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <h6>
-                <% date = ad.updated_at.to_date.to_s.split('-') %>
-                <small><i class="fa fa-calendar"></i>  <%= date[2]<<'-'<<date[1]<<'-'<<date[0] %></small>
-              </h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <%= link_to image_tag(ad.image_url, class: 'hidden-xs img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
-              <%= markdown(ad.description) %>
-              <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-sm btn-block hidden-sm hidden-md hidden-lg' %>
-            </div>
-          </div>
-      <% end %>
+<% if @ads.count == 0 %>
+    <%# No hay anuncios %>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center text-danger">No hay anuncios por el momento</p>
+      </div>
     </div>
+<% else %>
+<%# Vista de usuarios %>
+    <% @ads.each_with_index do |ad, index| %>
+        <div class="row" id="<%= ad.title %>">
+          <%= render layout: 'shared/panel', locals: {title: ad.title, size: 10, offset: 1} do %>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <h6>
+                    <% date = ad.updated_at.to_date.to_s.split('-') %>
+                    <small><i class="fa fa-calendar"></i>  <%= date[2]<<'-'<<date[1]<<'-'<<date[0] %></small>
+                  </h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <%= link_to image_tag(ad.image_url, class: 'hidden-xs img-ad', align: 'right'), "#{ad.image_url}", 'data-lightbox' => index, 'data-title' => "#{ad.title}" %>
+                  <%= markdown(ad.description) %>
+                  <%= link_to 'Mostrar imagen', "#{ad.image_url}", 'data-lightbox' => "#{ad.title}", 'data-title' => "#{ad.title}", class: 'btn btn-primary btn-sm btn-block hidden-sm hidden-md hidden-lg' %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
 <% end %>
