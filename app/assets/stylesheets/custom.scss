@@ -256,7 +256,7 @@ label.required:after {
 .flash-messages {
   position: fixed;
   width: 33.3333%;
-  bottom: 15px;
+  bottom: -30px;
   left: 15px;
   z-index: 1020;
   height: 20%; // Esto hace que no abarque toda la pantalla y bloquee lo demás
