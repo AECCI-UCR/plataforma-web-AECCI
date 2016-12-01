@@ -127,7 +127,7 @@ $body-bg: $body-color;
   }
 }
 
-// Color para el titulo de los paels
+// Color para el titulo de los panels
 .panel-title {
   color: $primary;
 }
@@ -144,6 +144,12 @@ textarea {
 // Estilo de los encabezados
 h1, h2, h3, h4, h5, h6 {
   color: $grey-dark;
+}
+
+// Estilos de los titulos de las paginas
+.page-title {
+  color: #f96816;
+  font-weight: 300;
 }
 
 // Estilo de los párrafos
